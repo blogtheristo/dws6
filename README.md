@@ -113,6 +113,7 @@ Same structure as English version, fully localized for Finnish market.
 Founder & CEO, Lifetime Consulting  
 Email: risto@lifetime.fi  
 LinkedIn: linkedin.com/in/ristopaarni
+Buy: https://lifetime.fi/buy/dws6  
 
 ---
 
