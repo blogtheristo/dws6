@@ -1,6 +1,8 @@
 # dws6
 Lifetime DWS IQ Platform Version 6
 
+[![Lifetime Oy - Firehorse](Firehorse2026.png)](https://www.crunchbase.com/organization/lifetime-oy)
+
 Agentic AI SaaS Implementation Guide (EN/FI)
 
 DWS IQ Platform Mission
@@ -149,7 +151,7 @@ Risto Anton Päärni
 Founder & CEO, Lifetime Consulting
 Email: risto@lifetime.fi
 LinkedIn: linkedin.com/in/ristopaarni
-Crunchbase: Lifetime Oy
+Crunchbase: [Lifetime Oy](https://www.crunchbase.com/organization/lifetime-oy)
 GitHub: Lifetime-oy Enterprise
 
 Document Version: 1.1
