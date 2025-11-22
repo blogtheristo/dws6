@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWS IQ Platform - Agentic AI for Intelligent Construction</title>
+    <meta name="description" content="Real-time AI decisions for construction sites. Deploy to cloud or on-premises. Sub-100ms edge inference with NVIDIA Jetson.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0a0a0a;
+            color: #fafafa;
+            min-height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fafafa;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #a1a1aa; text-decoration: none; font-size: 0.9rem; }
+        .nav-links a:hover { color: #fafafa; }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem;
+            background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+        }
+        .badge {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: 1.25rem;
+            color: #a1a1aa;
+            max-width: 650px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: #fafafa;
+            color: #0a0a0a;
+        }
+        .btn-primary:hover { background: #e4e4e7; transform: translateY(-1px); }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #3f3f46;
+            color: #fafafa;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: #52525b; }
+        .stats {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.02);
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-value { font-size: 2.5rem; font-weight: 700; color: #3b82f6; }
+        .stat-label { font-size: 0.9rem; color: #71717a; margin-top: 0.25rem; }
+        .features {
+            padding: 5rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .feature h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+        .feature p { color: #a1a1aa; line-height: 1.6; font-size: 0.95rem; }
+        .deploy-options {
+            padding: 4rem 5%;
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.05) 100%);
+        }
+        .deploy-options h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .deploy-options p { color: #a1a1aa; margin-bottom: 2rem; }
+        .deploy-grid {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .deploy-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            min-width: 180px;
+        }
+        .deploy-card h4 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .deploy-card p { font-size: 0.85rem; color: #71717a; }
+        footer {
+            padding: 3rem 5%;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        footer p { color: #52525b; font-size: 0.85rem; }
+        footer a { color: #71717a; text-decoration: none; }
+        footer a:hover { color: #a1a1aa; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        @media (max-width: 640px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .stats { gap: 2rem; }
+            footer { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">🏗️ DWS IQ</a>
+        <div class="nav-links">
+            <a href="https://onelifetime.world">Community</a>
+            <a href="mailto:risto@lifetime.fi">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">🚀 Pilot launching with Turner Construction</div>
+        <h1>
+            <span class="gradient-text">Agentic AI</span> for<br>
+            Intelligent Construction
+        </h1>
+        <p class="hero-sub">
+            Real-time AI agents for construction sites. Sub-100ms decisions with NVIDIA Jetson edge computing.
+            Deploy to our cloud or your private infrastructure.
+        </p>
+        <div class="hero-cta">
+            <a href="mailto:risto@lifetime.fi?subject=Demo Request - DWS IQ Platform" class="btn btn-primary">
+                Request Demo →
+            </a>
+            <a href="https://onelifetime.world" class="btn btn-outline">
+                Join Community
+            </a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <div class="stat-value">&lt;100ms</div>
+            <div class="stat-label">Edge Inference</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">86%</div>
+            <div class="stat-label">Cost Reduction</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">24/7</div>
+            <div class="stat-label">AI Agents</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">515%</div>
+            <div class="stat-label">Edge ROI</div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon">🔍</div>
+            <h3>SiteSense Agent</h3>
+            <p>Real-time drone imagery analysis for safety violations, progress tracking, and BIM deviation detection.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📅</div>
+            <h3>ScheduleGenius Agent</h3>
+            <p>AI-powered schedule optimization. Identifies bottlenecks and reallocates resources automatically.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📦</div>
+            <h3>MaterialOracle Agent</h3>
+            <p>Predictive inventory management. Reduces waste and ensures materials arrive just-in-time.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>NVIDIA Jetson Edge</h3>
+            <p>On-site AI inference under 100ms. Works offline. Solar-powered capable for remote sites.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Enterprise Security</h3>
+            <p>SOC 2 ready. GDPR compliant. Deploy to your private cloud or air-gapped environments.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🌱</div>
+            <h3>Climate Positive</h3>
+            <p>Reduce material waste by 15%+. Optimize energy consumption. Build sustainably.</p>
+        </div>
+    </section>
+
+    <section class="deploy-options">
+        <h2>Deploy Anywhere</h2>
+        <p>Choose the deployment that fits your security and compliance requirements</p>
+        <div class="deploy-grid">
+            <div class="deploy-card">
+                <h4>☁️ Lifetime Cloud</h4>
+                <p>Managed SaaS</p>
+            </div>
+            <div class="deploy-card">
+                <h4>🔷 Azure</h4>
+                <p>Private Cloud</p>
+            </div>
+            <div class="deploy-card">
+                <h4>🟠 AWS</h4>
+                <p>Private Cloud</p>
+            </div>
+            <div class="deploy-card">
+                <h4>🔵 GCP</h4>
+                <p>Private Cloud</p>
+            </div>
+            <div class="deploy-card">
+                <h4>🏢 On-Premises</h4>
+                <p>Air-Gapped</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 <a href="https://lifetime.fi">Lifetime Oy</a> · Helsinki, Finland</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/ristopaarni">LinkedIn</a>
+            <a href="https://github.com/enterprises/Lifetime-oy">GitHub</a>
+            <a href="https://onelifetime.world">Community</a>
+            <a href="mailto:risto@lifetime.fi">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
