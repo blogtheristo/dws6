@@ -1,7 +1,9 @@
 # DWS IQ Platform - Architecture Summary
-## dws10.com (Backend) + onelifetime.world (Frontend) Integration
+## dws10.com (Backend) + onelifetime.world (Frontend) + Lifetime Agent Foundry
 
-**Last Updated:** November 16, 2025
+**Last Updated:** November 23, 2025
+
+> **NEW:** Lifetime Agent Foundry integrated - modular framework for agentic AI development using Google Antigravity + LangChain. See `/lifetime-agent-foundry/AGENT_FOUNDRY.md`
 
 ---
 
@@ -135,6 +137,59 @@
 │  - Stream Manager (batch sync to cloud)                       │
 └────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## 🏭 Lifetime Agent Foundry Layer
+
+The Agent Foundry provides the development framework for all AI agents in the system:
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│  6. AGENT FOUNDRY (Development Framework)                      │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                                 │
+│  Development Tools:                                             │
+│  ┌──────────────────────────────────────────────────────────┐ │
+│  │  Google Antigravity IDE                                   │ │
+│  │  - Agent-first development with Gemini 3 Pro             │ │
+│  │  - Autonomous planning, execution, verification          │ │
+│  │  - 50% faster development vs traditional IDEs            │ │
+│  └──────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  Agent Library (lifetime-agent-foundry):                        │
+│  ┌──────────────────────────────────────────────────────────┐ │
+│  │  agents/                                                  │ │
+│  │  ├── SiteSenseAgent      → Site monitoring (<100ms)      │ │
+│  │  ├── ScheduleGeniusAgent → Timeline optimization         │ │
+│  │  ├── MaterialOracleAgent → Carbon & procurement          │ │
+│  │  └── ImmutableLedgerAgent→ Blockchain carbon records     │ │
+│  │                                                           │ │
+│  │  orchestration/                                           │ │
+│  │  ├── AgentOrchestrator   → Multi-agent coordination      │ │
+│  │  └── HierarchicalPlanner → Task decomposition            │ │
+│  │                                                           │ │
+│  │  integration/                                             │ │
+│  │  ├── edge/               → Jetson, Groq connectors       │ │
+│  │  ├── cloud/              → GCP, AWS, Supabase            │ │
+│  │  └── compliance/         → Fit for 55, CSRD              │ │
+│  └──────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  Orchestration Flow:                                            │
+│  1. Task arrives → HierarchicalPlanner decomposes              │
+│  2. AgentOrchestrator delegates to appropriate agents          │
+│  3. Agents execute with LangChain tool chains                  │
+│  4. Results aggregate and feed dependent agents                │
+│  5. ImmutableLedger records carbon data to blockchain          │
+│                                                                 │
+│  Integration Stack:                                             │
+│  - LangChain (orchestration) + CrewAI (multi-agent)           │
+│  - LlamaIndex (knowledge) + Groq (inference)                  │
+│  - NVIDIA Jetpack SDK (edge optimization)                      │
+└────────────────────────────────────────────────────────────────┘
+```
+
+> Full documentation: `/lifetime-agent-foundry/AGENT_FOUNDRY.md`
 
 ---
 

@@ -1,10 +1,12 @@
 # DWS IQ Platform - Planning Phase (Updated)
 ## Incorporating Existing Infrastructure: dws10.com + onelifetime.world
 
-**Document Version:** 2.0
-**Last Updated:** November 16, 2025
+**Document Version:** 3.0
+**Last Updated:** November 23, 2025
 **Prepared by:** Risto Anton Päärni / Lifetime Consulting
 **Status:** PLANNING PHASE - READY FOR EXECUTION
+
+> **NEW:** Lifetime Agent Foundry added - modular framework for building and deploying agentic AI systems. See `/lifetime-agent-foundry/AGENT_FOUNDRY.md` for full documentation.
 
 ---
 
@@ -119,6 +121,51 @@ By leveraging these existing domains, we reduce time-to-market by **30-45 days**
 | **Admin Dashboard** | ✅ | ❌ | Internal operations, customer management |
 | **Webhook Handlers** | ✅ | ❌ | External integrations (Stripe, AWS IoT) |
 | **Analytics & Monitoring** | ✅ | ❌ | Operational metrics, system health |
+
+---
+
+## Lifetime Agent Foundry Integration
+
+The **Lifetime Agent Foundry** is a modular framework for developing and deploying agentic AI systems. It provides reusable components for construction and climate-tech applications.
+
+### Agent Library Architecture
+
+```
+lifetime-agent-foundry/
+├── agents/
+│   ├── site_sense.py          # Real-time site monitoring (<100ms)
+│   ├── schedule_genius.py     # Project timeline optimization
+│   ├── material_oracle.py     # Carbon footprint & procurement
+│   └── immutable_ledger.py    # Blockchain carbon records
+├── orchestration/
+│   ├── coordinator.py         # Multi-agent task delegation
+│   └── planner.py             # Hierarchical planning
+├── integration/
+│   ├── edge/                  # NVIDIA Jetson, Groq LPU
+│   ├── cloud/                 # GCP, AWS, Supabase
+│   └── client/                # PWA interfaces
+└── compliance/
+    ├── fit_for_55.py          # EU regulations
+    └── carbon_tracker.py      # Embodied carbon
+```
+
+### Development Tools
+
+| Tool | Purpose | Priority |
+|------|---------|----------|
+| **Google Antigravity** | Agent-first IDE with Gemini 3 Pro | Primary |
+| **LangChain** | Composable agent workflows | High |
+| **CrewAI** | Multi-agent collaboration | Medium |
+| **LlamaIndex** | Knowledge management | Medium |
+
+### Key Benefits
+
+- **50% faster development** via AI-assisted agent prototyping
+- **Reusable components** for multiple construction projects
+- **Compliance built-in** for EU Fit for 55 and CSRD
+- **Edge-cloud hybrid** with <100ms latency target
+
+> Full documentation: `/lifetime-agent-foundry/AGENT_FOUNDRY.md`
 
 ---
 
