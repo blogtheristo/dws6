@@ -3,6 +3,65 @@ Lifetime DWS IQ Platform Version 6
 
 [![Lifetime Oy - Firehorse](Firehorse2026.png)](https://www.crunchbase.com/organization/lifetime-oy)
 
+---
+
+## Lifetime Brand Portfolio
+
+**DWS™IQ for intelligent industries**
+
+**Lifetime™World. Lifetime Friends. Sustainability™Partner.**
+
+### Platform Products
+- **DWS™IQ** - Industrial intelligence platform
+- **Lifetime™AIQ** solutions
+- **LTW™Investor Studio**
+- **Lifetime™RAG AI**
+- **Lifetime Studio 2026**
+
+### Technology
+- **Lifetime™Quantum Elements**
+- **Lifetime™Robotics**
+- **Lifetime™Cloud**
+
+### Digital Assets
+- **Lifetime™World Coin ($LTW)**
+- **Lifetime World Coin®**
+- **LTWCash®**
+- **LTWCertificate®**
+- **LTWCert®**
+
+---
+
+## The Lifetime Equation
+
+**Lifetime Happiness** = Livelihood Independence + Prosperity Creation – Carbon Footprint – Erosion Expansion – Droughts Mitigation
+
+### Renewable Energy Stack
+Renewable Energy + Solar + Wind + H2 + Storage + Electricity + Heat/Cool + Water + Food + Fuel + Land
+
+---
+
+## Why DWS™IQ for Intelligent Industries?
+
+DWS is an industrial platform for enterprises who wish to transform their purpose and operations into **intelligent industries** using Physical Artificial Intelligence and data-driven decisioning.
+
+### To Survive:
+- The transition to electrification and H2 solutions
+- New EU AI Act and advancing industrial governance requirements
+- High standards of the sustainability age
+
+While offering customers leading-edge products and services.
+
+### The Hydrogen Age
+Hydrogen age will become mandatory to fight and prevent worst-case climate change scenarios.
+
+### Industry 5.0 Call-to-Action
+The new industrial age Industry 5.0 requires significant changes to company production technologies and products. **Using DWS, any company finds it easier to transform into the new industrial age.**
+
+Changing environmental compliance requirements demand action now.
+
+---
+
 ## DWS6: Climate-Intelligent Agents for Construction & Manufacturing
 
 ### The Regulatory Moment
@@ -184,7 +243,7 @@ Founder & CEO, Lifetime Consulting
 ---
 
 Document Version: 2.0
-Last Updated: November 22, 2025
+Last Updated: November 22, 2026
 Prepared by: Risto Anton Päärni / Lifetime Consulting
 AI Agents Used: Claude Code, Kimi K2, GitHub Copilot, Cursor.ai
 License: Proprietary - Lifetime Oy
