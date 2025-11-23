@@ -382,7 +382,7 @@ The Agent Foundry provides the development framework for all AI agents in the sy
 
 ### Current (Pilot Phase)
 
-- **Users:** 10-20 (Turner Construction)
+- **Users:** 10-20 (pilot customers)
 - **Requests:** 500-1,000/day
 - **Edge Devices:** 5 NVIDIA Jetson
 - **Cloud Run Instances:** 1 (min)

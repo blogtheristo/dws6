@@ -32,7 +32,7 @@ Based on the GitHub repository (blogtheristo/dws6), the DWS IQ Platform by Lifet
 |------|-------------|
 | **Real-time edge decisions** | <100ms latency using hybrid architectures (NVIDIA Jetson for edge, Google Cloud for core, Groq for inference) |
 | **Compliance automation** | Supplier risk assessment, decarbonization scoring, workflow orchestration |
-| **Target sectors** | Construction (Turner Construction pilot) and manufacturing SMEs |
+| **Target sectors** | Construction and manufacturing SMEs |
 | **Features** | Energy optimization, waste routing, carbon tracking |
 
 ### Deliverables
