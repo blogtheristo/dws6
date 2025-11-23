@@ -1,8 +1,10 @@
 # DWS IQ Platform - Implementation Summary & Next Steps
 
-**Document Version:** 1.0
-**Last Updated:** November 16, 2025
+**Document Version:** 2.0
+**Last Updated:** November 23, 2025
 **Status:** ✅ Planning Phase Complete - Ready for Implementation
+
+> **NEW:** Lifetime Agent Foundry added - modular Python framework for agentic AI development using Google Antigravity + LangChain
 
 ---
 
@@ -19,8 +21,9 @@ I've completed a comprehensive planning phase for the DWS IQ Platform. All docum
 | Document | Purpose | Status |
 |----------|---------|--------|
 | **README.md** | Platform overview, mission statement | ✅ Updated |
-| **PLANNING_PHASE_UPDATED.md** | 90-day implementation roadmap | ✅ Created (1,680 lines) |
-| **ARCHITECTURE_SUMMARY.md** | Visual architecture diagrams, traffic flows | ✅ Created (visual guide) |
+| **PLANNING_PHASE_UPDATED.md** | 90-day implementation roadmap | ✅ Updated v3.0 |
+| **ARCHITECTURE_SUMMARY.md** | Visual architecture diagrams, traffic flows | ✅ Updated |
+| **lifetime-agent-foundry/AGENT_FOUNDRY.md** | Agent development framework | ✅ NEW |
 
 ### 2. Infrastructure Planning
 
@@ -34,7 +37,7 @@ I've completed a comprehensive planning phase for the DWS IQ Platform. All docum
 | Document | Purpose | Value |
 |----------|---------|-------|
 | **PAYMENT_INTEGRATION.md** | Revolut + PayPal integration | Saves €2,035/year vs PayPal-only (dual provider) |
-| **STRATEGIC_PARTNERSHIPS.md** | Partnerships & credibility stack | Peachscore + $135K startup credits + Turner pilot |
+| **STRATEGIC_PARTNERSHIPS.md** | Partnerships & credibility stack | Peachscore + $125K startup credits |
 
 ---
 
@@ -94,11 +97,6 @@ Based on your inputs, here's the finalized infrastructure:
   - Benchmarking against 500+ Finnish scaleups
   - Quarterly investor meetups
 
-- 🔄 **Turner Construction** → €30K pilot + €20K success fee
-  - Austin Tower construction site
-  - 5 Chromebook Plus devices
-  - Target: >10% time savings proof
-
 - 🔄 **ALICE Technologies** → Technical integration partner
   - YC-backed construction scheduling software
   - DWS IQ ScheduleGenius ↔ ALICE API integration
@@ -108,6 +106,44 @@ Based on your inputs, here's the finalized infrastructure:
   - 360° construction camera system
   - Free API for 3 pilots
   - AWS Marketplace co-listing
+
+---
+
+## 🏭 Lifetime Agent Foundry (NEW)
+
+A modular Python framework for developing and deploying agentic AI systems for construction and climate-tech.
+
+### Core Components
+
+| Component | Description |
+|-----------|-------------|
+| **SiteSenseAgent** | Real-time site monitoring with <100ms edge inference |
+| **ScheduleGeniusAgent** | Project timeline optimization with EU compliance |
+| **MaterialOracleAgent** | Carbon footprint assessment & procurement automation |
+| **ImmutableLedgerAgent** | Blockchain-based carbon record keeping (CSRD compliant) |
+| **AgentOrchestrator** | Multi-agent coordination and task delegation |
+
+### Development Stack
+
+```
+Google Antigravity IDE → LangChain → Groq LPU → NVIDIA Jetson
+       ↓                    ↓           ↓            ↓
+  Agent-first dev     Orchestration  Inference   Edge compute
+```
+
+### Key Benefits
+
+- **50% faster development** via AI-assisted prototyping
+- **Reusable library** for multiple construction projects
+- **Compliance built-in** for EU Fit for 55 and CSRD
+- **Open-source** (MIT license) for community contribution
+
+### Files
+
+```
+lifetime-agent-foundry/
+└── AGENT_FOUNDRY.md    # Full documentation with code examples
+```
 
 ---
 
@@ -190,12 +226,11 @@ TOTAL 12-MONTH CASH NEED: €143,587 (~$157,000 USD)
 | Month | Customers | MRR | Event | Total Revenue |
 |-------|-----------|-----|-------|---------------|
 | M1-3 | 0 | €0 | Development phase | €0 |
-| M4 | 1 (Turner) | €2,499 | Pilot contract | €30,000 |
+| M4 | 1 | €2,499 | First pilot contract | €2,499 |
 | M5-6 | 1 | €2,499 | Pilot ongoing | €4,998 |
-| M7 | 1 | €2,499 | Success fee if >10% savings | €20,000 + €2,499 |
-| M8-9 | 2 | €4,998 | Second customer onboarded | €9,996 |
+| M7-9 | 2 | €4,998 | Second customer onboarded | €14,994 |
 | M10-12 | 5 | €12,495 | Three more customers | €37,485 |
-| **Year 1 Total** | — | — | — | **€104,978** |
+| **Year 1 Total** | — | — | — | **€59,976** |
 
 **Break-Even Analysis:**
 - Cash need: €143,587
@@ -287,24 +322,24 @@ LAYER 3: Continuous Assurance
 
 **Month 2: Hardware & AWS IoT**
 - [ ] Order 5 NVIDIA Jetson Orin Nano devices ($2,495)
-- [ ] Finalize Turner Construction pilot agreement (€30K)
+- [ ] Finalize first pilot customer agreement
 - [ ] Configure AWS IoT Greengrass, create thing groups
 - [ ] Deploy edge agents to Jetson (TensorRT Llama 3.1 8B 4-bit)
 
 ### Phase 3: Pilot Launch (Days 61-90)
 
-**Month 3-4: Turner Construction Pilot**
+**Month 3-4: First Customer Pilot**
 - [ ] Launch pilot (5 Chromebook Plus devices)
-- [ ] 4-hour training workshop for Turner site staff
+- [ ] 4-hour training workshop for site staff
 - [ ] Monitor metrics: 500-1,000 agent invocations/day
 - [ ] Target: >10% time savings, CSAT >70%
 
 ### Phase 4: Growth (Month 4-12)
 
 **Month 4-6:**
-- Turner pilot results (case study)
+- First pilot results (case study)
 - ALICE Technologies integration
-- €50K revenue (pilot + success fee)
+- First revenue milestones
 
 **Month 7-12:**
 - Onboard 3-5 more customers
@@ -330,17 +365,17 @@ LAYER 3: Continuous Assurance
 
 | Metric | Month 4 | Month 6 | Month 12 |
 |--------|---------|---------|----------|
-| **Paying Customers** | 1 (Turner) | 2 | 5 |
+| **Paying Customers** | 1 | 2 | 5 |
 | **MRR** | €2,499 | €4,998 | €12,495 |
 | **Agent Invocations** | 10K/mo | 50K/mo | 200K/mo |
 | **Time Savings (Proven)** | 10% | 12% | 15% |
 | **Customer NPS** | 50+ | 60+ | 70+ |
 
-### Pilot Success Criteria (Turner Construction)
+### Pilot Success Criteria
 
 ```
 ✅ PRIMARY SUCCESS:
-- >10% time savings proven (triggers €20K success fee)
+- >10% time savings proven
 - CSAT score >70% (weekly surveys)
 - 500-1,000 agent invocations/day
 
@@ -465,19 +500,14 @@ Based on DOMAIN_STRATEGY.md analysis:
 
 **My recommendation:** Start under Lifetime Oy, incorporate Lifetime Chronos Oy later (when you raise Series A).
 
-### 3. Pilot Customer Priority
+### 3. Pilot Customer Strategy
 
-**Question:** Should we prioritize Turner Construction pilot, or explore other customers first?
+**Recommendation:** Start with 1-2 smaller pilots (€5K-10K each) to validate the platform, then pursue larger enterprise contracts.
 
-**Option A:** Turner Construction (€30K + €20K)
-- Pro: Large contract, brand name, proven market
-- Con: High stakes, complex deployment
-
-**Option B:** Smaller pilot first (€5K-10K)
-- Pro: Lower risk, faster iteration
-- Con: Less revenue, less impressive for investors
-
-**My recommendation:** Pursue Turner Construction (already in discussions), but also onboard 1-2 smaller customers in parallel as fallback.
+**Benefits:**
+- Lower risk, faster iteration
+- Build case studies and references
+- Validate product-market fit before scaling
 
 ---
 
@@ -530,7 +560,7 @@ All planning documentation is complete and committed to your repository. The arc
 - ✅ Minimize costs (€25/month with $135K credits)
 - ✅ Maximize performance (<100ms edge, <2s cloud)
 - ✅ Scale efficiently (1 → 100+ customers)
-- ✅ Impress investors (Peachscore + startup credits + Turner pilot)
+- ✅ Impress investors (Peachscore + startup credits)
 
 **Next action:** Start Week 1 with Cloudflare DNS configuration (30 minutes).
 
