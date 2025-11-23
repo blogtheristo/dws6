@@ -166,7 +166,7 @@ We're validating DWS6 with 2-3 construction or manufacturing companies in Europe
 - **12-Month Revenue**: €140,000 (pilots + customers)
 - **12-Month Edge Savings**: €333,000 (cloud cost avoidance)
 - **Result**: +€281,370 PROFIT in Month 12
-- **Investment Ask**: €150,000 SAFE @ €2M cap, 20% discount
+- **Investment Ask**: €150,000 SAFE @ €3.8M cap, 20% discount
 - **Hardware ROI**: 515% annually (NVIDIA Jetson investment)
 
 ---

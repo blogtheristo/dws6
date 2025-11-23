@@ -339,7 +339,7 @@ When pitching to VCs, emphasize:
                 to deliver <100ms decisions on construction sites.
 
    Stage: Pre-Seed / Seed
-   Funding: €150K SAFE target (€2M cap, 20% discount)
+   Funding: €150K SAFE target (€3.8M cap, 20% discount)
    MRR: €0 (launching Q1 2025)
    Employees: 2 founders + 2 contractors
    ```

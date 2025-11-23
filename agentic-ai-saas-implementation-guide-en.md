@@ -60,7 +60,7 @@ The DWS IQ Platform combines:
 - **12-Month Revenue**: €140,000 (pilots + early customers)
 - **12-Month Edge Savings**: €333,000 (cloud cost avoidance)
 - **Month 12 Profit**: +€281,370
-- **Investment Ask**: €150,000 SAFE @ €2M cap, 20% discount
+- **Investment Ask**: €150,000 SAFE @ €3.8M cap, 20% discount
 - **Hardware ROI**: 515% annually
 
 ---
@@ -983,7 +983,7 @@ class SyncManager {
 
 #### Startup Capital Efficiency
 
-**Investment Ask: €150,000 SAFE @ €2M cap, 20% discount**
+**Investment Ask: €150,000 SAFE @ €3.8M cap, 20% discount**
 
 **Runway Analysis:**
 - Total Year 1 costs: €322,200
@@ -1574,7 +1574,7 @@ This isn't just faster - it's **25x faster than cloud-only solutions** and **86%
 - Startup credits: $135,000 (Google, AWS, Groq, GitHub)
 - Edge hardware: €54,200 (pays for itself in 2.5 months)
 - Total capital needed: €191,630 for 12 months
-- Your investment: €150,000 at €2M cap, 20% discount
+- Your investment: €150,000 at €3.8M cap, 20% discount
 
 **Financial Projections:**
 - Year 1 Revenue: €140,000
