@@ -19,7 +19,7 @@ Project Plan for Version 5 with Google Cloud and Vertex AI
 * **Lifetime H2AIQ Solutions:** Focused on hydrogen manufacturing, electrification, and storage, including utilizing hydrogen and burned hydrogen to create water and ensuring water quality for drought prevention and erosion control.  
 * **DWS IQ Platform:** The core platform, which is an ecosystem for the Physical Electrification Age. It manages humanoid robots, Physical AI devices (like Cars and Phones), and a new fleet to prevent climate change from rising above 1.5 degrees. It includes a Ledger for Coal Certificates and Lifetime World Coin, a Customer Wallet, Fleet Management, a Situation Room, and Dashboards for measuring H2AIQ and Prosperity Solutions.
 
-The DWS 5.0 IQ Solution is designed to monitor OPEX/CAPEX costs, optimize supply chain sustainability, connect to sustainability reporting, and improve asset-class profitability through the monetization of industrial certified assets. This plan outlines the implementation using **Google Cloud** and **Vertex AI** for scale, efficiency, and reliability.
+The DWS IQ Solution is designed to monitor OPEX/CAPEX costs, optimize supply chain sustainability, connect to sustainability reporting, and improve asset-class profitability through the monetization of industrial certified assets. This plan outlines the implementation using **Google Cloud** and **Vertex AI** for scale, efficiency, and reliability.
 
 **Proposed Four-Layer AI Agent Framework**  
 To build a robust and scalable system of interconnected AI Agents on the DWS IQ Platform, we propose the following four-layered framework, aligning with the project's focus on Physical AI, IoT, and data-driven sustainability:
