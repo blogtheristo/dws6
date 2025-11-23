@@ -1312,6 +1312,87 @@ We are seeing a tougher World scenario for any company profitability, and a toug
 
 Contact us today Risto Anton \+358 400 319010 risto.anton@lifetime.fi to apply for a board position in this exciting business opportunity from Lifetime Group. We are looking for investors who share our vision of building a sustainable future through electrification of industries.
 
+# Press Release 11 / 2025 - COP30 Backgrounder {#press-release-11-/-2025---cop30-backgrounder}
+
+## EU Secures Agreement on Global Response to Keep 1.5°C Limit Within Reach
+
+*Source: European Commission Press Release IP/25/2756 - COP30 UN Climate Change Conference, Belém, Brazil*
+
+### Overview
+
+The European Union stood united for strong climate action and the Paris Agreement goals at the COP30 UN Climate Change Conference in the heart of the Amazonas. While aiming for more ambition, EU negotiators worked with partners to secure an agreement that recognises the need to keep the 1.5°C limit of global average temperatures within reach, and to transition away from fossil fuels.
+
+In an era of changing geopolitics and growing disinformation, and with communities across the globe increasingly feeling climate impacts, it is more important than ever to stand behind our core principles in the fight against climate change: science, multilateralism and cooperation with global partners, in particular the most vulnerable.
+
+### Key Outcomes
+
+At COP30, a total of 86 Nationally Determined Contributions (NDCs) under the Paris Agreement has been submitted by 113 Parties. This includes the new EU NDC setting out a **reduction of net greenhouse gas (GHG) emissions by 66.25 – 72.5% below 1990 levels by 2035**, comprising all sectors of the economy and all GHGs.
+
+COP Parties agreed on the **"Global Mutirão"** aiming for a united and collective effort to deploy common climate solutions for this planet. Deep, rapid and sustained reductions in global greenhouse gas emissions are the only path to limit global warming to 1.5°C with no or limited overshoot.
+
+A new **"Global Implementation Accelerator"** will provide a global response to the mitigation gap and accelerate implementation across all sectors to keep 1.5°C within reach. It will involve support to countries to deliver on the ground their NDCs, national adaptation plans and the Biennial Transparency Reports (BTRs).
+
+### EU Commitments
+
+The EU remains fully committed to all climate commitments agreed together with global partners in the past years, especially in Dubai and Baku. As the clean energy transition accelerates worldwide, the EU will continue delivering the Global Pledges to:
+- **Transition away from fossil fuels**
+- **Triple the installed capacity of renewables by 2030**
+- **Double the global rate of energy efficiency improvements by 2030**
+
+### Adaptation Framework
+
+In the framework of the Global Goal of Climate Adaptation, Parties agreed on a set of indicators to guide and enable investments and programmes on adaptation. They also called for **tripling by 2035 finance for adaptation** in the context of the climate finance commitments (New Collective Quantified Goal) of COP29.
+
+### Fossil Fuel Transition Partnership
+
+A coalition of more than 80 willing countries, including the EU and its Member States launched under Brazil's leadership a partnership to transition away from fossil fuels. Parties also agreed on accelerating implementation of the Just Transition pathways to 1.5°C, recognising the importance of human rights, labour rights, gender equality as well as inclusive stakeholder engagement and social dialogue.
+
+### Key Announcements at COP30
+
+**Open Coalition on Compliance Carbon Markets**: The EU helped secure a Leaders' Declaration endorsed by President von der Leyen. The Declaration boosts the recognition of carbon pricing and market mechanisms as key tools to advance climate action globally.
+
+**Tropical Forest Forever Facility**: The EU endorsed the Declaration on the Launch of the initiative, a global innovative funding mechanism that rewards the conservation of tropical forests.
+
+**Belém Call to Action for the Congo Basin Forests**: The Commission signed this agreement, renewing its COP26 commitment to halt and reverse deforestation and forest degradation by 2030.
+
+**Global Statement on Gender Equality and Climate Action**: The Union supported recognising that women and girls often face the greatest climate risks.
+
+**Global Methane Status Report**: Launched together with International Methane Emissions Observatory, showing progress towards achieving the Pledge's global target of cutting methane emissions at least 30% by 2030 compared to 2020 levels.
+
+### Background & EU Track Record
+
+Under the 2015 Paris Agreement, 194 countries agreed to keep average global temperature change well below 2°C and as close as possible to 1.5°C by the end of the century.
+
+The European Union:
+- Accounts for only **6% of global emissions**
+- Has already **cut greenhouse gas emissions by 37% since 1990** while growing its economy by 71%
+- Is on track to reach its 2030 climate target of **reducing net GHG emissions by at least 55% by 2030**
+- Has submitted an ambitious new NDC to reduce net GHG emissions by **66.25 – 72.5% below 1990 levels by 2035**
+- Is advancing discussions to cut net GHG emissions by **90% by 2040** compared to 1990 levels
+
+### EU Climate Finance Leadership
+
+The EU remains the **largest provider of international climate finance** in the world:
+- **€31.7 billion** from public sources in 2024
+- **€11 billion** mobilised in private finance
+- Funds projects in developing countries across the globe for emissions reduction and climate resilience
+
+### Relevance to DWS Platform
+
+This COP30 agreement reinforces the strategic positioning of DWS for Intelligent Industries:
+
+1. **Regulatory Validation**: The EU's commitment to 66.25-72.5% emissions reduction by 2035 creates mandatory compliance requirements that DWS helps enterprises navigate.
+
+2. **Carbon Market Opportunity**: The Open Coalition on Compliance Carbon Markets aligns with DWS's carbon certificate and ledger capabilities (LTWCertificate®, Lifetime World Coin).
+
+3. **Just Transition Support**: DWS's focus on workforce upskilling and digital-green twin transition directly supports the Just Transition pathways agreed at COP30.
+
+4. **Construction & Manufacturing Alignment**: The agreement's emphasis on deep, rapid emissions reductions validates DWS6's focus on climate-intelligent agents for construction and manufacturing sectors.
+
+5. **Methane Reduction**: The Global Methane Status Report and 30% reduction target by 2030 creates opportunities for DWS H2AIQ Solutions in monitoring and reducing industrial methane emissions.
+
+*Reference: [EU at COP30 UN Climate Change Conference](https://ec.europa.eu/commission/presscorner/detail/en/ip_25_2756)*
+
 # Tiedote 01 / 2022 {#tiedote-01-/-2022}
 
 ## 
