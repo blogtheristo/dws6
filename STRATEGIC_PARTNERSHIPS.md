@@ -340,7 +340,7 @@ When pitching to VCs, emphasize:
 
    Stage: Pre-Seed / Seed
    Funding: €150K SAFE target (€3.8M cap, 20% discount)
-   MRR: €0 (launching Q1 2026)
+   MRR: €10K (launching Q1 2026)
    Employees: 2 founders + 2 contractors
    ```
 
