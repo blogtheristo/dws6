@@ -666,7 +666,7 @@ Perustaja ja Toimitusjohtaja, Lifetime Consulting
 Sähköposti: risto@lifetime.fi  
 LinkedIn: linkedin.com/in/ristopaarni
 
-© 2025 Lifetime Oy. Kaikki oikeudet pidätetään.
+© 2026 Lifetime Oy. Kaikki oikeudet pidätetään.
 
 ---
 
@@ -688,4 +688,4 @@ Kysymyksiä tai selvennyksiä varten, ota yhteyttä:
 - **GitHub:** github.com/enterprises/Lifetime-oy
 - **Verkkosivusto:** lifetime.fi
 
-© 2025 Lifetime Oy. Kaikki oikeudet pidätetään.
+© 2026 Lifetime Oy. Kaikki oikeudet pidätetään.

@@ -335,7 +335,7 @@ Quick context on our traction since applying:
 Our hybrid architecture (Google Cloud Run core + AWS edge + Groq inference)
 is designed to leverage Google Cloud's strengths in serverless compute and
 global scaling. The $100K in credits would enable us to deploy to production
-and onboard our first 5 enterprise customers (construction sites) by Q2 2025.
+and onboard our first 5 enterprise customers (construction sites) by Q2 2026.
 
 Happy to provide additional information, pitch deck, or schedule a call if helpful.
 
@@ -356,7 +356,7 @@ Hi Groq Team,
 Following up on my Groq for Startups application submitted 2 weeks ago.
 
 Since applying:
-- Confirmed Turner Construction pilot (€30K) - launching Q1 2025
+- Confirmed Turner Construction pilot (€30K) - launching Q1 2026
 - Architected multi-agent system (SiteSense, ScheduleGenius, MaterialOracle)
 - Estimated 10M+ tokens/month at full deployment (50 construction sites)
 
