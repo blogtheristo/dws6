@@ -1633,7 +1633,7 @@ This isn't just faster - it's **25x faster than cloud-only solutions** and **86%
 ### The Ask
 
 **Investment Structure:** €150,000 SAFE
-- Valuation cap: €2M
+- Valuation cap: €3.8M
 - Discount: 20%
 - No interest, no maturity date
 

@@ -60,7 +60,7 @@ DWS IQ Platform yhdistää:
 - **12 kuukauden liikevaihto**: 140 000 € (pilotit + asiakkaat)
 - **12 kuukauden reunasäästöt**: 333 000 € (pilvikustannusten välttäminen)
 - **Kuukausi 12 voitto**: +281 370 €
-- **Sijoituspyyntö**: 150 000 € SAFE @ 2M € cap, 20% alennus
+- **Sijoituspyyntö**: 150 000 € SAFE @ 3,8M € cap, 20% alennus
 - **Laitteisto-ROI**: 515% vuodessa
 
 ---
@@ -581,7 +581,7 @@ Tämä ei ole vain nopeampi - se on **25x nopeampi kuin vain-pilvi-ratkaisut** j
 - Startup-krediitit: 135 000 € (Google, AWS, Groq, GitHub)
 - Reunalaitteisto: 54 200 € (maksaa itse takaisin 2,5 kuukaudessa)
 - Yhteensä tarvitaan pääomaa: 191 630 € 12 kuukaudeksi
-- Teidän sijoituksenne: 150 000 € 2M € cap:lla, 20% alennus
+- Teidän sijoituksenne: 150 000 € 3,8M € cap:lla, 20% alennus
 
 **Taloudelliset Ennusteet:**
 - Vuosi 1 liikevaihto: 140 000 €
@@ -621,7 +621,7 @@ Tämä ei ole vain nopeampi - se on **25x nopeampi kuin vain-pilvi-ratkaisut** j
 ### Pyyntö
 
 **Sijoitusrakenne:** 150 000 € SAFE
-- Arviointikatto: 2M €
+- Arviointikatto: 3,8M €
 - Alennus: 20%
 - Ei korkoa, ei eräpäivää
 
