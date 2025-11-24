@@ -44,7 +44,7 @@ Based on the GitHub repository (blogtheristo/dws6), the DWS IQ Platform by Lifet
 
 ### OneLifetime.World Vision
 
-The OneLifetime.World site positions this as an AI-powered construction community launching in Q1 2025, built on a **"World Model"** with physical brands:
+The OneLifetime.World site positions this as an AI-powered construction community launching in Q1 2026, built on a **"World Model"** with physical brands:
 
 | Brand | Focus |
 |-------|-------|
@@ -437,7 +437,7 @@ This 90-day phased plan mirrors the DWS IQ timeline, assuming a lean team (found
 | Use Antigravity self-improvement loops | Ongoing | AI Engineer |
 | Secure funding (€150K SAFE) | Ongoing | CEO |
 
-**Milestone:** Production launch, aligned with Q1 2025 rollout
+**Milestone:** Production launch, aligned with Q1 2026 rollout
 
 ### Timeline Visualization
 

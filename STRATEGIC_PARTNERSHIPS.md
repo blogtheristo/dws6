@@ -46,7 +46,7 @@ Peachscore is Finland's leading scale-up community and benchmarking platform tha
 **Action Items:**
 - [ ] Update company profile on Peachscore with DWS IQ launch
 - [ ] Add Peachscore logo to investor pitch deck (slide: "Backed By")
-- [ ] Attend Peachscore quarterly meetup (next: Q1 2025)
+- [ ] Attend Peachscore quarterly meetup (next: Q1 2026)
 - [ ] Connect with construction tech companies in Peachscore network
 
 ---
@@ -240,7 +240,7 @@ Commercial space station developer (NASA Artemis partner).
    - Relevance: Construction visualization, BIM integration
    - Contact: CEO Niko Eiden
 
-**Action:** Schedule coffee meetings via Peachscore introductions (Q1 2025).
+**Action:** Schedule coffee meetings via Peachscore introductions (Q1 2026).
 
 ---
 
@@ -271,7 +271,7 @@ Commercial space station developer (NASA Artemis partner).
 **Warm Intro Strategy:**
 - Get introduced via Peachscore community manager
 - Leverage Turner Construction pilot results as traction proof
-- Target: Q2 2025 (after pilot success)
+- Target: Q2 2026 (after pilot success)
 
 ---
 
@@ -306,19 +306,19 @@ When pitching to VCs, emphasize:
 - ✅ GitHub Enterprise setup
 - 🔄 Google/Groq/AWS startup program applications
 
-### Q1 2025 (January - March)
+### Q1 2026 (January - March)
 - Turner Construction pilot agreement signed
 - ALICE Technologies API access secured
 - OpenSpace partnership finalized
 - Peachscore quarterly event attendance
 
-### Q2 2025 (April - June)
+### Q2 2026 (April - June)
 - Turner pilot results published (case study)
 - Investor introductions via Peachscore
 - Axiom Space grant award (if approved)
 - First 3 paying customers onboarded
 
-### Q3 2025 (July - September)
+### Q3 2026 (July - September)
 - Series A preparation (€2M-5M target)
 - Nordic VC pitch tour (Lifeline, Inventure, etc.)
 - Peachscore "Company to Watch" feature
@@ -340,7 +340,7 @@ When pitching to VCs, emphasize:
 
    Stage: Pre-Seed / Seed
    Funding: €150K SAFE target (€3.8M cap, 20% discount)
-   MRR: €0 (launching Q1 2025)
+   MRR: €0 (launching Q1 2026)
    Employees: 2 founders + 2 contractors
    ```
 

@@ -372,7 +372,7 @@ The Agent Foundry provides the development framework for all AI agents in the sy
 │                                                                 │
 │  Compliance:                                                    │
 │  - GDPR: Data residency in EU (Frankfurt + Stockholm)          │
-│  - SOC 2: Preparation underway (target: Q3 2025)              │
+│  - SOC 2: Preparation underway (target: Q3 2026)              │
 └────────────────────────────────────────────────────────────────┘
 ```
 

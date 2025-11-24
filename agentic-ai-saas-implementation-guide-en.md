@@ -1804,5 +1804,5 @@ For questions or clarifications, contact:
 - **GitHub:** github.com/enterprises/Lifetime-oy
 - **Website:** lifetime.fi
 
-© 2025 Lifetime Oy. All rights reserved.
+© 2026 Lifetime Oy. All rights reserved.
 This document is proprietary and confidential.

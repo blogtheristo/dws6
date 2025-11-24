@@ -131,7 +131,7 @@ Lifetime operates a multi-site architecture with clear separation of concerns be
 ```html
 <!-- Standard footer for all product sites -->
 <footer>
-  <p>© 2025 <a href="https://lifetime.fi">Lifetime Oy</a> · Helsinki, Finland</p>
+  <p>© 2026 <a href="https://lifetime.fi">Lifetime Oy</a> · Helsinki, Finland. All rights reserved.</p>
   <div class="footer-links">
     <a href="https://lifetime.fi">Company</a>
     <a href="https://onelifetime.world">Community</a>
