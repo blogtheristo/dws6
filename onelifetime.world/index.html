@@ -240,10 +240,56 @@
         }
         footer a { color: var(--accent); }
 
+        /* Images and Media */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .image-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .image-card-caption {
+            padding: 20px;
+            text-align: center;
+            color: var(--dark);
+        }
+        .video-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         @media (max-width: 768px) {
             .hero h2 { font-size: 1.8rem; }
             .hero-stats { gap: 20px; }
             .stat-value { font-size: 1.8rem; }
+            .image-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -280,6 +326,65 @@
                 <div class="stat">
                     <div class="stat-value">$135K</div>
                     <div class="stat-label">Startup Credits</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h3>Lifetime Fleet: The Physical Hands of Lifetime World</h3>
+            <p style="text-align:center; font-size:1.2rem; margin-bottom:40px;">Robots, drones, and vehicles moving atoms in the real world. Solving the "Last Meter of Care" gap.</p>
+            
+            <div class="video-container">
+                <h4 style="text-align:center; margin-bottom:20px; color: var(--primary);">Lifetime Fleet V152</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/7pLs8IEzZfg?si=fKbL__mc4OtfjfHb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="../images/lifetime-fleet/robot_help.png" alt="Robot helping with care tasks">
+                    <div class="image-card-caption">
+                        <strong>Last Meter of Care</strong><br>
+                        Robots handling logistics, cleaning, and pet care
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="../images/lifetime-fleet/TheFleet.jpg" alt="Lifetime Fleet">
+                    <div class="image-card-caption">
+                        <strong>Lifetime Fleet</strong><br>
+                        Physical incarnation brand moving atoms in the real world
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="../images/lifetime-fleet/Society5.png" alt="Society 5.0">
+                    <div class="image-card-caption">
+                        <strong>Society 5.0</strong><br>
+                        Transforming industries with intelligent automation
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="../images/lifetime-fleet/Execution.png" alt="Execution">
+                    <div class="image-card-caption">
+                        <strong>Execution</strong><br>
+                        From great science to real-world deployment
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="../images/lifetime-fleet/Traction.png" alt="Traction">
+                    <div class="image-card-caption">
+                        <strong>Traction</strong><br>
+                        Live operations with Uber and Taksi Helsinki
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="../images/lifetime-fleet/rental.jpg" alt="Recovery Rental">
+                    <div class="image-card-caption">
+                        <strong>Recovery Rental</strong><br>
+                        6-week packages for hospitals and families
+                    </div>
                 </div>
             </div>
         </div>
