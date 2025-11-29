@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DWS IQ 6 | Climate Tech for Intelligent Industries | Lifetime Oy</title>
-    <meta name="description" content="DWS IQ 6: Climate Tech transforming intelligent industries with Agentic AI. Real-time edge decisions (<100ms) using NVIDIA Jetson, Google Cloud, Groq LPU.">
+    <meta name="description"
+        content="DWS IQ 6: Climate Tech transforming intelligent industries with Agentic AI. Real-time edge decisions (<100ms) using NVIDIA Jetson, Google Cloud, Groq LPU.">
     <style>
         :root {
             --primary: #1a365d;
@@ -13,14 +15,25 @@
             --light: #f7fafc;
             --dark: #1a202c;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
             color: var(--dark);
             background: var(--light);
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
         /* Header */
         header {
@@ -28,13 +41,20 @@
             color: white;
             padding: 20px 0;
         }
+
         .logo-section {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-        .logo-section img { height: 80px; }
-        .logo-section h1 { font-size: 1.8rem; }
+
+        .logo-section img {
+            height: 80px;
+        }
+
+        .logo-section h1 {
+            font-size: 1.8rem;
+        }
 
         /* Hero */
         .hero {
@@ -43,8 +63,18 @@
             padding: 80px 0;
             text-align: center;
         }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 30px; }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
         .hero-stats {
             display: flex;
             justify-content: center;
@@ -52,14 +82,37 @@
             flex-wrap: wrap;
             margin-top: 40px;
         }
-        .stat { text-align: center; }
-        .stat-value { font-size: 2.5rem; font-weight: bold; color: #ffd700; }
-        .stat-label { font-size: 0.9rem; opacity: 0.9; }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
 
         /* Sections */
-        section { padding: 60px 0; }
-        section:nth-child(even) { background: white; }
-        h3 { font-size: 2rem; color: var(--primary); margin-bottom: 30px; text-align: center; }
+        section {
+            padding: 60px 0;
+        }
+
+        section:nth-child(even) {
+            background: white;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
         /* Brand Portfolio */
         .brands {
@@ -67,15 +120,27 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
+
         .brand-card {
             background: white;
             border-radius: 10px;
             padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .brand-card h4 { color: var(--secondary); margin-bottom: 15px; }
-        .brand-card ul { list-style: none; }
-        .brand-card li { padding: 8px 0; border-bottom: 1px solid #eee; }
+
+        .brand-card h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .brand-card ul {
+            list-style: none;
+        }
+
+        .brand-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
 
         /* Equation */
         .equation {
@@ -84,14 +149,19 @@
             text-align: center;
             padding: 60px 20px;
         }
-        .equation h3 { color: white; }
+
+        .equation h3 {
+            color: white;
+        }
+
         .equation-formula {
             font-size: 1.4rem;
             margin: 30px 0;
             padding: 20px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
         }
+
         .energy-stack {
             display: flex;
             flex-wrap: wrap;
@@ -99,8 +169,9 @@
             gap: 15px;
             margin-top: 20px;
         }
+
         .energy-item {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             padding: 10px 20px;
             border-radius: 20px;
         }
@@ -110,6 +181,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
+
         .why-item {
             display: flex;
             align-items: flex-start;
@@ -118,8 +190,9 @@
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
+
         .why-icon {
             width: 50px;
             height: 50px;
@@ -137,18 +210,24 @@
         .regulatory {
             background: #fff5f5;
         }
+
         .reg-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
+
         .reg-card {
             background: white;
             padding: 30px;
             border-radius: 10px;
             border-left: 4px solid var(--accent);
         }
-        .reg-card h4 { color: var(--accent); margin-bottom: 15px; }
+
+        .reg-card h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
 
         /* Target Companies */
         .companies table {
@@ -157,18 +236,24 @@
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .companies th, .companies td {
+
+        .companies th,
+        .companies td {
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
+
         .companies th {
             background: var(--primary);
             color: white;
         }
-        .companies tr:hover { background: #f7fafc; }
+
+        .companies tr:hover {
+            background: #f7fafc;
+        }
 
         /* Architecture */
         .arch-grid {
@@ -176,13 +261,17 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
+
         .arch-item {
             background: white;
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-        .arch-item strong { color: var(--secondary); }
+
+        .arch-item strong {
+            color: var(--secondary);
+        }
 
         /* Investment */
         .investment {
@@ -190,13 +279,18 @@
             color: white;
             text-align: center;
         }
-        .investment h3 { color: white; }
+
+        .investment h3 {
+            color: white;
+        }
+
         .invest-highlight {
             font-size: 3rem;
             font-weight: bold;
             color: #ffd700;
             margin: 20px 0;
         }
+
         .invest-details {
             display: flex;
             justify-content: center;
@@ -204,12 +298,25 @@
             flex-wrap: wrap;
             margin-top: 30px;
         }
-        .invest-item { text-align: center; }
-        .invest-value { font-size: 1.5rem; font-weight: bold; }
+
+        .invest-item {
+            text-align: center;
+        }
+
+        .invest-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
         /* Contact */
-        .contact { text-align: center; }
-        .contact-info { margin-top: 30px; }
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
@@ -217,6 +324,7 @@
             flex-wrap: wrap;
             margin-top: 20px;
         }
+
         .contact-links a {
             color: var(--secondary);
             text-decoration: none;
@@ -225,6 +333,7 @@
             border-radius: 5px;
             transition: all 0.3s;
         }
+
         .contact-links a:hover {
             background: var(--secondary);
             color: white;
@@ -237,31 +346,92 @@
             padding: 40px 0;
             text-align: center;
         }
-        footer a { color: #ffd700; }
+
+        footer a {
+            color: #ffd700;
+        }
 
         @media (max-width: 768px) {
-            .hero h2 { font-size: 1.8rem; }
-            .hero-stats { gap: 20px; }
-            .stat-value { font-size: 1.8rem; }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
-            <div class="logo-section">
-                <a href="https://www.crunchbase.com/organization/lifetime-oy">
-                    <img src="../Firehorse2026.png" alt="Lifetime Oy - Firehorse">
-                </a>
-                <h1>DWS IQ Platform Version 6</h1>
+            <div class="logo-section" style="justify-content: space-between; width: 100%;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <a href="https://www.crunchbase.com/organization/lifetime-oy">
+                        <img src="../Firehorse2026.png" alt="Lifetime Oy - Firehorse">
+                    </a>
+                    <h1>DWS IQ Platform Version 6</h1>
+                </div>
+                <nav>
+                    <ul style="display: flex; list-style: none; gap: 20px; align-items: center;">
+                        <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+                        <li style="position: relative; group: hover;">
+                            <a href="#" style="color: white; text-decoration: none;">Industries ▾</a>
+                            <ul style="position: absolute; top: 100%; left: 0; background: white; min-width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 5px; padding: 10px 0; display: none; z-index: 100;"
+                                class="dropdown">
+                                <li><a href="construction.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Construction</a>
+                                </li>
+                                <li><a href="manufacturing.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Manufacturing</a>
+                                </li>
+                                <li><a href="logistics.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Logistics
+                                        & Supply Chain</a></li>
+                                <li><a href="energy.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Energy
+                                        & Utilities</a></li>
+                                <li><a href="real-estate.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Real
+                                        Estate Development</a></li>
+                                <li><a href="architecture.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Architecture
+                                        & Engineering</a></li>
+                                <li><a href="waste.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Waste
+                                        Management</a></li>
+                                <li><a href="mining.html"
+                                        style="display: block; padding: 8px 20px; color: var(--dark); text-decoration: none;">Mining/Heavy
+                                        Industry</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://onelifetime.world"
+                                style="color: white; text-decoration: none;">Community</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
+        <style>
+            nav li:hover .dropdown {
+                display: block !important;
+            }
+
+            nav .dropdown li:hover {
+                background: #f7fafc;
+            }
+        </style>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h2>Climate Tech Transforming Intelligent Industries with Agentic AI</h2>
-            <p>Real-time edge decisions in under 100ms using NVIDIA Jetson, Google Cloud, and Groq LPU. DWS IQ Platform is on a mission to mitigate climate change effects with AI solutions for intelligent industries.</p>
+            <h2>Agentic AI for Intelligent Construction</h2>
+            <p>Real-time AI agents for construction sites. Sub-100ms decisions with NVIDIA Jetson edge computing. Deploy
+                to our cloud or your private infrastructure.</p>
             <div class="hero-stats">
                 <div class="stat">
                     <div class="stat-value">&lt;100ms</div>
@@ -283,10 +453,44 @@
         </div>
     </section>
 
+    <section style="background: white;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                    Lifetime World is a global community and mission initiative by the Lifetime Group.
+                </p>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                    Lifetime Group (Lifetime Oy legal name) is a Finnish limited company 100% owned by its founder Risto
+                    Anton Päärni. It operates in the Nordics, EU. Its operating brands include Lifetime Studios,
+                    Lifetime Consulting, and Lifetime Fleet. Its brands include Lifetime World, DWS IQ, and Lifetime
+                    Firehorse Business Solutions.
+                </p>
+
+                <ul style="list-style: none; font-size: 1.1rem; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">✨ Lifetime World is on a mission to reduce climate change effects.
+                    </li>
+                    <li style="margin-bottom: 10px;">✨ Lifetime World is a 'World Model' (Specialized LLM). Its physical
+                        "Hands" brand is called Lifetime Fleet. We bet on cheap robots with specialized tasks. Lifetime
+                        Firehorse brand offers consumer and business solutions.</li>
+                    <li style="margin-bottom: 10px;">✨ onelifetime.world is the community hub for the Lifetime World
+                        initiative and partnerships (UC) and a market place for solutions.</li>
+                    <li style="margin-bottom: 10px;">✨ Lifetime DWS IQ "Brain" is a climate-intelligent AI platform
+                        designed for 8 industries with significant carbon footprints reduction.</li>
+                    <li style="margin-bottom: 10px;">✨ the DWS10.com solutions platform for 8 industries (dws6.com UC)
+                    </li>
+                    <li style="margin-bottom: 10px;">✨ Lifetime Fleet <a href="https://lifetime.fi/fleet"
+                            style="color: var(--secondary);">https://lifetime.fi/fleet</a> is partner of Uber and Taksi
+                        Helsinki Kela National Care rides. MRR 10k.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section>
         <div class="container">
             <h3>Lifetime Brand Portfolio</h3>
-            <p style="text-align:center; font-size:1.2rem; margin-bottom:40px;"><strong>DWS™IQ for intelligent industries</strong><br>Lifetime™World. Lifetime Friends. Sustainability™Partner.</p>
+            <p style="text-align:center; font-size:1.2rem; margin-bottom:40px;"><strong>DWS™IQ for intelligent
+                    industries</strong><br>Lifetime™World. Lifetime Friends. Sustainability™Partner.</p>
             <div class="brands">
                 <div class="brand-card">
                     <h4>Platform Products</h4>
@@ -324,7 +528,8 @@
         <div class="container">
             <h3>The Lifetime Equation</h3>
             <div class="equation-formula">
-                <strong>Lifetime Happiness</strong> = Livelihood Independence + Prosperity Creation – Carbon Footprint – Erosion Expansion – Droughts Mitigation
+                <strong>Lifetime Happiness</strong> = Livelihood Independence + Prosperity Creation – Carbon Footprint –
+                Erosion Expansion – Droughts Mitigation
             </div>
             <h4>Renewable Energy Stack</h4>
             <div class="energy-stack">
@@ -350,21 +555,24 @@
                     <div class="why-icon">H2</div>
                     <div>
                         <h4>Electrification & Hydrogen Transition</h4>
-                        <p>Hydrogen age will become mandatory to fight and prevent worst-case climate change scenarios. DWS helps enterprises navigate this transformation.</p>
+                        <p>Hydrogen age will become mandatory to fight and prevent worst-case climate change scenarios.
+                            DWS helps enterprises navigate this transformation.</p>
                     </div>
                 </div>
                 <div class="why-item">
                     <div class="why-icon">AI</div>
                     <div>
                         <h4>EU AI Act Compliance</h4>
-                        <p>New EU AI Act and advancing industrial governance requirements demand intelligent, compliant AI solutions.</p>
+                        <p>New EU AI Act and advancing industrial governance requirements demand intelligent, compliant
+                            AI solutions.</p>
                     </div>
                 </div>
                 <div class="why-item">
                     <div class="why-icon">5.0</div>
                     <div>
                         <h4>Industry 5.0 Transformation</h4>
-                        <p>The new industrial age requires significant changes to production technologies. Using DWS, any company finds it easier to transform into the new industrial age.</p>
+                        <p>The new industrial age requires significant changes to production technologies. Using DWS,
+                            any company finds it easier to transform into the new industrial age.</p>
                     </div>
                 </div>
             </div>
@@ -377,15 +585,18 @@
             <div class="reg-grid">
                 <div class="reg-card">
                     <h4>2028 Embodied Carbon Mandate</h4>
-                    <p>The EU mandates embodied carbon measurement for buildings &gt;1,000 m² by 2028. This isn't aspirational—it's a compliance deadline.</p>
+                    <p>The EU mandates embodied carbon measurement for buildings &gt;1,000 m² by 2028. This isn't
+                        aspirational—it's a compliance deadline.</p>
                 </div>
                 <div class="reg-card">
                     <h4>Fit for 55 Targets</h4>
-                    <p>55% emissions reduction by 2030, 100% by 2050. Buildings account for 40% of EU CO₂ emissions over their life cycle.</p>
+                    <p>55% emissions reduction by 2030, 100% by 2050. Buildings account for 40% of EU CO₂ emissions over
+                        their life cycle.</p>
                 </div>
                 <div class="reg-card">
                     <h4>Manufacturing SMEs</h4>
-                    <p>Manufacturing contributes 24% of EU greenhouse gas emissions. SMEs account for 63% of all European carbon emissions and face twin digital-green transformation.</p>
+                    <p>Manufacturing contributes 24% of EU greenhouse gas emissions. SMEs account for 63% of all
+                        European carbon emissions and face twin digital-green transformation.</p>
                 </div>
             </div>
         </div>
@@ -394,10 +605,13 @@
     <section>
         <div class="container">
             <h3>For Construction Enterprises</h3>
-            <p style="text-align:center; max-width:800px; margin:0 auto 30px;">Real-time embodied carbon tracking across supply chains, automated compliance roadmap management, supplier risk assessment.</p>
+            <p style="text-align:center; max-width:800px; margin:0 auto 30px;">Real-time embodied carbon tracking across
+                supply chains, automated compliance roadmap management, supplier risk assessment.</p>
 
             <h3 style="margin-top:50px;">For Manufacturing SMEs</h3>
-            <p style="text-align:center; max-width:800px; margin:0 auto 30px;">Digital-green twin transition orchestration—automating the decisions you lack headcount for: energy optimization, waste routing, supplier decarbonization scoring.</p>
+            <p style="text-align:center; max-width:800px; margin:0 auto 30px;">Digital-green twin transition
+                orchestration—automating the decisions you lack headcount for: energy optimization, waste routing,
+                supplier decarbonization scoring.</p>
         </div>
     </section>
 
@@ -414,14 +628,40 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Vinci</td><td>Paris</td><td>€74B</td><td>Construction + concessions</td></tr>
-                    <tr><td>Bouygues</td><td>Paris</td><td>€37B</td><td>Public works, property</td></tr>
-                    <tr><td>ACS Group</td><td>Madrid</td><td>€37B</td><td>Concessions + energy</td></tr>
-                    <tr><td>Strabag</td><td>Vienna</td><td>€11B</td><td>Central European focus</td></tr>
-                    <tr><td>Hochtief</td><td>Essen</td><td>€39B</td><td>Public/private infrastructure</td></tr>
+                    <tr>
+                        <td>Vinci</td>
+                        <td>Paris</td>
+                        <td>€74B</td>
+                        <td>Construction + concessions</td>
+                    </tr>
+                    <tr>
+                        <td>Bouygues</td>
+                        <td>Paris</td>
+                        <td>€37B</td>
+                        <td>Public works, property</td>
+                    </tr>
+                    <tr>
+                        <td>ACS Group</td>
+                        <td>Madrid</td>
+                        <td>€37B</td>
+                        <td>Concessions + energy</td>
+                    </tr>
+                    <tr>
+                        <td>Strabag</td>
+                        <td>Vienna</td>
+                        <td>€11B</td>
+                        <td>Central European focus</td>
+                    </tr>
+                    <tr>
+                        <td>Hochtief</td>
+                        <td>Essen</td>
+                        <td>€39B</td>
+                        <td>Public/private infrastructure</td>
+                    </tr>
                 </tbody>
             </table>
-            <p style="text-align:center; margin-top:30px;"><strong>Market Size:</strong> 3.5 million construction companies in Europe</p>
+            <p style="text-align:center; margin-top:30px;"><strong>Market Size:</strong> 3.5 million construction
+                companies in Europe</p>
         </div>
     </section>
 
@@ -493,7 +733,8 @@
                 <div class="arch-item">Google for Startups<br><strong>$100,000 credits</strong></div>
                 <div class="arch-item">GitHub for Startups<br><strong>Enterprise features, 20 seats</strong></div>
             </div>
-            <p style="text-align:center; margin-top:30px;"><strong>Total:</strong> $135,000 in credits + €54,200 NVIDIA hardware = 6 years free infrastructure</p>
+            <p style="text-align:center; margin-top:30px;"><strong>Total:</strong> $135,000 in credits + €54,200 NVIDIA
+                hardware = 6 years free infrastructure</p>
         </div>
     </section>
 
@@ -525,4 +766,5 @@
         </div>
     </footer>
 </body>
+
 </html>
