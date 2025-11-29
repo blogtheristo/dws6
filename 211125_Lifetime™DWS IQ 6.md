@@ -4,6 +4,11 @@
 
 # **Lifetime™Digital World (DWS)**  {#lifetime™digital-world-(dws)}
 
+Lifetime Group (Lifetime Oy legal name) is a Finnish limited company 100% owned by its founder Risto Anton Päärni. It operates in the Nordics, the EU. Its operating brands include Lifetime Studios, Lifetime Consulting, and Lifetime Fleet. Its brands include Lifetime World, DWS IQ, and Lifetime Firehorse Business Solutions.
+
+Lifetime DWS IQ is a climate-intelligent AI platform designed for industries with significant carbon footprints, including Construction, Manufacturing, Logistics & Supply Chain, Energy & Utilities, Real Estate Development, Architecture & Engineering, Waste Management, and Mining/Heavy Industry. This platform is part of the larger initiative, Lifetime World, whose mission is to mitigate climate change effects and droughts, and improve living conditions through human care services. We provide real-time embodied carbon tracking, automated EU Fit for 55 compliance management, and supplier decarbonization scoring using hybrid edge AI (NVIDIA Jetson) and cloud infrastructure. Our platform helps companies navigate the 2028 EU embodied carbon mandate while achieving €50-100k annual savings through compliance automation. The core intelligence is powered by the Lifetime World Model, a specialized LLM designed to serve DWS IQ human and silicon users. Additionally, the company supports broader ecological and logistical needs, including specialized services such as Lifetime Fleet Cars, Drones, and Robots Rental Recovery Care Services.
+
+
 # **for Intelligent Industries** {#for-intelligent-industries}
 
 ![][image1]
