@@ -1,5 +1,254 @@
 # 2026 Action Timeline: Who to Contact & When
 
+## Overview of DWS IQ 6 Investment Plan
+
+**DWS IQ 6** is Version 6 of the DWS IQ Platform developed by Lifetime Oy, a Finnish startup focused on climate-intelligent AI solutions. The platform targets eight high-carbon industries:
+- Construction
+- Manufacturing
+- Energy
+- Logistics
+- Real estate
+- Architecture
+- Waste management
+- Mining
+
+### Core Technology & Value Proposition
+- **Agentic AI** for real-time decisions, embodied carbon tracking, energy optimization
+- **EU Compliance** focus: 2028 embodied carbon mandate and Fit for 55 targets
+- **Edge Computing**: NVIDIA Jetson for sub-100ms inference
+- **Integration**: AWS IoT, Groq API, digital twins
+- **Mission**: Reduce emissions through automation and digital twins
+
+### Business Model & Financials
+- **Current Stage**: Early-stage with ~€140,000 revenue
+- **Funding Goal**: €150,000 SAFE at €3.8M cap
+- **Market**: 3.5M+ construction firms in Europe
+- **ROI**: 515% hardware efficiency gains
+- **Target**: Profitability by October 2026 (+€281K projected)
+
+### Broader Initiative
+Part of the **Lifetime™World** global movement launching December 2026 – a community-driven climate mitigation platform accelerating innovation through collaboration.
+
+---
+
+## Private Equity Opportunities for DWS IQ 6
+
+While private equity (PE) typically targets more mature companies, growth equity and specialized climate-focused PE funds align with DWS IQ 6's scalability in sustainability tech, especially for later-stage expansion into infrastructure or asset-based models (e.g., deploying AI-driven fleets).
+
+### Key European PE Players in Climate Tech
+
+**Brookfield Asset Management**
+- Focus: Flexible capital across climate infrastructure, renewables, electrification
+- Contact: marie.fuller@brookfield.com
+- Fit: Global coverage for scaling transition assets
+
+**Macquarie Asset Management**
+- Focus: Digital and clean power infrastructure
+- Fit: AI-enabled solutions for energy optimization
+
+**BlackRock**
+- Focus: Critical assets in power and renewables
+- Fit: Active ownership in sustainable platforms
+
+**Other Notable Funds**
+- **Antin Infrastructure Partners**: Energy transition
+- **Ardian**: Sustainable infrastructure
+- **EQT**: Climate adaptation
+
+### Market Opportunities
+- Climate adaptation and resilience sector is rapidly growing
+- Growth equity accelerating investments in AI for emissions reduction
+- Target deals with proven revenue (€5M+), positive unit economics, fast growth
+- DWS IQ 6 is a fit post-Series A
+- Early outreach via networks like **Carbon Equity** for hybrid debt-equity deals
+
+---
+
+## Grants and Competitions to Seek
+
+Focus on EU-funded programs emphasizing low-carbon innovation, deep tech, and sustainability. Prioritize non-dilutive funding to bridge cash needs.
+
+### Priority Grants
+
+**EU Innovation Fund**
+- Amount: Up to €20M+ for demonstration projects
+- Focus: Low-carbon technologies, pilots in energy, manufacturing, carbon tracking
+- Alignment: Net-zero goals
+- Contact: CINEA-IF-CALLS@ec.europa.eu
+
+**Horizon Europe – Cluster 5 (Climate & Energy)**
+- Amount: €2M-€10M for digital-green transitions
+- Focus: AI for industrial decarbonization
+- Deadline: Rolling calls throughout 2026
+- Contact: Finnish NCP via Tekes
+
+**EIC Accelerator**
+- Amount: Up to €2.5M grants + €15M equity
+- Focus: Deep tech for climate solutions
+- Deadline: March 12, 2026 (Step 1)
+- Tool: ChatEIC automated writer
+
+**Sage Impact Program**
+- Amount: Up to $60,000 + mentorship
+- Focus: European climate tech startups
+- Deadline: January 5, 2026
+- Contact: sage.fi/contact
+
+**LIFE Programme**
+- Amount: €0.5M-€2M for SMEs (€5.4B total pool)
+- Focus: Environment/climate action
+- Deadline: October 15, 2026 (rolling)
+- Contact: ease-life@ec.europa.eu
+
+**EIC Pathfinder**
+- Amount: €3M for AI sustainability
+- Focus: Breakthrough technologies
+
+### Key Competitions
+
+**SET Award 2026**
+- Focus: Global climate tech startup competition for energy innovations
+- Benefits: Visibility, partnerships, funding intros
+- Contact: info@startup-energy-transition.com
+- Timeline: Late March 2026 (finalists announced)
+
+**Ecosummit**
+- Dates: March 25-26 & October 7-8, 2026 (Berlin)
+- Focus: Marketplace for decarbonization startups
+- Benefits: Pitch to 50+ climate tech VCs
+- Contact: jan@ecosummit.net
+
+**Wolves Summit Pitch Competitions**
+- Locations: Bucharest, Vienna, Tallinn, Berlin
+- Focus: Impact/sustainability startups
+- Benefits: Funding prizes and networking
+
+**Tech Nation Climate 2026**
+- Location: UK-based (open to EU)
+- Focus: 24 climate tech firms growth program
+- Contact: apply@technation.com
+- Deadline: Mid-May 2026
+
+**Slush 2026**
+- Location: Helsinki
+- Date: Late November 2026
+- Focus: Deep tech pitches
+- Contact: founders@slush.org
+- Deadline: August 15, 2026 (pitch video)
+
+---
+
+## Business Angels Interested in DWS IQ 6
+
+Angel investors in Europe are increasingly active in climate tech and AI, typically writing €25K-€100K checks for early-stage ventures with impact potential.
+
+### Key Angel Investors
+
+**Chris Neuman**
+- Background: Founding partner of The Assembly
+- Focus: Urban tech for emissions reduction
+- Investment history: Green solutions, sustainability
+
+**Simon Mantkelow**
+- Background: Exited Mindtools
+- Portfolio: 10+ sustainable startups (methane detection, biodiversity monitoring)
+- Check size: €25K-€50K average
+- Network: Green Angel Syndicate
+
+**Other Notable Angels**
+- **Taavet Hinrikus**: AI/climate overlap
+- **Eileen Burbidge**: Fintech/sustainability crossover
+- **Proptech Angels**: Construction AI focus (from top 50 Europe lists)
+
+### Angel Networks
+
+**Green Angel Syndicate**
+- Contact: james@greenangelsyndicate.com
+- Focus: Sustainability startups
+- Approach: Monthly applications
+
+**Una Terra**
+- Focus: Biodiversity/climate preservation
+- Check size: €25K-€100K
+
+### Pitch Emphasis
+- 515% hardware ROI
+- EU compliance hooks (2028 embodied carbon mandate)
+- Real-time edge AI for industrial decarbonization
+- Reach via LinkedIn or events like Ecosummit
+
+---
+
+## Venture Capital Investors
+
+VCs in Europe are actively investing in climate tech intersecting with AI, with 30+ active funds in 2025 focusing on seed to Series B for decarbonization. DWS IQ 6 fits as a deep tech solution for industrial sustainability.
+
+### Priority Climate Tech VCs
+
+**World Fund**
+- Fund size: €300M+ (targeting €500M Fund II)
+- Focus: Climate tech saving 100Mt+ CO2e/year
+- Stage: Seed to Series B
+- Target: AI for energy/manufacturing
+- Contact: veronica@worldfund.vc
+
+**Speedinvest**
+- Focus: Climate tech arm for pre-seed/seed
+- Specialty: Industrial AI reducing emissions
+- Contact: andreas@speedinvest.com
+
+**Pale Blue Dot**
+- Stage: Seed-stage
+- Focus: Climate solutions like carbon tracking
+- Contact: heidi@paleblue.vc
+
+**Norrsken VC**
+- Focus: Impact-focused sustainability AI
+- Scale: Global
+
+**Contrarian Ventures**
+- Stage: Early-stage
+- Focus: Cleantech, AI for logistics/energy
+
+**4impact**
+- Focus: Sustainability VCs for green tech transformations
+
+**Antler**
+- Stage: Pre-seed
+- Focus: Deep tech/climate intersections
+- Contact: antler.co/helsinki
+
+**SFC Capital**
+- Stage: Early-stage
+- Focus: AI/sustainability
+- Contact: climate@sfc-capital.com
+
+### Additional Notable VCs
+
+**Deep Tech AI Focused**
+- **Elaia**: Deep tech AI
+- **APEX Ventures**: Industrial tech
+- **Vsquared Ventures**: AI sustainability
+
+**Corporate VCs**
+- **Ecosummit's 107 Smart Green VCs**: Strategic intros for construction/energy
+- Access via: jan@ecosummit.net
+
+### Pitch Strategy
+- Emphasize EU market: 3.5M construction firms
+- Highlight tech stack: Edge AI, sub-100ms latency, digital twins
+- Showcase compliance advantage: 2028 embodied carbon mandate
+- Demonstrate traction: €140K revenue, path to profitability
+- Present high-impact potential: Multi-industry scalability
+
+### Market Context
+- Funding environment: Down but patient investors seek high-impact plays
+- Opportunity: 30+ active climate tech VCs in Europe
+- Sweet spot: Seed to Series B rounds for proven technology
+- Target raise: €500K-€1M Seed, €5M Series A (Nov 2026)
+
+---
+
 ## Q1 2026 (January – March)
 
 ### January 2026
