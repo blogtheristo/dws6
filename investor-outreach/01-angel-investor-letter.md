@@ -1,64 +1,105 @@
 # Angel/Pre-Seed Investor Letter
 
-**Subject:** €150k SAFE, 515% hardware ROI, profitability in 12 months – DWS IQ 6 edge‑AI for EU carbon compliance
+**Subject:** DWS IQ 6 – ROI-positive climate AI platform raising €150k SAFE
 
 **From:** Risto Anton Päärni, Founder & CEO, Lifetime Oy
 **To:** [Angel Investor Name]
-**Date:** December 2025
+**Date:** [Date]
 
 ---
 
-I'm raising **€150k via SAFE at a €3.8M cap (20% discount)** to finish DWS IQ 6—the only agentic‑AI platform that automates embodied‑carbon decisions for EU construction firms facing mandatory carbon reporting by 2028.
+Hi [Investor Name],
 
-## Why now
+I'm Risto, founder & CEO of Lifetime Oy in Finland. We're building **DWS IQ 6**, an edge AI platform that helps high‑carbon industries (starting with construction) meet upcoming EU embodied‑carbon and Fit for 55 requirements without adding compliance headcount.
 
-The **EU 2028 mandate** for buildings >1,000 m² will hit 3.5M construction companies. Construction = 40% of EU CO₂. SMEs (63% of EU emissions) have zero automation. We give them **<100ms edge decisions, 25× faster than cloud**.
+## Where we are now
 
-## The moat (already built)
+- ~€140k in revenue from early customers and pilots
+- 8 target industries (construction first) with clear EU regulatory pull for 2028
+- Hybrid AWS IoT + NVIDIA Jetson + Google Cloud + Groq stack delivering <100ms edge inference
+- €135k in secured startup credits and an architecture that saves ~€333k vs pure‑cloud over 12 months
 
-- **Hybrid edge‑cloud**: NVIDIA Jetson + AWS IoT + Google Cloud + Groq API → $180/month post‑credits (86% cheaper than pure cloud)
-- **515% hardware ROI**: Jetson pays for itself in 1.95 months, saves €333k/year in cloud costs
-- **€135k credits secured**: AWS, Google, Groq, GitHub Enterprise = 6 years free infrastructure
-- **ISO 27001, EU data residency, ROI calculator** proven at €50‑100k annual savings per client
+## Why this matters
 
-## 12‑month forecast
+SMEs across EU‑27 face a hard 2028 deadline for embodied‑carbon reporting. Most don't have in‑house AI teams or the budget for heavy cloud inference. DWS IQ 6 runs on inexpensive NVIDIA Jetson hardware on‑site, gives <100ms decisions, and pays back the hardware in under 2 months (515% annual ROI on the edge devices).
 
-- **Cash need**: €191,630
-- **Revenue**: €140k (2‑3 pilots)
-- **Edge savings**: €333k
-- **Result**: +€281k profit by Month 12
+## Round details
 
-## Use of funds
+- **Instrument:** SAFE
+- **Amount:** €150,000
+- **Cap:** €3.8M, 20% discount
+- **Use of funds (12 months):**
+  - Productising DWS IQ 6 for construction SMEs and their suppliers
+  - 2–3 paid pilots focused on embodied‑carbon workflows
+  - Scaling from pilots to ~50 active edge sites
 
-- **Days 1‑30**: Google Cloud + Groq setup (€50k)
-- **Days 31‑90**: 2‑3 pilot validations (€70k)
-- **Months 4‑12**: Production launch & compliance (€30k)
+Based on our GitHub financial model, this €150k bridge plus existing credits gets us to:
+- ~€140k annual revenue
+- ~€333k cloud‑cost savings via edge
+- ~€281k profit by Month 12 (before any Seed round)
 
-## Target customers (direct outreach active)
+## Why I'm reaching out to you specifically
 
-- Vinci (€74B)
-- Bouygues (€37B)
-- ACS (€37B)
-- Hochtief (€39B)
+[PERSONALIZATION: 1–2 sentences tailored to this angel]
+- **Option A** (Portfolio fit): "I noticed your investment in [Portfolio Company] which tackles [similar problem]. DWS IQ 6 addresses the same market with an edge AI approach."
+- **Option B** (Background): "Given your background in [industry/expertise], you understand the [specific pain point] we're solving."
+- **Option C** (Focus area): "Your focus on [climate tech/AI/infrastructure] aligns perfectly with our mission to decarbonize EU industry."
+- **Option D** (Network): "[Mutual Connection] suggested I reach out, given your interest in [specific area]."
 
-## Ask
+## The ask
 
-**€150k SAFE @ €3.8M cap, 20% discount**
+If this aligns with your focus on [climate/AI/infrastructure], I'd love to schedule a 30-minute call to walk through:
+- The tech stack and edge AI architecture
+- Our pilot program results and customer pipeline
+- The 12-month path to profitability
+- How the EU 2028 mandate creates a €40B market opportunity
 
-You get:
-- 12‑month profitability
-- 515% hardware ROI
-- Front‑row seat in the EU's €40B carbon‑compliance market
+## Next steps
 
-## Next step
-
-30‑min call to walk through the tech stack and pilot plan.
+Reply with your availability, or book directly: [Calendly link]
 
 **Full architecture and financial model:** https://github.com/blogtheristo/dws6
+**Crunchbase:** https://www.crunchbase.com/organization/lifetime-oy
+
+Looking forward to connecting!
 
 ---
 
 Best,
 **Risto Anton Päärni**
+Founder & CEO, Lifetime Oy
 risto@lifetime.fi
++358 [Phone Number]
 LinkedIn: [linkedin.com/in/ristopaarni](https://linkedin.com/in/ristopaarni)
+
+---
+
+## Email Template Variables (for mail merge)
+
+Use these fields when sending via CRM or email tool:
+
+- `{{investor_name}}` - Angel investor's first name
+- `{{investor_full_name}}` - Full name
+- `{{personalization}}` - Custom 1-2 sentence pitch based on research
+- `{{focus_area}}` - Their investment focus (climate tech, AI, infrastructure, etc.)
+- `{{mutual_connection}}` - Name of person who made intro (if applicable)
+- `{{portfolio_company}}` - Relevant portfolio company to reference
+- `{{date}}` - Current date
+- `{{calendly_link}}` - Your scheduling link
+
+## Personalization Examples by Angel Type
+
+### Climate Tech Angels
+"I noticed your investment in [Climate Portfolio Company] focused on [emissions reduction/carbon tracking]. DWS IQ 6 takes a similar approach but targets the construction sector, which represents 40% of EU CO₂ emissions. Our edge AI architecture delivers the compliance automation that [Portfolio Company] achieved for [their sector]."
+
+### Proptech/Construction Angels
+"Given your background in proptech and investments in [Construction Tech Company], you understand the massive regulatory shift coming with the EU 2028 embodied carbon mandate. DWS IQ 6 is positioned as the operating system for construction SMEs who need real-time carbon compliance without adding headcount."
+
+### AI/Deep Tech Angels
+"Your portfolio focus on edge computing and industrial AI (e.g., [Portfolio Company]) aligns perfectly with DWS IQ 6. We're using NVIDIA Jetson to deliver <100ms inference on construction sites—25× faster than cloud-only solutions—while cutting infrastructure costs by 86%."
+
+### ESG/Impact Angels
+"I noticed your focus on ESG impact investing, particularly in [sector]. DWS IQ 6 directly addresses the EU Green Deal's 2028 embodied carbon mandate, helping 3.5M SMEs reduce their carbon footprint while improving profitability. We've already validated €50-100K annual savings per customer."
+
+### Syndicate Members (Green Angel Syndicate, etc.)
+"[Lead Angel Name] mentioned you're active in the [Syndicate Name] and focus on [sustainability/climate]. DWS IQ 6 fits your thesis perfectly: we're tackling industrial decarbonization with proven ROI (515% hardware payback) and a clear regulatory catalyst (EU 2028 mandate)."

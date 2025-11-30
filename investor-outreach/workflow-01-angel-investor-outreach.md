@@ -38,6 +38,209 @@ This workflow guides you through the process of identifying, contacting, and clo
 - [ ] LinkedIn angel groups (Climate Tech Angels Europe)
 - [ ] Local Finnish angel groups
 
+### 1.1.1 Using the Angel Investor Contact List
+
+**Import the Contact List**
+- [ ] Open `contacts-angel-investors.csv` in your CRM (Airtable, Notion) or Google Sheets
+- [ ] Review pre-populated angel investors with focus areas and check sizes
+- [ ] Add 40-50 more angels from your research (aim for 50+ total targets)
+
+**Contact List Fields Explained**
+- **Name**: Angel investor full name
+- **Email**: Direct email (research via hunter.io, LinkedIn, company website)
+- **LinkedIn**: LinkedIn profile URL
+- **Phone**: Direct phone number (optional, use sparingly)
+- **Location**: City/country
+- **Focus Area**: Primary investment focus (climate tech, proptech, AI, etc.)
+- **Check Size (EUR)**: Typical angel check range
+- **Angel Network**: Syndicate or network affiliation
+- **Portfolio Companies**: Relevant portfolio companies to reference
+- **Personalization Notes**: Key insights for customizing outreach
+- **Warm Intro Path**: Mutual connections who can introduce you
+- **Contact Status**: Tracking stage (Not contacted, Outreach sent, Call scheduled, etc.)
+- **Last Contact Date**: Date of most recent interaction
+- **Next Action**: What to do next with this contact
+
+**Research Each Angel** (15-20 min per person)
+- [ ] LinkedIn: Check portfolio, background, recent posts about climate/AI/construction
+- [ ] Crunchbase: View investment history and focus areas
+- [ ] Twitter/X: See what they're talking about publicly
+- [ ] Portfolio company websites: Understand their investment thesis
+- [ ] News/press: Recent interviews, podcast appearances, articles
+
+**Fill in Personalization Notes**
+For each angel, document:
+1. **Portfolio fit**: Which portfolio company is similar to DWS IQ 6?
+2. **Background**: Relevant work experience or expertise
+3. **Focus area**: Specific sub-sector (edge computing, carbon tracking, construction tech)
+4. **Recent activity**: Recent investments, tweets, or posts you can reference
+5. **Mutual connections**: LinkedIn connections in common
+6. **Event attendance**: Will they be at Ecosummit, Slush, etc.?
+
+**Example Personalization Research**
+
+*Chris Neuman (The Assembly):*
+```
+Portfolio fit: Invests in urban tech for emissions reduction - DWS IQ 6 targets
+construction (40% of urban emissions)
+
+Background: Founded The Assembly, focus on climate solutions in built environment
+
+Recent activity: Posted about EU Green Deal impact on construction (LinkedIn, Nov 2025)
+
+Mutual connections: Jan Michael Hess (Ecosummit)
+
+Event attendance: Likely at Ecosummit March 2026
+
+Personalization angle: "I noticed The Assembly's focus on urban emissions reduction.
+DWS IQ 6 tackles the construction sector—40% of EU CO₂—with edge AI that delivers
+515% ROI. Given your background in built environment solutions, I'd love to share
+how we're automating embodied carbon compliance for the EU 2028 mandate."
+```
+
+*Simon Mantkelow (Green Angel Syndicate):*
+```
+Portfolio fit: Invested in 10+ sustainable startups including methane detection
+and biodiversity monitoring
+
+Background: Exited Mindtools, active in Green Angel Syndicate
+
+Check size: €25K-€50K average
+
+Network: Green Angel Syndicate (james@greenangelsyndicate.com)
+
+Personalization angle: "Your portfolio of sustainable startups—especially in
+emissions monitoring—aligns perfectly with DWS IQ 6. We're applying similar real-time
+tracking principles to embodied carbon in construction, an industry representing 40%
+of EU emissions. Would love to share our pilot results showing €50-100K annual
+savings per customer."
+```
+
+### 1.1.2 Automatic Personalization Workflow
+
+**Step 1: Batch Research (Dedicate 1-2 days)**
+- [ ] Block 4-6 hours for deep research on 20-30 angels
+- [ ] Use LinkedIn, Crunchbase, Google News, Twitter
+- [ ] Fill in "Personalization Notes" column for each angel
+- [ ] Identify warm intro paths for at least 50% of your list
+
+**Step 2: Create Personalization Snippets**
+
+For each angel, write 1-2 sentence personalization snippets based on their type:
+
+**Climate Tech Angels**
+```
+"I noticed your investment in [Portfolio Company] focused on [specific climate problem].
+DWS IQ 6 takes a similar approach for construction—the sector responsible for 40% of
+EU CO₂—using edge AI to automate embodied carbon compliance for the 2028 EU mandate."
+```
+
+**Proptech/Construction Angels**
+```
+"Given your background in proptech and investments in [Construction Tech Company], you
+understand the regulatory shift hitting 3.5M EU construction firms in 2028. DWS IQ 6
+is the operating system for SMEs who need real-time carbon compliance without adding
+headcount—validated at €50-100K annual savings."
+```
+
+**AI/Deep Tech Angels**
+```
+"Your portfolio focus on edge computing and industrial AI (e.g., [Portfolio Company])
+aligns perfectly with DWS IQ 6. We're using NVIDIA Jetson to deliver <100ms inference
+on construction sites—25× faster than cloud—while cutting infrastructure costs by 86%."
+```
+
+**ESG/Impact Angels**
+```
+"Your focus on ESG impact investing in [sector] suggests DWS IQ 6 could be a strong
+fit. We're helping 3.5M EU SMEs reduce carbon footprint profitably—validated €50-100K
+savings per customer—ahead of the 2028 embodied carbon mandate."
+```
+
+**Syndicate Members**
+```
+"[Lead Angel Name] mentioned you're active in [Syndicate Name] and focus on
+sustainability. DWS IQ 6 fits your thesis: industrial decarbonization with proven ROI
+(515% hardware payback) and a clear regulatory catalyst (EU 2028 mandate)."
+```
+
+**Step 3: Mail Merge Setup** (if using Gmail or CRM)
+
+Set up mail merge fields in your email tool:
+- `{{first_name}}` - Angel first name
+- `{{full_name}}` - Full name
+- `{{focus_area}}` - Their investment focus
+- `{{portfolio_company}}` - Relevant portfolio company
+- `{{personalization}}` - Your custom 1-2 sentence snippet
+- `{{mutual_connection}}` - Name of warm intro (if applicable)
+- `{{calendly_link}}` - Your scheduling link
+
+**Step 4: Use the Updated Angel Letter Template**
+
+The new `01-angel-investor-letter.md` template includes:
+- Pre-written personalization options by angel type
+- Mail merge variables
+- Modular sections you can customize per angel
+
+**Step 5: Personalize Each Email (10-15 min per angel)**
+
+For each outreach email:
+1. Copy base template from `01-angel-investor-letter.md`
+2. Replace `{{placeholders}}` with actual data from contact list
+3. Insert your custom personalization snippet from research
+4. Add 1 specific detail (recent post, portfolio company, mutual connection)
+5. Proofread for name spelling, company names, accuracy
+6. Send or schedule for optimal time (Tue-Thu, 9-11am local time)
+
+**Example: Personalized Email for Chris Neuman**
+
+```
+Subject: DWS IQ 6 – ROI-positive climate AI platform raising €150k SAFE
+
+Hi Chris,
+
+I'm Risto, founder & CEO of Lifetime Oy in Finland. We're building DWS IQ 6, an edge
+AI platform that helps high‑carbon industries (starting with construction) meet upcoming
+EU embodied‑carbon and Fit for 55 requirements without adding compliance headcount.
+
+Where we are now:
+- ~€140k in revenue from early customers and pilots
+- 8 target industries (construction first) with clear EU regulatory pull for 2028
+- Hybrid AWS IoT + NVIDIA Jetson + Google Cloud + Groq stack delivering <100ms edge inference
+- €135k in secured startup credits and an architecture that saves ~€333k vs pure‑cloud over 12 months
+
+[... rest of template ...]
+
+Why I'm reaching out to you specifically:
+
+I noticed The Assembly's focus on urban tech for emissions reduction. DWS IQ 6 tackles
+the construction sector—which represents 40% of EU CO₂—with edge AI that delivers 515% ROI.
+Given your background in built environment solutions and your recent LinkedIn post about
+the EU Green Deal's impact on construction, I'd love to share how we're automating embodied
+carbon compliance for the 2028 mandate.
+
+If this aligns with your focus on climate tech and urban emissions, I'd love to schedule a
+30-minute call to walk through the tech stack and pilot results.
+
+Reply with your availability, or book directly: [Calendly link]
+
+Looking forward to connecting!
+
+Best,
+Risto Anton Päärni
+```
+
+**Step 6: Track Personalization Effectiveness**
+
+In your CRM, track which personalization angles work best:
+- Portfolio company reference → 25% response rate
+- Mutual connection mention → 40% response rate
+- Recent post/activity reference → 30% response rate
+- Background/expertise → 20% response rate
+- Event attendance → 35% response rate
+
+Adjust your approach based on what converts.
+
 ### 1.2 Prepare Collateral
 
 **Core Documents**
