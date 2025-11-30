@@ -6,12 +6,13 @@ on:
       - main
     paths:
       - 'dws10.com/**'
+      - 'onelifetime.world/**'
       - 'DWS_IQ2026.png'
       - 'Firehorse2026.png'
   workflow_dispatch:
 
 jobs:
-  sync-dws10-com:
+  sync-landing-pages:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -42,15 +43,35 @@ jobs:
       - name: Sync dws10.com to landing-pages/dws10-com
         if: steps.check_commit.outputs.skip != 'true'
         run: |
-          # Copy the main index.html file
-          cp dws10.com/index.html landing-pages/dws10-com/index.html
+          # Create destination directory if it doesn't exist
+          mkdir -p landing-pages/dws10-com
+          # Copy all files from root folder to landing-pages folder
+          cp -r dws10.com/* landing-pages/dws10-com/ 2>/dev/null || true
+          # Ensure index.html exists (required file)
+          if [ ! -f landing-pages/dws10-com/index.html ]; then
+            echo "Error: index.html not found in dws10.com/"
+            exit 1
+          fi
+      
+      - name: Sync onelifetime.world to landing-pages/onelifetime-world
+        if: steps.check_commit.outputs.skip != 'true'
+        run: |
+          # Create destination directory if it doesn't exist
+          mkdir -p landing-pages/onelifetime-world
+          # Copy all files from root folder to landing-pages folder
+          cp -r onelifetime.world/* landing-pages/onelifetime-world/ 2>/dev/null || true
+          # Ensure index.html exists (required file)
+          if [ ! -f landing-pages/onelifetime-world/index.html ]; then
+            echo "Error: index.html not found in onelifetime.world/"
+            exit 1
+          fi
       
       - name: Commit and push changes
         if: steps.check_commit.outputs.skip != 'true'
         run: |
-          git add landing-pages/dws10-com/index.html
+          git add landing-pages/dws10-com/ landing-pages/onelifetime-world/
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-sync: Update landing page from dws10.com [skip ci]"
+            git commit -m "Auto-sync: Update landing pages from root source folders [skip ci]"
             git push origin main
           else
             echo "No changes to commit"
