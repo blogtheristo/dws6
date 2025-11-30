@@ -1,0 +1,4 @@
+Phase,Action,Goal
+"Phase 1: The ""Silent"" Pilot",Deploy 1 Agent (Camera + Edge Box) on a site.,"Train the AI. Let it ""watch"" the site and predict needs without ordering trucks. Compare its predictions to actuals to calibrate accuracy."
+"Phase 2: The ""Advisor""",Activate the dashboard for Site Managers.,"Human-in-the-loop. The Agent sends alerts/suggestions to the manager, who manually confirms the truck orders."
+Phase 3: Autonomous Mode,Full integration with Supplier APIs.,"Just-in-Time. The Agent manages the delivery schedule autonomously within set parameters (e.g., +/- 30 min adjustments)."
