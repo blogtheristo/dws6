@@ -1,0 +1,242 @@
+# Viability Agent Configuration Template
+# Focuses on unit economics and financial health
+
+agent:
+  id: "viability-{VERTICAL}-001"
+  name: "Viability Agent - {VERTICAL}"
+  type: "viability"
+  vertical: "{VERTICAL}"
+
+  model:
+    provider: "anthropic"
+    name: "claude-sonnet-4.5"
+    temperature: 0.1  # Very low for accurate financial calculations
+    max_tokens: 4000
+
+  system_prompt: |
+    You are a Financial Analyst specializing in SaaS unit economics for the {VERTICAL} vertical.
+
+    ROLE: Calculate and monitor viability metrics to ensure sustainable business growth.
+
+    KEY METRICS (Priority Order):
+    1. **Payback Period** on hardware + setup (TARGET: ≤ 2 months)
+       - Formula: (Hardware Cost + Setup Cost) / Monthly Gross Profit
+       - RED FLAG: > 3 months → Escalate to leadership
+       - YELLOW FLAG: 2-3 months → Recommend pricing review
+
+    2. **Gross Margin** per customer
+       - Formula: (Revenue - COGS) / Revenue
+       - Target: ≥ 60%
+       - COGS includes: Hardware amortization, cloud costs, support hours
+
+    3. **Net Revenue Retention (NRR)**
+       - Formula: (Starting ARR + Expansion - Contraction - Churn) / Starting ARR
+       - Target: > 110% (indicates healthy expansion)
+       - RED FLAG: < 100% (indicates shrinking accounts)
+
+    4. **Customer Acquisition Cost (CAC) Payback**
+       - Formula: CAC / (Monthly Recurring Revenue × Gross Margin)
+       - Target: ≤ 12 months
+
+    5. **Annual Contract Value (ACV)** by segment
+       - Pilot: €500-1,000/month
+       - Production: €2,000-5,000/month
+       - Enterprise: €10,000+/month
+
+    6. **Capital Intensity**
+       - Formula: € Capex Required / € ARR Generated
+       - Target: < 0.5 (50 cents capex per €1 ARR)
+
+    7. **LTV/CAC Ratio**
+       - Target: > 3.0
+
+    DECISION RULES:
+    - **Approve Deal** if: Payback ≤ 2 months AND Gross Margin ≥ 60%
+    - **Review Required** if: Payback 2-3 months OR Gross Margin 50-60%
+    - **Reject Deal** if: Payback > 3 months OR Gross Margin < 50%
+
+    CONSTRAINTS:
+    - Always show your calculation steps (chain of thought)
+    - Never approve a deal without calculating payback period
+    - Flag any assumptions made (e.g., estimated churn rate)
+    - If data is missing, request specific data points needed
+
+    OUTPUT FORMAT (JSON):
+    {
+      "customer_id": "string",
+      "viability_score": 0-100,
+      "recommendation": "Approve" | "Review" | "Reject",
+      "metrics": {
+        "payback_period_months": number,
+        "gross_margin_percent": number,
+        "acv_eur": number,
+        "ltv_cac_ratio": number,
+        "nrr_percent": number
+      },
+      "red_flags": ["flag1", "flag2"],
+      "yellow_flags": ["flag1"],
+      "green_signals": ["signal1", "signal2"],
+      "calculation_breakdown": {
+        "hardware_cost": number,
+        "setup_cost": number,
+        "monthly_revenue": number,
+        "monthly_cogs": number,
+        "monthly_gross_profit": number
+      },
+      "recommendations": ["action1", "action2"]
+    }
+
+  knowledge_base:
+    - type: "api"
+      provider: "stripe"
+      entities:
+        - "invoices"
+        - "subscriptions"
+        - "customers"
+      purpose: "Real-time revenue data"
+
+    - type: "api"
+      provider: "aws_cost_explorer"
+      purpose: "Cloud infrastructure costs by customer"
+
+    - type: "database"
+      provider: "supabase"
+      tables:
+        - "hardware_costs"
+        - "setup_costs_by_vertical"
+        - "customer_churn_history"
+        - "industry_benchmarks"
+
+    - type: "file"
+      provider: "google_sheets"
+      spreadsheet_id: "{FINANCIAL_MODEL_SHEET_ID}"
+      sheets:
+        - "Unit Economics Model"
+        - "Benchmark Data"
+
+  deployment:
+    phase_1:
+      mode: "silent_pilot"
+      duration_days: 30
+      actions:
+        - "calculate_viability_for_existing_customers"
+        - "compare_predictions_to_actual_payback"
+        - "calibrate_cost_models"
+
+      outputs:
+        - type: "weekly_report"
+          destination: "email"
+          recipients: ["cfo@lifetime.fi", "ceo@lifetime.fi"]
+
+    phase_2:
+      mode: "advisor"
+      duration_days: 60
+      actions:
+        - "analyze_new_deal_viability"
+        - "recommend_pricing_adjustments"
+        - "flag_unprofitable_customers"
+
+      approval_workflow:
+        required: true
+        approvers: ["finance_lead"]
+
+    phase_3:
+      mode: "autonomous"
+      actions:
+        - "auto_approve_deals_if_viability_score_above_80"
+        - "auto_reject_deals_if_payback_over_3_months"
+        - "trigger_pricing_review_for_low_margin_segments"
+
+      guardrails:
+        - rule: "require_manual_approval_if_acv_above"
+          value: 50000
+        - rule: "never_reject_without_finance_lead_notification"
+          value: true
+
+  tools:
+    - name: "calculate_payback_period"
+      description: "Calculate payback period for a customer"
+      parameters:
+        customer_id: {type: "string", required: true}
+        hardware_cost_eur: {type: "number"}
+        setup_hours: {type: "number"}
+      logic: |
+        total_upfront = hardware_cost_eur + (setup_hours * hourly_rate)
+        monthly_gross_profit = monthly_revenue - monthly_cogs
+        payback_months = total_upfront / monthly_gross_profit
+        return payback_months
+
+    - name: "get_revenue_data"
+      description: "Fetch revenue data from Stripe"
+      endpoint: "https://api.stripe.com/v1/subscriptions"
+
+    - name: "get_cloud_costs"
+      description: "Fetch AWS costs allocated to customer"
+      endpoint: "https://api.lifetime.fi/v1/costs/by-customer"
+
+    - name: "calculate_ltv"
+      description: "Calculate customer lifetime value"
+      parameters:
+        customer_id: {type: "string", required: true}
+        cohort: {type: "string"}
+      logic: |
+        avg_monthly_revenue = calculate_average_revenue(customer_id)
+        gross_margin = calculate_gross_margin(customer_id)
+        churn_rate = get_cohort_churn_rate(cohort)
+        ltv = (avg_monthly_revenue * gross_margin) / churn_rate
+        return ltv
+
+    - name: "benchmark_against_industry"
+      description: "Compare metrics to industry benchmarks"
+      parameters:
+        metric: {type: "string", enum: ["nrr", "gross_margin", "cac_payback"]}
+        value: {type: "number"}
+      knowledge_source: "Peachscore 500 Finnish scaleups benchmark data"
+
+  integrations:
+    stripe:
+      type: "payments"
+      api_key_env: "STRIPE_API_KEY"
+      scopes: ["invoices", "subscriptions", "customers"]
+
+    aws_cost_explorer:
+      type: "cloud_costs"
+      api_key_env: "AWS_ACCESS_KEY_ID"
+      api_secret_env: "AWS_SECRET_ACCESS_KEY"
+
+    google_sheets:
+      type: "spreadsheet"
+      credentials_env: "GOOGLE_SHEETS_CREDENTIALS_JSON"
+
+    supabase:
+      type: "database"
+      connection_string_env: "SUPABASE_CONNECTION_STRING"
+
+  monitoring:
+    metrics:
+      - name: "average_payback_period_months"
+        type: "gauge"
+        alert_if_above: 2.5
+      - name: "deals_rejected_count"
+        type: "counter"
+      - name: "gross_margin_by_vertical"
+        type: "gauge"
+        labels: ["vertical"]
+
+    dashboards:
+      - name: "Viability Dashboard"
+        platform: "grafana"
+        panels:
+          - "Payback Period Trend (30d)"
+          - "Gross Margin by Vertical"
+          - "NRR by Cohort"
+          - "Deal Approval Rate"
+
+  cost_tracking:
+    budget_monthly_eur: 150
+    estimated_monthly_tokens: 750000
+
+metadata:
+  version: "1.0.0"
+  created_date: "2025-12-01"
+  owner: "Lifetime Oy - Finance & AI Teams"
