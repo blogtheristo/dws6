@@ -1,0 +1,331 @@
+# Customer Satisfaction Agent Configuration Template
+# This template can be instantiated for each industry vertical
+
+agent:
+  # Unique identifier: {agent_type}-{vertical}-{sequence}
+  id: "customersat-{VERTICAL}-001"
+  name: "Customer Satisfaction Agent - {VERTICAL}"
+  type: "customer_satisfaction"
+  vertical: "{VERTICAL}"  # construction, manufacturing, energy, etc.
+
+  # Model configuration
+  model:
+    provider: "anthropic"  # anthropic, groq, or local
+    name: "claude-sonnet-4.5"
+    temperature: 0.3  # Lower for consistent analysis
+    max_tokens: 4000
+
+  # System prompt defines agent behavior
+  system_prompt: |
+    You are a Customer Satisfaction Specialist for the {VERTICAL} industry.
+
+    ROLE: Monitor customer interactions, NPS metrics, and support tickets to ensure high customer satisfaction.
+
+    MISSION: Identify at-risk customers and recommend proactive engagement strategies.
+
+    KEY RESPONSIBILITIES:
+    1. Analyze customer health metrics (NPS, support tickets, usage patterns)
+    2. Identify early warning signs of churn risk
+    3. Recommend personalized retention strategies
+    4. Track customer success milestones
+
+    CONSTRAINTS:
+    - Never modify CRM records without human approval in Phase 2
+    - Only analyze customers in the {VERTICAL} vertical
+    - Flag NPS scores below 7 for immediate review
+    - Always cite specific ticket numbers and interaction timestamps
+    - If data is insufficient, state "Insufficient data" rather than guessing
+
+    TOOLS AVAILABLE:
+    - query_crm(customer_id, timeframe): Retrieve customer interaction history
+    - get_nps_scores(segment, days): Get NPS scores for customer segment
+    - analyze_support_tickets(status, priority): Analyze support ticket patterns
+    - send_notification(channel, message): Send alerts to team
+    - calculate_health_score(customer_id): Calculate 0-100 health score
+
+    OUTPUT FORMAT (JSON):
+    {
+      "customer_id": "string",
+      "health_score": 0-100,
+      "risk_level": "Low" | "Medium" | "High" | "Critical",
+      "risk_factors": ["factor1", "factor2"],
+      "recommended_actions": [
+        {"action": "string", "urgency": "High" | "Medium" | "Low", "owner": "CSM" | "Sales"}
+      ],
+      "supporting_data": {
+        "nps_score": number,
+        "last_interaction_days": number,
+        "open_tickets": number,
+        "usage_trend": "Increasing" | "Stable" | "Decreasing"
+      }
+    }
+
+  # Knowledge base configuration
+  knowledge_base:
+    - type: "vector_db"
+      provider: "supabase_pgvector"
+      collections:
+        - "{VERTICAL}_customer_interactions"
+        - "{VERTICAL}_nps_history"
+        - "support_tickets_{VERTICAL}"
+      embedding_model: "text-embedding-3-small"
+
+    - type: "api"
+      provider: "hubspot_crm"
+      entities:
+        - "contacts"
+        - "deals"
+        - "tickets"
+      refresh_interval_minutes: 15
+
+    - type: "api"
+      provider: "intercom"
+      entities:
+        - "conversations"
+        - "user_events"
+      refresh_interval_minutes: 5
+
+  # Phased deployment configuration
+  deployment:
+    # Phase 1: Silent Pilot (Observation Only)
+    phase_1:
+      mode: "silent_pilot"
+      duration_days: 30
+      start_date: "{PHASE_1_START_DATE}"  # e.g., "2026-01-15"
+
+      actions:
+        - "observe_customer_interactions"
+        - "generate_health_scores"
+        - "generate_daily_reports"
+        - "calibrate_risk_scores"
+
+      outputs:
+        - type: "daily_report"
+          destination: "slack"
+          channel: "#customer-success-{VERTICAL}"
+        - type: "weekly_summary"
+          destination: "email"
+          recipients: ["csm-lead@lifetime.fi"]
+
+      success_criteria:
+        - metric: "prediction_accuracy"
+          threshold: 0.85
+          description: "Churn predictions match actual outcomes 85%+ of the time"
+        - metric: "false_positive_rate"
+          threshold: 0.10
+          description: "Less than 10% false positives for churn risk"
+
+    # Phase 2: Advisor Mode (Human-in-the-Loop)
+    phase_2:
+      mode: "advisor"
+      duration_days: 60
+      start_date: "{PHASE_2_START_DATE}"  # Auto-calculated or manual
+
+      actions:
+        - "recommend_customer_outreach"
+        - "suggest_upsell_opportunities"
+        - "flag_churn_risk_accounts"
+        - "generate_personalized_retention_plans"
+
+      approval_workflow:
+        required: true
+        approvers: ["csm_assigned", "csm_manager"]
+        approval_timeout_hours: 24
+        auto_approve_if_health_score_above: 70
+
+      outputs:
+        - type: "recommendation"
+          destination: "hubspot_task"
+          assignee: "csm_assigned"
+        - type: "alert"
+          destination: "slack"
+          channel: "#customer-success-{VERTICAL}"
+          trigger_when: "risk_level >= High"
+
+      success_criteria:
+        - metric: "human_approval_rate"
+          threshold: 0.90
+          description: "90%+ of recommendations approved by CSMs"
+        - metric: "retention_improvement"
+          threshold: 0.05
+          description: "5%+ improvement in retention rate"
+
+    # Phase 3: Autonomous Mode (Full Automation)
+    phase_3:
+      mode: "autonomous"
+      start_date: "{PHASE_3_START_DATE}"
+
+      actions:
+        - "send_personalized_customer_emails"
+        - "create_follow_up_tasks_in_crm"
+        - "trigger_retention_workflows"
+        - "schedule_check_in_calls"
+        - "adjust_customer_success_plans"
+
+      approval_workflow:
+        required: false  # Autonomous
+        exception_approval_when:
+          - "risk_level == Critical"
+          - "customer_acv > 50000"
+
+      guardrails:
+        - rule: "max_emails_per_customer_per_week"
+          value: 2
+        - rule: "require_approval_for_discount_offers"
+          value: true
+        - rule: "never_send_after_hours"
+          timezone: "Europe/Helsinki"
+          hours: "09:00-17:00"
+
+      outputs:
+        - type: "action_log"
+          destination: "supabase_audit_table"
+        - type: "weekly_summary"
+          destination: "email"
+          recipients: ["leadership@lifetime.fi"]
+
+  # Tool definitions (functions the agent can call)
+  tools:
+    - name: "query_crm"
+      description: "Retrieve customer interaction history from HubSpot CRM"
+      parameters:
+        customer_id:
+          type: "string"
+          required: true
+        timeframe_days:
+          type: "integer"
+          default: 90
+      endpoint: "https://api.hubspot.com/crm/v3/objects/contacts/{customer_id}"
+
+    - name: "get_nps_scores"
+      description: "Get NPS scores for a customer segment"
+      parameters:
+        segment:
+          type: "string"
+          enum: ["all", "pilot", "production", "enterprise"]
+        days:
+          type: "integer"
+          default: 30
+      endpoint: "https://api.lifetime.fi/v1/metrics/nps"
+
+    - name: "analyze_support_tickets"
+      description: "Analyze support ticket patterns"
+      parameters:
+        status:
+          type: "string"
+          enum: ["open", "in_progress", "resolved", "all"]
+        priority:
+          type: "string"
+          enum: ["low", "medium", "high", "critical", "all"]
+      endpoint: "https://api.intercom.io/tickets"
+
+    - name: "send_notification"
+      description: "Send notification to Slack or email"
+      parameters:
+        channel:
+          type: "string"
+          description: "Slack channel or email address"
+        message:
+          type: "string"
+        priority:
+          type: "string"
+          enum: ["low", "medium", "high"]
+          default: "medium"
+      endpoint: "https://api.lifetime.fi/v1/notifications/send"
+
+    - name: "calculate_health_score"
+      description: "Calculate customer health score (0-100)"
+      parameters:
+        customer_id:
+          type: "string"
+          required: true
+      logic: |
+        health_score = (
+          nps_weight * normalize(nps_score, 0, 10) +
+          usage_weight * normalize(usage_trend, 0, 100) +
+          support_weight * (1 - normalize(open_tickets, 0, 10)) +
+          engagement_weight * normalize(days_since_last_interaction, 0, 30)
+        ) * 100
+      weights:
+        nps_weight: 0.35
+        usage_weight: 0.30
+        support_weight: 0.20
+        engagement_weight: 0.15
+
+  # Integration configurations
+  integrations:
+    hubspot:
+      type: "crm"
+      api_key_env: "HUBSPOT_API_KEY"
+      scopes:
+        - "contacts.read"
+        - "deals.read"
+        - "tickets.read"
+        - "tasks.write"  # Phase 3 only
+      rate_limit: 100  # requests per 10 seconds
+
+    intercom:
+      type: "customer_support"
+      api_key_env: "INTERCOM_API_KEY"
+      scopes:
+        - "conversations.read"
+        - "user_events.read"
+      rate_limit: 100
+
+    slack:
+      type: "notifications"
+      webhook_url_env: "SLACK_WEBHOOK_URL"
+      default_channel: "#customer-success-{VERTICAL}"
+
+    supabase:
+      type: "database"
+      connection_string_env: "SUPABASE_CONNECTION_STRING"
+      tables:
+        - "customer_health_scores"
+        - "agent_actions_audit"
+        - "nps_history"
+
+  # Monitoring and observability
+  monitoring:
+    logging:
+      level: "INFO"  # DEBUG, INFO, WARN, ERROR
+      destination: "google_cloud_logging"
+
+    metrics:
+      - name: "agent_invocations_total"
+        type: "counter"
+        labels: ["vertical", "phase", "action"]
+      - name: "agent_latency_seconds"
+        type: "histogram"
+        buckets: [0.1, 0.5, 1.0, 2.0, 5.0]
+      - name: "health_score_distribution"
+        type: "histogram"
+        buckets: [0, 25, 50, 75, 100]
+      - name: "churn_prediction_accuracy"
+        type: "gauge"
+
+    alerting:
+      - condition: "churn_prediction_accuracy < 0.80"
+        severity: "high"
+        notification: "slack:#agent-ops"
+      - condition: "agent_error_rate > 0.05"
+        severity: "critical"
+        notification: "pagerduty"
+
+  # Cost tracking
+  cost_tracking:
+    budget_monthly_eur: 100
+    alert_at_percentage: 80
+    model_costs:
+      anthropic_claude_sonnet_4_5:
+        input_per_1m_tokens: 3.00
+        output_per_1m_tokens: 15.00
+      estimated_monthly_tokens: 500000
+
+# Metadata
+metadata:
+  version: "1.0.0"
+  created_date: "2025-12-01"
+  last_updated: "2025-12-01"
+  owner: "Lifetime Oy - AI Team"
+  documentation_url: "https://github.com/blogtheristo/dws6/blob/main/AgentFoundry/README.md"

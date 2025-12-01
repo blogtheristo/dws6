@@ -1,0 +1,96 @@
+# Customer Satisfaction Agent - MVP Configuration
+# Ultra-lean config for 5-customer pilot using Groq free tier
+
+agent:
+  id: "customersat-construction-mvp"
+  name: "Customer Satisfaction Agent - MVP Pilot"
+  type: "customer_satisfaction"
+  vertical: "construction"
+  mvp_mode: true
+
+  model:
+    provider: "groq"
+    name: "llama-3.1-70b-versatile"
+    temperature: 0.3
+    max_tokens: 1500  # Reduced to save costs
+
+  system_prompt: |
+    You are a Customer Satisfaction Specialist analyzing 5 pilot construction customers.
+
+    MISSION: Identify at-risk customers to prevent churn.
+
+    ANALYZE THESE METRICS:
+    1. NPS Score (0-10): Target >8, Red flag <7
+    2. Support Tickets: Red flag if >5 open tickets
+    3. Last Interaction: Red flag if >30 days
+    4. Equipment Usage Trend: Red flag if declining
+
+    OUTPUT FORMAT (JSON only, be concise):
+    {
+      "customer_id": "string",
+      "health_score": 0-100,
+      "risk_level": "Low" | "Medium" | "High",
+      "primary_concern": "brief description",
+      "recommended_action": "one specific action"
+    }
+
+    CONSTRAINTS:
+    - Keep response under 150 tokens to minimize API costs
+    - Only analyze the data provided
+    - If any metric is missing, note it in primary_concern
+    - Be direct and actionable
+
+  deployment:
+    phase: 1
+    mode: "silent_pilot"
+    pilot_customers: 5
+    duration_days: 30
+    start_date: "2025-12-01"
+
+    outputs:
+      - type: "weekly_report"
+        destination: "slack"
+        channel: "#mvp-pilot"
+        schedule: "Monday 09:00 Europe/Helsinki"
+
+  tools:
+    - name: "calculate_health_score"
+      description: "Calculate customer health score 0-100"
+      type: "internal"
+      logic: |
+        # Weighted scoring (no external API calls)
+        nps_score = normalize(nps, 0, 10) * 40
+        ticket_score = (1 - normalize(open_tickets, 0, 10)) * 30
+        engagement_score = (1 - normalize(days_since_contact, 0, 60)) * 30
+
+        health_score = nps_score + ticket_score + engagement_score
+        return round(health_score)
+
+  integrations:
+    slack:
+      type: "webhook"
+      webhook_url_env: "SLACK_WEBHOOK_URL"
+      channel: "#mvp-pilot"
+
+    google_sheets:
+      type: "api"
+      spreadsheet_id_env: "MVP_GOOGLE_SHEET_ID"
+      sheet_name: "Customer Health"
+      credentials_env: "GOOGLE_SHEETS_CREDENTIALS"
+
+  cost_tracking:
+    budget_monthly_eur: 5
+    alert_at_eur: 3
+    token_limit_per_invocation: 1500
+    estimated_monthly_invocations: 60  # 5 customers × 12 checks/month
+
+metadata:
+  version: "1.0.0-mvp"
+  created_date: "2025-12-01"
+  purpose: "MVP pilot for investor due diligence"
+  pilot_customers:
+    - "Demo Construction Ltd"
+    - "Acme Builders Oy"
+    - "BuildCo Ltd"
+    - "Nordic Builders AB"
+    - "SitePro Construction"
