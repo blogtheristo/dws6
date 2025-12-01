@@ -1,0 +1,5 @@
+Phase,Action,Goal
+"Phase 1: The ""Silent"" Pilot",Deploy 1 Agent to monitor investor network and client opportunities.,"Train the AI. Let it ""observe"" investor activities, Peachscore events, and potential client signals without taking actions. Compare its predictions to actual outcomes to calibrate accuracy."
+"Phase 2: The ""Advisor""",Activate the dashboard for Investor Relations Team.,"Human-in-the-loop. The Agent sends alerts/suggestions for investor meetings, client introductions, and network opportunities. Team manually reviews and acts on recommendations."
+Phase 3: Autonomous Mode,Full integration with CRM and investor networks.,"Proactive Engagement. The Agent autonomously identifies investor opportunities, schedules warm introductions, and manages client acquisition workflows within set parameters (e.g., investor fit scores, client qualification thresholds)."
+

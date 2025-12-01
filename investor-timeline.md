@@ -31,6 +31,196 @@ Part of the **Lifetime™World** global movement launching December 2026 – a c
 
 ---
 
+## Corporate Cloud Agents: 8-Industry Rollout Timeline 2026
+
+DWS IQ 6 deploys **Corporate Cloud Agents** (formerly Background Agents) across eight high-carbon industries. Each industry receives three specialized agents: **Customer Satisfaction Agent**, **Desirability Agent**, and **Deal Flow Agent**.
+
+### Industry Overview & Market Opportunity
+
+| Industry | Market Size | Key Opportunity | Primary Investors |
+|----------|-------------|-----------------|-------------------|
+| **Construction** | 3.5M companies in Europe | 2028 embodied carbon mandate | Construction tech VCs, infrastructure funds |
+| **Manufacturing** | $10T global industry | Industry 5.0 transformation | Industrial AI VCs, deep tech funds |
+| **Energy** | $2T+ global market | Renewable transition, grid optimization | Climate tech VCs, energy funds |
+| **Logistics** | $8T global market | Supply chain decarbonization | Logistics tech VCs, impact funds |
+| **Real Estate** | $280T global asset value | Building efficiency, smart cities | Proptech VCs, real estate funds |
+| **Architecture** | $300B+ global market | BIM integration, carbon tracking | AEC tech VCs, design tech funds |
+| **Waste Management** | $530B global market | Circular economy, waste-to-energy | Circular economy VCs, waste tech funds |
+| **Mining** | $1.5T global market | Resource optimization, safety | Mining tech VCs, industrial funds |
+
+---
+
+### 1. Construction Industry
+
+**Market Size**: 3.5 million construction companies in Europe; highest concentration in UK (500k), Spain (489k), France (397k)
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (5 construction sites)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (50+ sites)
+- **Q4 2026**: Scale to 200+ sites across Europe
+
+**Key Investors**:
+- **Lifeline Ventures** (Helsinki): €500K-€2M Seed
+- **Inventure** (Helsinki): €1M-€5M Series A
+- **Nordic Ninja** (Helsinki): €500K-€3M Seed/Series A
+- **Voima Ventures** (Espoo): €500K-€2M Seed
+
+**Target Companies**: Vinci (€74B), Bouygues (€37B), ACS Group (€37B), Strabag (€11B), Hochtief (€39B)
+
+**Grants**: EU Innovation Fund, Horizon Europe Cluster 5, EIC Accelerator
+
+---
+
+### 2. Manufacturing Industry
+
+**Market Size**: $10T global industry, 2M+ manufacturing companies in Europe
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (3 manufacturing facilities)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (20+ facilities)
+- **Q4 2026**: Scale to 100+ facilities across Europe
+
+**Key Investors**:
+- **World Fund**: €300M+ fund, Seed to Series B
+- **Speedinvest**: Pre-seed/seed climate tech
+- **APEX Ventures**: Industrial tech focus
+- **Vsquared Ventures**: AI sustainability
+
+**Target Companies**: Siemens, ABB, Schneider Electric, Bosch
+
+**Grants**: Horizon Europe Cluster 5 (AI for industrial decarbonization), EIC Accelerator
+
+---
+
+### 3. Energy Industry
+
+**Market Size**: $2T+ global market, accelerating renewable transition
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (5 energy facilities)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (30+ facilities)
+- **Q4 2026**: Scale to 150+ facilities (solar, wind, grid)
+
+**Key Investors**:
+- **Pale Blue Dot**: Seed-stage climate solutions
+- **Contrarian Ventures**: Cleantech, AI for energy
+- **Norrsken VC**: Impact-focused sustainability AI
+- **Brookfield Asset Management**: Climate infrastructure
+
+**Target Companies**: E.ON, Enel, Ørsted, Vattenfall
+
+**Grants**: EU Innovation Fund (renewable energy), SET Award 2026, Horizon Europe Cluster 5
+
+---
+
+### 4. Logistics Industry
+
+**Market Size**: $8T global market, supply chain optimization critical
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (3 logistics hubs)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (25+ hubs)
+- **Q4 2026**: Scale to 100+ logistics operations
+
+**Key Investors**:
+- **Contrarian Ventures**: AI for logistics/energy
+- **4impact**: Green tech transformations
+- **Speedinvest**: Climate tech logistics focus
+
+**Target Companies**: DHL, DB Schenker, Kuehne + Nagel, Maersk
+
+**Grants**: EU LIFE Programme (logistics AI module), Horizon Europe Cluster 5
+
+---
+
+### 5. Real Estate Industry
+
+**Market Size**: $280T global asset value, smart building transformation
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (10 buildings)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (50+ buildings)
+- **Q4 2026**: Scale to 200+ commercial buildings
+
+**Key Investors**:
+- **Proptech Angels**: Construction AI focus
+- **Ecosummit's 107 Smart Green VCs**: Strategic intros
+- **Real estate-focused VCs**: Building efficiency thesis
+
+**Target Companies**: CBRE, JLL, Cushman & Wakefield, major REITs
+
+**Grants**: EU LIFE Programme, Horizon Europe (smart cities), EIC Accelerator
+
+---
+
+### 6. Architecture Industry
+
+**Market Size**: $300B+ global market, BIM and carbon tracking focus
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (5 architecture firms)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (20+ firms)
+- **Q4 2026**: Scale to 100+ architecture practices
+
+**Key Investors**:
+- **AEC tech VCs**: Architecture, Engineering, Construction focus
+- **Design tech funds**: BIM integration thesis
+- **Deep tech AI funds**: AI for design optimization
+
+**Target Companies**: Gensler, AECOM, Arup, Foster + Partners
+
+**Grants**: Horizon Europe (digital-green transitions), EIC Pathfinder (AI sustainability)
+
+---
+
+### 7. Waste Management Industry
+
+**Market Size**: $530B global market, circular economy acceleration
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (5 waste facilities)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (30+ facilities)
+- **Q4 2026**: Scale to 150+ waste operations
+
+**Key Investors**:
+- **Circular economy VCs**: Waste-to-energy focus
+- **Waste tech funds**: Recycling optimization thesis
+- **Impact funds**: Environmental impact focus
+
+**Target Companies**: Veolia, Suez, Waste Management Inc., Remondis
+
+**Grants**: EU LIFE Programme (waste AI module), Horizon Europe Cluster 5, EIC Accelerator
+
+---
+
+### 8. Mining Industry
+
+**Market Size**: $1.5T global market, resource optimization critical
+
+**Corporate Cloud Agents Rollout**:
+- **Q1 2026**: Customer Satisfaction Agent pilot (3 mining operations)
+- **Q2 2026**: Desirability Agent deployment, Deal Flow Agent pilot
+- **Q3 2026**: Full agent suite production (15+ operations)
+- **Q4 2026**: Scale to 50+ mining sites
+
+**Key Investors**:
+- **Mining tech VCs**: Resource optimization focus
+- **Industrial funds**: Safety and efficiency thesis
+- **Deep tech funds**: AI for mining operations
+
+**Target Companies**: BHP, Rio Tinto, Vale, Glencore
+
+**Grants**: Horizon Europe (industrial AI), EIC Pathfinder, EU Innovation Fund
+
+---
+
 ## Private Equity Opportunities for DWS IQ 6
 
 While private equity (PE) typically targets more mature companies, growth equity and specialized climate-focused PE funds align with DWS IQ 6's scalability in sustainability tech, especially for later-stage expansion into infrastructure or asset-based models (e.g., deploying AI-driven fleets).
@@ -257,6 +447,11 @@ VCs in Europe are actively investing in climate tech intersecting with AI, with 
   - Action: Finalize 2-page impact application, attach GitHub architecture link
   - Amount: Up to $60K grant + mentorship
 
+- **January 15: Corporate Cloud Agents - Construction & Manufacturing Pilot Launch**
+  - Deploy Customer Satisfaction Agents to 5 construction sites + 3 manufacturing facilities
+  - Action: Begin Phase 1 "Silent Pilot" for Construction and Manufacturing industries
+  - Goal: Train AI agents, calibrate accuracy against actual outcomes
+
 ### February 2026
 - **Early February: Follow up on EU Innovation Fund orientation (if applied in 2025)**
   - Contact: CINEA-IF-CALLS@ec.europa.eu
@@ -290,6 +485,11 @@ VCs in Europe are actively investing in climate tech intersecting with AI, with 
   - Action: Submit full proposal (€3M-€10M request) with consortium partners
   - Focus: AI for industrial decarbonization, digital-green twin transition
 
+- **April 20: Corporate Cloud Agents - Energy & Logistics Pilot Launch**
+  - Deploy Customer Satisfaction Agents to 5 energy facilities + 3 logistics hubs
+  - Action: Begin Phase 1 "Silent Pilot" for Energy and Logistics industries
+  - Goal: Train AI agents, calibrate accuracy against actual outcomes
+
 - **April 30: DWS IQ 6 pilot program midpoint review**
   - Contact: Direct pilot customers (Vinci, Bouygues, ACS, etc.)
   - Action: Present 6-week progress report, validate €50-100K savings KPIs
@@ -299,14 +499,29 @@ VCs in Europe are actively investing in climate tech intersecting with AI, with 
   - Contact: Veronica Fresneau: veronica@worldfund.vc
   - Action: Share pilot results, request partner intro for €1M+ round
 
+- **May 10: Corporate Cloud Agents - Real Estate & Architecture Pilot Launch**
+  - Deploy Customer Satisfaction Agents to 10 buildings + 5 architecture firms
+  - Action: Begin Phase 1 "Silent Pilot" for Real Estate and Architecture industries
+  - Goal: Train AI agents, calibrate accuracy against actual outcomes
+
 - **Mid-May: Apply to Tech Nation Climate 2026 cohort**
   - Contact: apply@technation.com
   - Action: Submit application for 24-company growth program (UK-based, open to EU)
 
 ### June 2026
+- **June 1: Corporate Cloud Agents - Waste & Mining Pilot Launch**
+  - Deploy Customer Satisfaction Agents to 5 waste facilities + 3 mining operations
+  - Action: Begin Phase 1 "Silent Pilot" for Waste and Mining industries
+  - Goal: Train AI agents, calibrate accuracy against actual outcomes
+
 - **June 15: DWS IQ 6 production launch target (per GitHub timeline)**
   - Contact: AWS/Groq/Google account managers (activate remaining credits)
   - Action: Scale from pilot to 10 production sites, monitor <100ms latency
+
+- **June 30: Corporate Cloud Agents - Phase 2 Activation (Construction & Manufacturing)**
+  - Activate Desirability Agents and Deal Flow Agents for Construction and Manufacturing
+  - Action: Move to Phase 2 "Advisor" mode with human-in-the-loop
+  - Goal: Deploy dashboard for managers, begin advisory recommendations
 
 ---
 
@@ -333,6 +548,11 @@ VCs in Europe are actively investing in climate tech intersecting with AI, with 
 ### September 2026
 - **September 1: Tech Nation Climate midterm review**
   - Action: Present customer traction to UK investor network
+
+- **September 15: Corporate Cloud Agents - Phase 2 Activation (All Industries)**
+  - Activate Desirability Agents and Deal Flow Agents for all 8 industries
+  - Action: Complete Phase 2 "Advisor" mode deployment across all industries
+  - Goal: Full advisory dashboard deployment, human-in-the-loop workflows active
 
 - **September 30: Close first Seed round (target: €500K-€1M)**
   - Contacts: Pale Blue Dot (heidi@paleblue.vc), SFC Capital (climate@sfc-capital.com), Contrarian Ventures
@@ -367,6 +587,12 @@ VCs in Europe are actively investing in climate tech intersecting with AI, with 
 - **December 1: Series A preparation begins**
   - Contacts: World Fund (veronica@worldfund.vc), Brookfield (marie.fuller@brookfield.com)
   - Action: Compile 12-month KPIs: revenue run rate, CO₂e impact, edge deployment count
+
+- **December 15: Corporate Cloud Agents - Phase 3 Autonomous Mode (All Industries)**
+  - Full integration with CRM, support systems, and market intelligence
+  - Action: Deploy Phase 3 "Autonomous Mode" for all 8 industries
+  - Goal: Autonomous agent operations within set parameters, full production deployment
+  - Scale: 200+ construction sites, 100+ manufacturing facilities, 150+ energy facilities, 100+ logistics hubs, 200+ buildings, 100+ architecture firms, 150+ waste facilities, 50+ mining operations
 
 - **December 31: Lifetime™World global movement launch**
   - Action: Community-driven climate mitigation platform goes live; invite investors to advisory board

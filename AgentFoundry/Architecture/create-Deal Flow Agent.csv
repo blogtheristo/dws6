@@ -1,0 +1,5 @@
+Phase,Action,Goal
+"Phase 1: The ""Silent"" Pilot",Deploy 1 Agent to monitor sales pipeline and lead qualification.,"Train the AI. Let it ""observe"" sales activities, lead sources, and conversion patterns without taking actions. Compare its predictions to actual deal outcomes to calibrate accuracy."
+"Phase 2: The ""Advisor""",Activate the dashboard for Sales Teams.,"Human-in-the-loop. The Agent sends alerts/suggestions for lead prioritization, deal health scores, and pipeline risks. Sales teams manually review and adjust their approach."
+Phase 3: Autonomous Mode,Full integration with CRM and marketing automation.,"Pipeline Optimization. The Agent autonomously qualifies leads, prioritizes opportunities, and manages deal flow within set parameters (e.g., lead score thresholds, conversion probability bands)."
+

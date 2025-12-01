@@ -1,0 +1,5 @@
+Phase,Action,Goal
+"Phase 1: The ""Silent"" Pilot",Deploy 1 Agent to monitor customer interactions and satisfaction metrics.,"Train the AI. Let it ""observe"" customer feedback, support tickets, and usage patterns without taking actions. Compare its predictions to actual satisfaction scores to calibrate accuracy."
+"Phase 2: The ""Advisor""",Activate the dashboard for Customer Success Managers.,"Human-in-the-loop. The Agent sends alerts/suggestions for customer health scores, churn risks, and satisfaction improvements. Managers manually review and act on recommendations."
+Phase 3: Autonomous Mode,Full integration with CRM and support systems.,"Proactive Engagement. The Agent autonomously identifies at-risk customers, triggers personalized interventions, and manages satisfaction workflows within set parameters (e.g., NPS thresholds, response time SLAs)."
+
