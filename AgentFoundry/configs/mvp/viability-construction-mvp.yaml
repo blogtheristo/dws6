@@ -1,0 +1,98 @@
+# Viability Agent - MVP Configuration
+# Financial analysis for 5-customer pilot using Groq free tier
+
+agent:
+  id: "viability-construction-mvp"
+  name: "Viability Agent - MVP Pilot"
+  type: "viability"
+  vertical: "construction"
+  mvp_mode: true
+
+  model:
+    provider: "groq"
+    name: "llama-3.1-70b-versatile"
+    temperature: 0.1  # Low temperature for accurate calculations
+    max_tokens: 1200
+
+  system_prompt: |
+    You are a Financial Analyst calculating unit economics for construction customers.
+
+    CALCULATE:
+    1. Payback Period (months) = (Hardware Cost + Setup Cost) / Monthly Gross Profit
+    2. Gross Margin % = (Monthly Revenue - Monthly COGS) / Monthly Revenue × 100
+
+    CONSTANTS (MVP assumptions):
+    - Hardware Cost: €700 (2× NVIDIA Jetson Nano @ €350 each)
+    - Setup Hourly Rate: €80
+    - Monthly Cloud Cost per Customer: €50
+
+    INPUTS (you will receive as JSON):
+    - customer_id: string
+    - setup_hours: number
+    - monthly_revenue_eur: number
+
+    FORMULA:
+    - Total Upfront = €700 + (setup_hours × €80)
+    - Monthly COGS = €50 (cloud)
+    - Monthly Gross Profit = monthly_revenue_eur - €50
+    - Payback Months = Total Upfront / Monthly Gross Profit
+    - Gross Margin % = (monthly_revenue_eur - €50) / monthly_revenue_eur × 100
+
+    OUTPUT (JSON only):
+    {
+      "customer_id": "string",
+      "payback_months": number (round to 1 decimal),
+      "gross_margin_percent": number (round to 0 decimals),
+      "verdict": "Approve" | "Review" | "Reject",
+      "calculation": "show one-line formula with actual numbers"
+    }
+
+    DECISION RULES:
+    - Approve: payback_months ≤ 2.0
+    - Review: payback_months > 2.0 AND ≤ 3.0
+    - Reject: payback_months > 3.0
+
+    KEEP RESPONSE UNDER 100 TOKENS.
+
+  deployment:
+    phase: 1
+    mode: "silent_pilot"
+    pilot_customers: 5
+    duration_days: 30
+
+    outputs:
+      - type: "analysis_report"
+        destination: "google_sheets"
+        sheet_name: "Viability Analysis"
+
+  tools:
+    - name: "calculate_payback"
+      description: "Calculate payback period in months"
+      type: "internal"
+      parameters:
+        hardware_cost_eur: 700
+        setup_hours: "variable"
+        hourly_rate_eur: 80
+        monthly_revenue_eur: "variable"
+        monthly_cogs_eur: 50
+
+  integrations:
+    google_sheets:
+      type: "api"
+      spreadsheet_id_env: "MVP_GOOGLE_SHEET_ID"
+      sheet_name: "Viability Analysis"
+      credentials_env: "GOOGLE_SHEETS_CREDENTIALS"
+      write_mode: "append"  # Append new rows for each calculation
+
+  cost_tracking:
+    budget_monthly_eur: 3
+    token_limit_per_invocation: 1200
+    estimated_monthly_invocations: 20  # 5 customers × 4 calculations/month
+
+metadata:
+  version: "1.0.0-mvp"
+  created_date: "2025-12-01"
+  purpose: "Prove unit economics for investor pitch"
+  target_metrics:
+    payback_months: "≤ 2.0"
+    gross_margin_percent: "≥ 60"
