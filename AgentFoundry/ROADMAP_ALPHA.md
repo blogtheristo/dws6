@@ -36,7 +36,44 @@
 
 ## Scope
 
-### Agents (6 Total)
+### Deployment Options
+
+**Two deployment models offered in Alpha:**
+
+#### Option A: DWS IQ Cloud (Default) 🎯
+
+**Our custom agent system (recommended):**
+- Built on Claude + Groq + LlamaStack
+- Full control and flexibility
+- Edge AI ready
+- Cost: €50-150/month
+- **This is what we build and support**
+
+#### Option B: DWS6 Private Cloud with Rovo Agents 🆕
+
+**For Atlassian-native customers:**
+- Available as managed service
+- Uses Atlassian Rovo agents
+- Requires customer's Atlassian Premium/Enterprise license
+- Deployed on customer's Atlassian Cloud tenant
+- We configure and manage Rovo agents
+- Cost: €200-300/month (managed service fee)
+- **Customer must provide:** Atlassian Premium/Enterprise license
+
+**When to offer Option B:**
+- Customer already heavily invested in Atlassian (Jira, Confluence)
+- Enterprise customer requiring Atlassian compliance
+- Customer prefers no-code/low-code tools
+- IT team mandates Atlassian-only integrations
+
+**Limitations of Option B (Rovo):**
+- ❌ No edge AI capability (cloud-only)
+- ❌ Cannot use Groq credits
+- ❌ Limited to Atlassian's LLM models
+- ❌ Locked to Atlassian ecosystem
+- ⚠️ Customer must pay for Atlassian license (~€1,400/month for 100 users)
+
+### Agents (Option A - DWS IQ Cloud)
 
 **Existing (from MVP):**
 1. ✅ Customer Satisfaction Agent (Construction)
@@ -392,6 +429,8 @@ tools:
 
 ## Budget
 
+### Option A: DWS IQ Cloud (Default)
+
 | Item | Month 4 | Month 5 | Month 6 |
 |------|---------|---------|---------|
 | Supabase Pro | €25 | €25 | €25 |
@@ -403,9 +442,23 @@ tools:
 
 **Average:** €101/month
 
-**vs. Rovo:** €1,400/month for 50 users
+### Option B: DWS6 Private Cloud with Rovo
 
-**Savings:** €1,299/month (93%)
+**Customer Costs:**
+- Atlassian Jira Premium: ~€1,400/month (100 users)
+- Rovo usage fees: €0-200/month (usage-based after quotas)
+- **Subtotal (Customer pays):** €1,400-1,600/month
+
+**Our Costs (Managed Service):**
+- Setup fee (one-time): €2,000
+- Monthly management: €200-300/month
+- Rovo agent configuration: €500 (one-time)
+
+**Total Customer Cost:** €1,600-1,900/month
+
+**vs. Option A:** €101/month
+
+**Savings with Option A:** €1,499-1,799/month (94%)
 
 ---
 
@@ -430,15 +483,123 @@ tools:
 
 ---
 
+## Option B: Rovo Agent Configuration (DWS6 Private Cloud)
+
+### What We Configure in Customer's Rovo
+
+**For Atlassian-native customers who choose Option B:**
+
+#### 1. Customer Health Agent (Rovo Studio)
+**Type:** No-code Rovo Studio agent
+
+**Configuration:**
+- **Knowledge Base:** Connected to customer's Confluence spaces (Construction, Manufacturing, Energy)
+- **Data Sources:** Jira tickets, customer interaction logs
+- **Role:** "You are a Customer Success specialist monitoring customer health"
+- **Capabilities:**
+  - Create Jira Issue (flag at-risk customers)
+  - Comment on Confluence pages (health reports)
+  - Look up Jira tickets
+- **Conversation Starters:**
+  - "Analyze health for all customers"
+  - "Show at-risk customers this week"
+  - "Generate customer health report"
+
+**Limitations:** Cannot access external APIs (Stripe, HubSpot) without Forge app
+
+#### 2. Deal Flow Agent (Rovo Studio)
+**Type:** No-code Rovo Studio agent
+
+**Configuration:**
+- **Knowledge Base:** Sales playbooks, pricing sheets (Confluence)
+- **Data Sources:** Jira Service Desk (lead forms), CRM exports
+- **Role:** "You are a Sales Operations specialist prioritizing leads"
+- **Capabilities:**
+  - Create Jira Issue (new qualified leads)
+  - Update issue status
+  - Assign to sales reps
+
+**Limitations:** No real-time CRM integration, no lead enrichment APIs
+
+#### 3. Viability Checker (Atlassian Forge)
+**Type:** Custom Forge app (requires development)
+
+**manifest.yml:**
+```yaml
+modules:
+  rovo:agent:
+    - key: viability-agent
+      name: Financial Viability Agent
+      prompt: >
+        Calculate payback period and gross margin.
+        Use 'calculate-payback' tool when asked about viability.
+
+  function:
+    - key: payback-calculator
+      handler: index.calculatePayback
+```
+
+**Capabilities:**
+- Call external financial APIs (Stripe, accounting systems)
+- Calculate payback period
+- Approve/reject deals based on criteria
+
+**Development Required:** 40-60 hours for Forge app development
+
+### Rovo Agent Comparison vs. DWS IQ Cloud
+
+| Feature | DWS IQ Cloud (Option A) | Rovo (Option B) |
+|---------|-------------------------|-----------------|
+| **Setup Time** | 1 week | 3-4 weeks (Forge apps) |
+| **Customization** | Full control | Limited to Rovo APIs |
+| **External APIs** | ✅ Any API | ⚠️ Only via Forge |
+| **Edge AI** | ✅ NVIDIA Jetson | ❌ Cloud-only |
+| **LLM Choice** | ✅ Claude, Groq, Llama | ❌ Atlassian's models |
+| **Cost (50 users)** | €101/month | €1,600-1,900/month |
+| **Data Residency** | ✅ Full control | ⚠️ Atlassian-controlled |
+| **Phase 3 (Autonomous)** | ✅ Yes (V1) | ❌ No (always requires approval) |
+
+### When to Recommend Option B (Rovo)
+
+**✅ Good fit:**
+- Customer has 500+ Atlassian licenses already
+- Enterprise compliance requires Atlassian
+- Customer refuses cloud providers other than Atlassian
+- IT team very familiar with Forge development
+
+**❌ Not a good fit:**
+- Customer needs edge AI (<100ms decisions)
+- Wants to minimize costs
+- Needs advanced analytics (Growth Tracker, predictive models)
+- Requires autonomous agents (Phase 3)
+- Multi-cloud strategy (Google Cloud, AWS)
+
+### Managed Service SLA (Option B)
+
+**What we provide:**
+- Initial Rovo agent configuration (4 weeks)
+- Monthly optimization and tuning
+- Quarterly knowledge base updates
+- 24/7 Slack support
+- Monthly performance reports
+
+**What customer provides:**
+- Atlassian Premium/Enterprise license
+- Access to Rovo Studio
+- Confluence/Jira admin access
+- Forge app deployment approvals
+
+---
+
 ## What's NOT in Alpha
 
 **Deferred to V1:**
 - **Growth Tracker Agent** (deploy at 50+ customers)
-- Edge AI (NVIDIA Jetson)
-- SiteSense Agent
-- Phase 3 (Autonomous Mode)
+- Edge AI (NVIDIA Jetson) - **Not available for Option B**
+- SiteSense Agent - **Not available for Option B**
+- Phase 3 (Autonomous Mode) - **Limited for Option B**
 - Remaining 5 verticals
-- Real-time dashboards (Grafana)
+- Real-time dashboards (Grafana) - **Option B uses Atlassian Analytics**
 - Predictive analytics
 
 ---
@@ -463,10 +624,15 @@ tools:
 
 **Current Phase:** Alpha
 **Duration:** 3 months (Mar 2026 - May 2026)
+**Deployment Options:** 2 (DWS IQ Cloud + DWS6 Private Cloud with Rovo)
 **Agents:** 8 (Customer Sat + Viability + Deal Flow + Desirability)
 **Customers:** 20-50
 **Verticals:** 3 (Construction, Manufacturing, Energy)
-**Cost:** €50-150/month
+
+**Cost:**
+- **Option A (Default):** €50-150/month
+- **Option B (Rovo):** €1,600-1,900/month (customer pays Atlassian licenses)
+
 **Goal:** Prove scalability and multi-vertical viability
 
 **Previous Phase:** MVP (see ROADMAP_MVP.md)
@@ -474,6 +640,7 @@ tools:
 
 ---
 
-**Last Updated:** December 1, 2025
+**Last Updated:** December 2, 2025
 **Status:** Planned - Starts March 2026
 **Owner:** Lifetime Oy - Product Team
+**Note:** Option B (DWS6 Private Cloud with Rovo) added for Atlassian-native customers
