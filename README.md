@@ -266,7 +266,7 @@ Manufacturing SMEs in Europe face a "twin transition"—simultaneous digital and
 ### Phased Development Strategy
 
 #### MVP Phase (Month 1-3) - **Current**
-**Location:** [AgentFoundry/ROADMAP_MVP.md](AgentFoundry/ROADMAP_MVP.md)
+**Location:** [docs/roadmaps/ROADMAP_MVP.md](docs/roadmaps/ROADMAP_MVP.md)
 
 - **Agents:** 2 (Customer Satisfaction + Viability)
 - **Customers:** 5 pilot
@@ -282,7 +282,7 @@ Manufacturing SMEs in Europe face a "twin transition"—simultaneous digital and
 - Investor pitch deck with live demo
 
 #### Alpha Phase (Month 4-6)
-**Location:** [AgentFoundry/ROADMAP_ALPHA.md](AgentFoundry/ROADMAP_ALPHA.md)
+**Location:** [docs/roadmaps/ROADMAP_ALPHA.md](docs/roadmaps/ROADMAP_ALPHA.md)
 
 - **Agents:** 8 (add Deal Flow + Desirability)
 - **Customers:** 20-50
@@ -301,7 +301,7 @@ Manufacturing SMEs in Europe face a "twin transition"—simultaneous digital and
 - Rovo agent alternative for enterprise
 
 #### V1 Production (Month 7-12)
-**Location:** [AgentFoundry/ROADMAP_V1.md](AgentFoundry/ROADMAP_V1.md)
+**Location:** [docs/roadmaps/ROADMAP_V1.md](docs/roadmaps/ROADMAP_V1.md)
 
 - **Agents:** 33 (32 + Growth Tracker)
 - **Customers:** 100+
@@ -351,10 +351,10 @@ This repository contains comprehensive implementation guides for building an Age
 ### Agent System Documentation (AgentFoundry/)
 
 **Roadmaps:**
-- **ROADMAP_MVP.md** - Month 1-3: FREE pilot with 5 customers
-- **ROADMAP_ALPHA.md** - Month 4-6: Scale to 50 customers + Rovo option
-- **ROADMAP_V1.md** - Month 7-12: Production with Growth Tracker
-- **ROADMAP.md** - Overall summary and decision framework
+- **docs/roadmaps/ROADMAP_MVP.md** - Month 1-3: FREE pilot with 5 customers
+- **docs/roadmaps/ROADMAP_ALPHA.md** - Month 4-6: Scale to 50 customers + Rovo option
+- **docs/roadmaps/ROADMAP_V1.md** - Month 7-12: Production with Growth Tracker
+- **docs/roadmaps/ROADMAP.md** - Overall summary and decision framework
 
 **Strategy Documents:**
 - **ROVO_ANALYSIS_AND_ALTERNATIVES.md** - Why custom agents > Rovo
