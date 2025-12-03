@@ -24,6 +24,7 @@ Lifetime DWS IQ Platform Version 6
 - **Lifetime™Cloud**
 
 ### Digital Assets
+- **Lifetime World Model**
 - **Lifetime™World Coin ($LTW)**
 - **Lifetime World Coin®**
 - **LTWCash®**
@@ -143,7 +144,10 @@ We're validating DWS6 with 2-3 construction or manufacturing companies in Europe
 - Royal BAM (Netherlands)
 - Balfour Beatty (UK)
 
-**Market Size**: 3.5 million construction companies in Europe; highest concentration in UK (500k), Spain (489k), France (397k)
+**Market Size**: 3.5 million construction companies in Europe; 
+highest concentration in UK (500k), 
+Spain (489k), 
+France (397k)
 
 ---
 
@@ -173,7 +177,7 @@ We're validating DWS6 with 2-3 construction or manufacturing companies in Europe
 
 ## Timeline
 
-- **Days 1-30**: Foundation (Google Cloud + Groq setup)
+- **Days 1-30**: Foundation (Google Cloud + Groq + AWS + NVIDIA Jetson + Hugo + Sites)
 - **Days 31-60**: Pilot validation with European construction/manufacturing partner
 - **Days 61-90**: Production launch
 - **Month 12**: Profitability
@@ -242,8 +246,8 @@ Founder & CEO, Lifetime Consulting
 
 ---
 
-Document Version: 2.0
-Last Updated: November 22, 2026
+Document Version: 2.1
+Last Updated: December 3, 2025
 Prepared by: Risto Anton Päärni / Lifetime Consulting
 AI Agents Used: Claude Code, Kimi K2, GitHub Copilot, Cursor.ai
 License: Proprietary - Lifetime Oy
