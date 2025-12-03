@@ -19,6 +19,10 @@ These agents are **internal tools** for Lifetime Oy team, distinct from the cust
 
 ## Proposed Team Agents
 
+**7 coordinated internal AI agents** (5 development + 2 sales):
+
+### Development Agents
+
 ### 1. Architect Agent 🏗️
 
 **Role:** System designer and technical decision-maker
@@ -166,33 +170,121 @@ These agents are **internal tools** for Lifetime Oy team, distinct from the cust
 
 ---
 
+### Sales & Market Intelligence Agents
+
+### 6. Market Signal Agent 📈
+
+**Role:** Market intelligence and demand detection
+
+**Responsibilities:**
+- Monitors Google Merchant Server analytics (impressions, clicks, conversions)
+- Tracks search queries (what terms bring people to products)
+- Identifies high-interest, low-conversion products (opportunities)
+- Detects pricing sensitivity (do clicks drop at certain price points?)
+- Compares competitor products (what features do they emphasize?)
+- Generates weekly market signal reports
+
+**Tools & Access:**
+- Read: Google Merchant Center API, Google Search Console, Google Analytics
+- Read: Competitor websites (web scraping for feature comparison)
+- Write: `docs/market-signals/` (weekly reports)
+
+**Weekly deliverables:**
+- Market signal report (top searched terms, conversion funnel analysis)
+- Product opportunity matrix (what to build next based on market demand)
+- Pricing recommendations (test price points based on click patterns)
+- Messaging insights (what keywords/phrases resonate)
+
+**Example tasks:**
+- "Analyze Google Merchant data: which products have >1K impressions but 0 conversions?"
+- "Track search query trends: what construction AI terms are growing >20% MoM?"
+- "Compare DWS6 vs Atlassian Rovo product pages: what messaging do they emphasize?"
+
+**Integration with development:**
+- High-interest products → Backlog (validate with landing page)
+- Pricing experiments → A/B tests on product pages
+- Market insights → Weekly reports (inform roadmap prioritization)
+
+---
+
+### 7. Product Page Generator Agent 🛒
+
+**Role:** Dynamic sales page creation and updating
+
+**Responsibilities:**
+- Reads GitHub Projects (development status: MVP 35% → 50% → 100%)
+- Reads roadmaps (what's coming: Alpha, V1 features)
+- Generates product pages for onelifetime.world and dws10.com
+- Updates pages automatically when:
+  - Development milestones reached (MVP → Alpha transition)
+  - Pricing experiments launched (A/B test €999 vs €1,499)
+  - New customer testimonials added
+  - Market signals suggest messaging changes
+- Deploys via static site generator (Hugo) + Netlify
+
+**Tools & Access:**
+- Read: GitHub Projects API, roadmap files, customer database (testimonials)
+- Write: Hugo markdown files (product pages)
+- Deploy: Git push → Netlify auto-deploy
+
+**Weekly deliverables:**
+- Updated product pages (reflect latest development %)
+- New landing pages (for demand validation experiments)
+- A/B test variations (pricing, messaging experiments)
+
+**Example tasks:**
+- "Update DWS6 Construction page: MVP 35% → 42% complete (auto from GitHub)"
+- "Create landing page for 'Embodied Carbon Agent' (validate demand before building)"
+- "Deploy A/B test: €2,000 vs €999 pricing (50/50 traffic split)"
+
+**Integration with development:**
+- GitHub Projects update → Product page auto-updates (transparency)
+- Roadmap milestone → New feature listed on product page
+- Customer testimonial → Auto-added to social proof section
+
+---
+
 ## Agent Coordination & Workflows
 
 ### Weekly Cycle (Fridays)
 
-1. **Product & Reporting Agent** generates draft weekly report
-2. **DevOps Agent** provides cost data + infrastructure metrics
-3. **Security & Compliance Agent** provides security scan results
-4. **Builder Agent** provides code review summary
-5. **Architect Agent** provides architecture change log
-6. **Product & Reporting Agent** compiles final report, publishes to `docs/Reports/`
+1. **Market Signal Agent** generates market insights (Google Merchant data, search trends)
+2. **Product Page Generator Agent** updates product pages (development %, pricing changes)
+3. **DevOps Agent** provides cost data + infrastructure metrics
+4. **Security & Compliance Agent** provides security scan results
+5. **Builder Agent** provides code review summary
+6. **Architect Agent** provides architecture change log
+7. **Product & Reporting Agent** compiles final report (includes market signals), publishes to `docs/Reports/`
 
 ### Monthly Cycle (Last Friday)
 
-1. **Product & Reporting Agent** generates monthly investor update (includes NPS, ARR, burn rate)
-2. **Architect Agent** reviews technical debt backlog, proposes Q+1 priorities
-3. **Security & Compliance Agent** runs full compliance audit (GDPR, ISO 27001)
-4. **DevOps Agent** reviews cloud costs, optimizes for next month
+1. **Market Signal Agent** generates monthly market report (trend analysis, competitor moves)
+2. **Product Page Generator Agent** reviews conversion funnel (where do visitors drop off?)
+3. **Product & Reporting Agent** generates monthly investor update (includes NPS, ARR, burn rate, market insights)
+4. **Architect Agent** reviews technical debt backlog, proposes Q+1 priorities
+5. **Security & Compliance Agent** runs full compliance audit (GDPR, ISO 27001)
+6. **DevOps Agent** reviews cloud costs, optimizes for next month
 
 ### Ad-Hoc Coordination
 
-**Example: New agent deployment (e.g., Manufacturing Energy Optimization Agent)**
+**Example 1: New agent deployment (e.g., Manufacturing Energy Optimization Agent)**
 
 1. **Architect Agent** designs data model and API contract
 2. **Builder Agent** implements code + tests
 3. **DevOps Agent** sets up CI/CD for deployment
 4. **Security & Compliance Agent** reviews for security issues
-5. **Product & Reporting Agent** updates roadmap, notifies customers
+5. **Product Page Generator Agent** creates product page, deploys to onelifetime.world
+6. **Product & Reporting Agent** updates roadmap, notifies customers
+
+**Example 2: Market signal triggers new product (e.g., Embodied Carbon Agent)**
+
+1. **Market Signal Agent** detects high search volume (340/month for "embodied carbon tracking")
+2. **Market Signal Agent** notifies Product & Reporting Agent (adds to weekly report)
+3. **Product Page Generator Agent** creates landing page for demand validation
+4. **DevOps Agent** deploys landing page to onelifetime.world/embodied-carbon-agent
+5. **Market Signal Agent** monitors waitlist signups (target: 20 in 2 weeks)
+6. If validated → **Architect Agent** designs, **Builder Agent** implements
+7. If not validated → **Product Page Generator Agent** archives landing page, **Market Signal Agent** investigates why
 
 ---
 
@@ -304,6 +396,8 @@ agent:
 | **DevOps** | Deployment success rate | >95% |
 | **Security** | Critical CVEs unresolved | 0 |
 | **Product** | Weekly report published on time | 100% (Fridays by 5pm) |
+| **Market Signal** | Market insights generated | 1 report/week |
+| **Product Page Generator** | Pages updated (auto) | 100% of dev milestones |
 
 ### Team Efficiency (Measured Monthly)
 
@@ -313,6 +407,17 @@ agent:
 | **Weekly report writing time** | 2 hours | 30 min | 75% faster |
 | **Security incidents** | 2/month | <1/month | 50% reduction |
 | **Infrastructure cost variance** | ±20% | ±5% | Tighter control |
+| **Product page update time** | 2 hours/update | 5 min (auto) | 96% faster |
+| **Market signal analysis time** | 4 hours/week | 30 min (auto) | 87% faster |
+
+### Sales Efficiency (Measured Monthly)
+
+| Metric | Static Pages (Squarespace) | Dynamic Pages (Hugo + Agents) | Target Improvement |
+|--------|----------------------------|-------------------------------|-------------------|
+| **Page update frequency** | 1x/month (manual) | Daily (auto) | 30x faster |
+| **Conversion rate** | 0% (baseline) | 5%+ (target) | ∞ improvement |
+| **Time to launch new product page** | 1 week | 1 day | 7x faster |
+| **Market signal → action time** | Never (no feedback loop) | 24 hours | Competitive advantage |
 
 ---
 
@@ -336,18 +441,24 @@ agent:
 
 ### MVP Phase (Month 1-3)
 - ✅ Define agent roles and responsibilities (this document)
-- ☐ Create templates (weekly report, architecture ADR, security checklist)
+- ✅ Create templates (weekly report, architecture ADR, security checklist)
 - ☐ Humans play all agent roles manually (establish workflows)
+- ☐ **NEW:** Set up Market Signal Agent (manual Google Merchant data pulls)
+- ☐ **NEW:** Create first dynamic product page (onelifetime.world)
 
 ### Alpha Phase (Month 4-6)
 - ☐ Automate DevOps Agent (GitHub Actions CI/CD)
 - ☐ Automate Security Agent (Trivy scans on PRs)
 - ☐ Semi-automate Product Agent (cost data auto-fetched)
+- ☐ **NEW:** Automate Market Signal Agent (daily Google Merchant data pulls)
+- ☐ **NEW:** Automate Product Page Generator (GitHub webhook → auto-update pages)
 
 ### V1 Phase (Month 7-12)
 - ☐ Deploy Product Agent (Claude generates draft reports)
 - ☐ Deploy Architect Agent (Claude suggests architecture improvements)
 - ☐ Deploy Builder Agent (Claude generates boilerplate code)
+- ☐ **NEW:** Deploy Market Signal Agent (Claude analyzes trends, proposes new products)
+- ☐ **NEW:** Deploy Product Page Generator (Claude writes product copy, A/B test variations)
 
 ### Post-V1 (Month 13+)
 - ☐ Full autonomous mode with human approval
