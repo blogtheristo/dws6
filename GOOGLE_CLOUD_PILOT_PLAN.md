@@ -46,7 +46,7 @@
 │                                                      │
 │  ┌────────────────────────────────────────────────┐ │
 │  │  Container Registry                            │ │
-│  │  gcr.io/lifetime-dws-iq/                      │ │
+│  │  gcr.io/dws-iq-pilot/                      │ │
 │  │  - groq-agent-router:v1.0.0                   │ │
 │  └────────────────────────────────────────────────┘ │
 │                                                      │
@@ -72,7 +72,7 @@
 **DEFERRED TO LATER (AWS Components):**
 - ❌ AWS IoT Core (edge device management)
 - ❌ AWS S3 (cold storage)
-- ❌ AWS Greengrass (NVIDIA Jetson)
+- ❌ AWS Greengrass (NVIDIA Jetson Orin Nano Super Developer Kit)
 - ❌ Edge computing layer
 
 **Why defer AWS:**
@@ -90,11 +90,11 @@
 **Day 1: Google Cloud Project Setup**
 ```bash
 # Create project
-gcloud projects create lifetime-dws-iq --name="DWS IQ Pilot"
-gcloud config set project lifetime-dws-iq
+gcloud projects create dws-iq-pilot --name="DWS IQ Pilot"
+gcloud config set project dws-iq-pilot
 
 # Enable billing (for startup credits)
-gcloud beta billing projects link lifetime-dws-iq \
+gcloud beta billing projects link dws-iq-pilot \
   --billing-account=XXXXXX-XXXXXX-XXXXXX
 
 # Enable required APIs
@@ -375,7 +375,7 @@ CALCULATE:
 2. Gross Margin % = (Revenue - COGS) / Revenue
 
 CONSTANTS:
-- Hardware: €700 (2x Jetson Nano @ €350 each)
+- Hardware: €470 (2x Jetson Orin Nano Super @ $249 each)
 - Setup hourly rate: €80
 - Monthly COGS: €50 (cloud costs)
 
@@ -514,7 +514,7 @@ on:
     branches: [claude/dws6-pilot-setup-01MsouoNp4hdrFQxeYU6EJFY, main]
 
 env:
-  PROJECT_ID: lifetime-dws-iq
+  PROJECT_ID: dws-iq-pilot
   SERVICE_NAME: groq-agent-router-mvp
   REGION: europe-north1
 
@@ -583,19 +583,19 @@ docker build -t groq-agent-router-mvp:v1.0.0 .
 
 # Tag for GCR
 docker tag groq-agent-router-mvp:v1.0.0 \
-  gcr.io/lifetime-dws-iq/groq-agent-router-mvp:v1.0.0
+  gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0
 
 # Authenticate
 gcloud auth configure-docker
 
 # Push
-docker push gcr.io/lifetime-dws-iq/groq-agent-router-mvp:v1.0.0
+docker push gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0
 ```
 
 **Day 16: Deploy to Cloud Run**
 ```bash
 gcloud run deploy groq-agent-router-mvp \
-  --image gcr.io/lifetime-dws-iq/groq-agent-router-mvp:v1.0.0 \
+  --image gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0 \
   --region europe-north1 \
   --platform managed \
   --allow-unauthenticated \
@@ -807,7 +807,7 @@ Create Google Sheets dashboard showing:
 - Cost: ~€150/month
 
 ### Month 7-12: Add AWS Edge Layer
-- NVIDIA Jetson deployment
+- NVIDIA Jetson Orin Nano Super Developer Kit deployment
 - AWS IoT Core integration
 - Edge-to-cloud sync
 - Cost: ~€345/month (full system)
@@ -820,7 +820,7 @@ Create Google Sheets dashboard showing:
 
 1. ❌ **AWS IoT Core** - No edge devices yet
 2. ❌ **AWS S3** - Use Supabase for hot data only
-3. ❌ **AWS Greengrass** - No NVIDIA Jetson deployment
+3. ❌ **AWS Greengrass** - No NVIDIA Jetson Orin Nano Super Developer Kit deployment
 4. ❌ **Edge inference** - Cloud-only for MVP
 5. ❌ **Multi-region** - Single region (europe-north1) only
 

@@ -8,7 +8,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-PROJECT_ID="${GCP_PROJECT_ID:-lifetime-dws-iq}"
+PROJECT_ID="${GCP_PROJECT_ID:-dws-iq-pilot}"
 REGION="europe-north1"
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

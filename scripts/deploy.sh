@@ -10,7 +10,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 # Configuration
-PROJECT_ID="${GCP_PROJECT_ID:-lifetime-dws-iq}"
+PROJECT_ID="${GCP_PROJECT_ID:-dws-iq-pilot}"
 SERVICE_NAME="groq-agent-router-mvp"
 REGION="europe-north1"
 IMAGE_NAME="gcr.io/$PROJECT_ID/$SERVICE_NAME"

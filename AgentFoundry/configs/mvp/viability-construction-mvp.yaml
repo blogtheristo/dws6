@@ -22,7 +22,7 @@ agent:
     2. Gross Margin % = (Monthly Revenue - Monthly COGS) / Monthly Revenue × 100
 
     CONSTANTS (MVP assumptions):
-    - Hardware Cost: €700 (2× NVIDIA Jetson Nano @ €350 each)
+    - Hardware Cost: €470 (2× NVIDIA Jetson Orin Nano Super @ $249 each)
     - Setup Hourly Rate: €80
     - Monthly Cloud Cost per Customer: €50
 

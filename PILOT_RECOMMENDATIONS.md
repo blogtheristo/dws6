@@ -163,7 +163,7 @@ Outcome: Automated deployment pipeline
    - After securing funding
    - After proving AI agent value
    - When you have real customers needing edge devices
-   - When you can afford NVIDIA Jetson hardware (€700/site)
+   - When you can afford NVIDIA Jetson hardware (~€235/site)
 
 ---
 

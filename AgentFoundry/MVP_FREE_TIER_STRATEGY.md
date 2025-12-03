@@ -353,7 +353,7 @@ agent:
 
     CONSTANTS (MVP assumptions):
     - Setup hourly rate: €80
-    - Hardware: €700 (2x Jetson Nano @ €350 each)
+    - Hardware: €470 (2x Jetson Orin Nano Super @ $249 each)
 
     OUTPUT (JSON only):
     {
@@ -426,7 +426,7 @@ pyyaml==6.0.1
 
 ```bash
 gcloud run deploy groq-agent-router \
-  --image gcr.io/lifetime-dws-iq/groq-agent-router:mvp-v1 \
+  --image gcr.io/dws-iq-pilot/groq-agent-router:mvp-v1 \
   --platform managed \
   --region europe-north1 \
   --port 8083 \

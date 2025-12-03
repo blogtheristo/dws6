@@ -10,7 +10,7 @@ on:
       - '.github/workflows/deploy-pilot.yml'
 
 env:
-  PROJECT_ID: lifetime-dws-iq
+  PROJECT_ID: dws-iq-pilot
   SERVICE_NAME: groq-agent-router-mvp
   REGION: europe-north1
 
@@ -22,6 +22,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Check prerequisites
+        run: |
+          if [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
+            echo "::error::GCP_SA_KEY secret is not set in GitHub Secrets"
+            echo "Please follow GCP_SETUP_GUIDE.md to configure Google Cloud"
+            exit 1
+          fi
+          if [ -z "${{ secrets.GROQ_API_KEY }}" ]; then
+            echo "::error::GROQ_API_KEY secret is not set in GitHub Secrets"
+            echo "Please add your Groq API key to GitHub Secrets"
+            exit 1
+          fi
+          echo "✓ All prerequisites met"
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
@@ -29,6 +43,24 @@ jobs:
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
+
+      - name: Sync GROQ_API_KEY to GCP Secret Manager
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          # Create or update the secret in GCP Secret Manager
+          echo -n "$GROQ_API_KEY" | gcloud secrets create GROQ_API_KEY \
+            --data-file=- \
+            --replication-policy="automatic" 2>/dev/null || \
+          echo -n "$GROQ_API_KEY" | gcloud secrets versions add GROQ_API_KEY \
+            --data-file=-
+          
+          # Grant Cloud Run service account access to the secret
+          PROJECT_NUMBER=$(gcloud projects describe ${{ env.PROJECT_ID }} --format="value(projectNumber)")
+          gcloud secrets add-iam-policy-binding GROQ_API_KEY \
+            --member="serviceAccount:$PROJECT_NUMBER-compute@developer.gserviceaccount.com" \
+            --role="roles/secretmanager.secretAccessor" \
+            --quiet || true
 
       - name: Configure Docker
         run: gcloud auth configure-docker

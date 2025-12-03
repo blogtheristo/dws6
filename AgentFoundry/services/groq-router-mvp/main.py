@@ -208,7 +208,7 @@ async def analyze_viability(request: ViabilityRequest):
     system_prompt = """You are a Financial Analyst for construction SaaS.
 
 CONSTANTS:
-- Hardware: €700 (2× Jetson Nano)
+- Hardware: €470 (2× Jetson Orin Nano Super @ $249 each)
 - Setup rate: €80/hour
 - Monthly COGS: €50
 

@@ -553,7 +553,7 @@ Annual Cost: $0
 ### Edge Computing (NVIDIA Jetson)
 
 **Hardware:**
-- NVIDIA Jetson Orin Nano: €350/device
+- NVIDIA Jetson Orin Nano Super: $249/device (Student)
 - 50 construction sites × 2 devices/site = 100 devices
 - Total: €35,000 (one-time capex)
 
@@ -567,7 +567,7 @@ Annual Cost: $0
 |------|------|
 | Claude API | €3,456 |
 | Groq API | €0 (credits) |
-| Jetson Hardware (amortized) | €35,000 |
+| Jetson Hardware (amortized) | €25,000 |
 | Development Time (200 hours @ €100/hr) | €20,000 |
 | **TOTAL** | **€58,456** |
 

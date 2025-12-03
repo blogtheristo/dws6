@@ -178,7 +178,7 @@ docker build -t claude-agent-router:latest .
 
 # Tag for Google Container Registry
 docker tag claude-agent-router:latest \
-  gcr.io/lifetime-dws-iq/claude-agent-router:v1.0.0
+  gcr.io/dws-iq-pilot/claude-agent-router:v1.0.0
 ```
 
 ### 2. Push to Google Container Registry
@@ -188,14 +188,14 @@ docker tag claude-agent-router:latest \
 gcloud auth configure-docker
 
 # Push image
-docker push gcr.io/lifetime-dws-iq/claude-agent-router:v1.0.0
+docker push gcr.io/dws-iq-pilot/claude-agent-router:v1.0.0
 ```
 
 ### 3. Deploy to Cloud Run
 
 ```bash
 gcloud run deploy claude-agent-router \
-  --image gcr.io/lifetime-dws-iq/claude-agent-router:v1.0.0 \
+  --image gcr.io/dws-iq-pilot/claude-agent-router:v1.0.0 \
   --platform managed \
   --region europe-north1 \
   --port 8083 \
@@ -279,7 +279,7 @@ gsutil -m cp -r configs/instances/ \
 
 # Mount in Cloud Run (use gcloud beta)
 gcloud beta run deploy claude-agent-router \
-  --image gcr.io/lifetime-dws-iq/claude-agent-router:v1.0.0 \
+  --image gcr.io/dws-iq-pilot/claude-agent-router:v1.0.0 \
   --execution-environment gen2 \
   --add-volume name=agent-configs,type=cloud-storage,bucket=lifetime-agent-configs \
   --add-volume-mount volume=agent-configs,mount-path=/app/configs/instances
@@ -425,12 +425,12 @@ EOF
 # Build and push
 docker build -t workflow-customer-onboarding:latest .
 docker tag workflow-customer-onboarding:latest \
-  gcr.io/lifetime-dws-iq/workflow-customer-onboarding:v1.0.0
-docker push gcr.io/lifetime-dws-iq/workflow-customer-onboarding:v1.0.0
+  gcr.io/dws-iq-pilot/workflow-customer-onboarding:v1.0.0
+docker push gcr.io/dws-iq-pilot/workflow-customer-onboarding:v1.0.0
 
 # Deploy to Cloud Run
 gcloud run deploy workflow-customer-onboarding \
-  --image gcr.io/lifetime-dws-iq/workflow-customer-onboarding:v1.0.0 \
+  --image gcr.io/dws-iq-pilot/workflow-customer-onboarding:v1.0.0 \
   --region europe-north1 \
   --set-env-vars CLAUDE_ROUTER_URL=https://claude-agent-router-xxx.run.app \
   --set-env-vars EDGE_SYNC_SERVICE_URL=https://edge-sync-service-xxx.run.app
@@ -442,7 +442,7 @@ Create a Cloud Run Job:
 
 ```bash
 gcloud run jobs create onboard-customer \
-  --image gcr.io/lifetime-dws-iq/workflow-customer-onboarding:v1.0.0 \
+  --image gcr.io/dws-iq-pilot/workflow-customer-onboarding:v1.0.0 \
   --region europe-north1 \
   --args="--customer-id=cust_123,--vertical=construction"
 ```

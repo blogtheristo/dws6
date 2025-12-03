@@ -158,7 +158,7 @@ docker build -t groq-agent-router-mvp:latest .
 
 # Tag for Google Container Registry
 docker tag groq-agent-router-mvp:latest \
-  gcr.io/lifetime-dws-iq/groq-agent-router-mvp:v1.0.0
+  gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0
 ```
 
 ### 2. Push to GCR
@@ -168,14 +168,14 @@ docker tag groq-agent-router-mvp:latest \
 gcloud auth configure-docker
 
 # Push
-docker push gcr.io/lifetime-dws-iq/groq-agent-router-mvp:v1.0.0
+docker push gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0
 ```
 
 ### 3. Deploy to Cloud Run
 
 ```bash
 gcloud run deploy groq-agent-router-mvp \
-  --image gcr.io/lifetime-dws-iq/groq-agent-router-mvp:v1.0.0 \
+  --image gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0 \
   --platform managed \
   --region europe-north1 \
   --port 8083 \
@@ -494,7 +494,7 @@ ls /home/user/dws6/AgentFoundry/configs/mvp/
 
 ```bash
 # Check image pushed to GCR
-gcloud container images list --repository=gcr.io/lifetime-dws-iq
+gcloud container images list --repository=gcr.io/dws-iq-pilot
 
 # Should show: groq-agent-router-mvp
 ```
