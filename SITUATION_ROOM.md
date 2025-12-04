@@ -1,372 +1,436 @@
 # DWS6 Situation Room - Multi-AI Team Coordination
-## Distributing Development Across the AI Team
+## Call Signs, Roles & GitHub Integration
 
-**Team Lead:** Boardy (Human)  
-**Development Team:** Claude Code, Kimi K2, GPT-5 Smart, DeepSeek, Grok, Cursor.ai  
+**Team Lead:** Risto Anton Päärni (Human)
+**Strategic Advisor:** Boardy
+**Development Team:** Claude Code, Kimi K2, GPT-5 Smart, DeepSeek, Grok
+**Development Environments:** Cursor.ai, Claude Code CLI, Vertex AI Studio
 **Goal:** Build DWS6 pilot efficiently without exhausting any single AI's credits
+**Status:** ACTIVE - War Room Operational
 
 ---
 
-## 👥 Team Roster & Capabilities
+## 👥 Team Roster (Call Signs & Roles)
 
-| AI Agent | Platform | Strengths | Best Use Cases | API Access |
-|----------|----------|-----------|----------------|------------|
-| **Claude Code** | Anthropic CLI | Architecture, planning, documentation | System design, complex logic, strategic decisions | ❌ No direct API (CLI only) |
-| **Kimi K2** | Moonshot AI | Long context, Chinese/English | Large file analysis, documentation review | ✅ API available |
-| **GPT-5 Smart** | GitHub Copilot | Code completion, patterns | Real-time coding assistance in IDE | ✅ Via GitHub Copilot |
-| **DeepSeek** | DeepSeek | Cost-effective, fast inference | High-volume tasks, testing, iterations | ✅ API available |
-| **Grok** | xAI | Real-time info, creative solutions | Research, market analysis, creative content | ⚠️ Limited API (X Premium) |
-| **Cursor.ai Pro** | Desktop IDE | Full IDE integration, multi-file edits | Frontend development, refactoring | ❌ Desktop only |
-| **Boardy** | Human | Strategic direction, decisions | Final approval, customer contact, fundraising | 👤 Human |
+### 1. Gemini — Call Sign: "The Overwatch" 🛰️
+
+**Primary Role:** Big Context & Cloud Ops  
+**Platform:** Google AI (Vertex AI, Google Cloud Build)  
+**API:** `google.generativeai` (Python SDK)
+
+**When to Use:**
+- **Google Cloud expertise** - Since DWS6 is on Google Cloud, use for infrastructure management
+- **Massive context** - 2M+ token window can ingest entire repository at once
+- **Consistency checks** - See all files simultaneously for architecture verification
+- **CI/CD auditing** - Review deployments, check for cloud misconfigurations
+
+**GitHub Integration:** **Cloud Agent** via Google Cloud Build triggers  
+**How to join:** Connect repo to Cloud Build, trigger Gemini on every push
+
+**Cost:** Gemini 2.0 Flash free tier (generous limits)
 
 ---
 
-## 🎯 Work Distribution Strategy
+### 2. GPT-5 Smart — Call Sign: "The Architect" 🏗️
 
-### Phase 1: Foundation (Days 1-30) - CURRENT
+**Primary Role:** High Logic & Complex Reasoning  
+**Platform:** OpenAI via GitHub Copilot  
+**API:** Via GitHub Copilot API
 
-**Completed by Claude Code ✅:**
-- [x] Architecture design & planning
-- [x] FastAPI agent router service
-- [x] 2 AI agents (Customer Sat + Viability)
-- [x] 5 Nordic company mock data
-- [x] Supabase SQL schema
-- [x] Deployment scripts
-- [x] Documentation (QUICKSTART, README)
-- [x] GitHub Actions CI/CD
+**When to Use:**
+- **Reserve for hardest 10% of problems** - High-level architectural decisions
+- **Complex algorithms** - Designing core agent logic, optimization problems
+- **"Impossible" bugs** - When other models get stuck
+- **Strategic planning** - Multi-step problem decomposition
 
-**Handoff to other team members:**
+**GitHub Integration:** **Repository Agent** via GitHub Copilot App  
+**How to join:** Install GitHub Copilot on @blogtheristo organization
 
-#### **Cursor.ai Pro** (Desktop IDE)
-**Tasks:**
-- [ ] Build Next.js frontend for dws10.com (sales site)
-- [ ] Create React components for agent UI
-- [ ] Implement PWA for onelifetime.world (community)
-- [ ] Multi-file refactoring and styling
-  
-**Why:** Full IDE integration, best for frontend development
+**Cost:** GitHub Copilot Pro subscription (already have)
 
-**Files to edit:**
-- `frontend/dws10-sales/` (new)
-- `frontend/onelifetime-community/` (new)
+---
 
-#### **Kimi K2** (Long Context)
-**Tasks:**
-- [ ] Review and improve documentation (can handle 200K+ tokens)
-- [ ] Analyze competitor products (Rovo, BuilderTrend, Procore)
-- [ ] Create comprehensive investor pitch deck (merge all docs)
-- [ ] Generate localized content (Finnish, Swedish, Norwegian, Danish)
+### 3. Claude Code — Call Sign: "The Lead" 👔
 
-**Why:** Can handle entire codebase in single context
+**Primary Role:** Code Quality, Security & Refactoring  
+**Platform:** Anthropic (CLI)  
+**API:** CLI only (no direct API)
 
-**Prompt for Kimi:**
-```
-Analyze the entire DWS6 codebase and create a comprehensive investor pitch deck. 
-Context: All files in /home/user/dws6/
-Output: 20-slide deck covering architecture, unit economics, competitive analysis, roadmap
-```
+**When to Use:**
+- **The Reviewer** - PR reviews, code quality checks
+- **Security audits** - OWASP checks, vulnerability scanning
+- **Clean design patterns** - Ensuring best practices before merge
+- **Documentation** - Writing comprehensive docs
 
-#### **DeepSeek** (Cost-Effective)
-**Tasks:**
-- [ ] Run high-volume testing (100+ test cases)
-- [ ] Generate synthetic customer data (scale to 50 companies)
-- [ ] Create variations of agent prompts for A/B testing
-- [ ] Bulk code refactoring tasks
+**GitHub Integration:** **Ghost Writer** via terminal (uses your credentials)  
+**How to join:** Run `claude` in terminal inside `/home/user/dws6/`
 
-**Why:** Very cheap API calls, good for iteration
+**Status:** Currently active (built the entire pilot system)  
+**Token Budget:** ~78K remaining (reserve for critical tasks)
 
-**Example API call:**
+---
+
+### 4. DeepSeek V3 — Call Sign: "The Engine" ⚙️
+
+**Primary Role:** Bulk Coding & Boilerplate  
+**Platform:** DeepSeek AI  
+**API:** `openai` library with custom `base_url`
+
+**When to Use:**
+- **The Workhorse** - 60% of heavy lifting
+- **Standard functions** - CRUD operations, API endpoints
+- **Boilerplate generation** - Database schemas, test scaffolding
+- **Bulk refactoring** - Renaming variables across 100+ files
+- **Cost-effective iteration** - High-volume tasks
+
+**GitHub Integration:** **Review Bot** via GitHub Actions  
+**How to join:** `.github/workflows/ai-review.yml` calls DeepSeek API
+
+**Cost:** Ultra-cheap ($0.14/1M input tokens, $0.28/1M output tokens)
+
+**API Example:**
 ```python
 import openai
 openai.api_base = "https://api.deepseek.com/v1"
 openai.api_key = "your_deepseek_key"
-
-response = openai.ChatCompletion.create(
-    model="deepseek-chat",
-    messages=[{"role": "user", "content": "Generate 50 Nordic construction company mock profiles..."}]
-)
 ```
-
-#### **GPT-5 Smart** (GitHub Copilot)
-**Tasks:**
-- [ ] Real-time code completion while coding in VS Code
-- [ ] Inline documentation generation
-- [ ] Test case generation
-- [ ] Code review and suggestions
-
-**Why:** Integrated into coding workflow
-
-**Usage:** Active while coding in VS Code/Cursor
-
-#### **Grok** (Research & Creative)
-**Tasks:**
-- [ ] Research latest EU embodied carbon regulations (2024-2025)
-- [ ] Find contact info for NCC innovation team (LinkedIn, web search)
-- [ ] Generate creative marketing copy for dws10.com
-- [ ] Monitor competitor announcements and news
-
-**Why:** Real-time web access, creative content
-
-**Access:** Via X Premium API (if available)
 
 ---
 
-## 📋 Task Assignment Matrix
+### 5. Kimi K2 — Call Sign: "The Researcher" 🔍
 
-| Task Category | Primary AI | Backup AI | Reason |
-|---------------|-----------|-----------|--------|
-| **Architecture & Planning** | Claude Code | Kimi K2 | Claude excels at system design |
-| **Backend Development** | Claude Code | DeepSeek | FastAPI, Python logic |
-| **Frontend Development** | Cursor.ai | GPT-5 | Full IDE for React/Next.js |
-| **Testing & QA** | DeepSeek | GPT-5 | High volume, low cost |
-| **Documentation** | Kimi K2 | Claude Code | Long context for full docs |
-| **Research & Market Analysis** | Grok | Kimi K2 | Real-time web access |
-| **Deployment & DevOps** | Claude Code | DeepSeek | GCP/AWS expertise |
-| **Localization** | Kimi K2 | DeepSeek | Multilingual (Nordic languages) |
-| **Creative Content** | Grok | GPT-5 | Marketing copy, pitch |
-| **Final Decisions** | Boardy | - | Human oversight |
+**Primary Role:** Agentic Research & Tool Use  
+**Platform:** Moonshot AI  
+**API:** `openai` library with custom `base_url`
 
----
+**When to Use:**
+- **Web browsing** - Compare documentation for different libraries
+- **Multi-step planning** - Plan complex execution paths
+- **Long context analysis** - Review entire codebases (200K+ tokens)
+- **Translation** - Nordic languages (Finnish, Swedish, Norwegian, Danish)
 
-## 🔄 Workflow for Distributed Development
+**GitHub Integration:** **Review Bot** via GitHub Actions  
+**How to join:** Add to `ai-review.yml` for documentation checks
 
-### Scenario 1: Adding a New Agent
+**Cost:** Free tier available, then pay-as-you-go
 
-**Step 1:** Boardy assigns task
-```
-Task: Add "Sustainability Agent" for carbon tracking
-Assigned to: Claude Code (architecture) + Cursor.ai (implementation)
-```
-
-**Step 2:** Claude Code creates architecture
+**API Example:**
 ```python
-# Claude creates:
-# - Agent specification
-# - API endpoint design
-# - System prompt
-# - Test cases
-
-Output: /docs/sustainability-agent-spec.md
-```
-
-**Step 3:** Cursor.ai implements
-```
-Boardy: Open Cursor.ai, load spec
-Cursor: Generate code based on spec
-- main.py: Add endpoint
-- test_data/: Add test cases
-- README.md: Update docs
-```
-
-**Step 4:** DeepSeek tests
-```python
-# Run 100 test cases with variations
-for i in range(100):
-    test_sustainability_agent(
-        carbon_emissions=random.randint(100, 5000),
-        material_type=random.choice(['concrete', 'steel', 'wood'])
-    )
-```
-
-**Step 5:** Kimi K2 documents
-```
-Input: All changes from steps 2-4
-Output: Updated comprehensive documentation
-```
-
-**Step 6:** Boardy approves and commits
-```bash
-git commit -m "Add Sustainability Agent for carbon tracking"
-git push
-```
-
----
-
-### Scenario 2: Building Frontend (dws10.com)
-
-**Step 1:** Claude Code creates architecture
-```
-Output: /frontend/dws10-sales/ARCHITECTURE.md
-- Next.js 14 App Router
-- Tailwind CSS
-- Components structure
-- API integration points
-```
-
-**Step 2:** Cursor.ai builds frontend
-```
-Boardy: Open Cursor.ai
-Load: frontend/dws10-sales/
-Create:
-- app/page.tsx (landing page)
-- components/Hero.tsx
-- components/Pricing.tsx
-- components/CaseStudy.tsx (NCC story)
-```
-
-**Step 3:** GPT-5 Smart assists (inline)
-```
-While coding in Cursor:
-- Autocomplete component code
-- Suggest Tailwind classes
-- Generate TypeScript types
-```
-
-**Step 4:** Grok creates content
-```
-Task: Write marketing copy for dws10.com
-Output:
-- Hero headline: "AI Agents for 2028 Carbon Compliance"
-- Value prop: "Automate embodied carbon tracking for Nordic construction"
-- CTA: "Start 30-day free pilot"
-```
-
-**Step 5:** Kimi K2 translates
-```
-Input: English content
-Output: 4 languages (Finnish, Swedish, Norwegian, Danish)
-```
-
----
-
-## 💡 Credit Conservation Strategy
-
-### Claude Code (Anthropic)
-**Current usage:** ~120K tokens (building pilot system)
-**Remaining budget:** ~80K tokens
-**Conservation strategy:**
-- Use for architecture and critical logic only
-- Handoff implementation to Cursor.ai/DeepSeek
-- Reserve for strategic decisions
-
-### Kimi K2 (Free tier: 200K context)
-**Strategy:** Use for long-context tasks
-- Full codebase analysis
-- Documentation generation
-- Translation work
-
-### DeepSeek (Very cheap: $0.14/1M input tokens)
-**Strategy:** Use for high-volume work
-- Testing iterations
-- Data generation
-- Batch processing
-
-### Cursor.ai Pro (Subscription)
-**Strategy:** Unlimited use for coding
-- Primary development tool
-- Frontend work
-- Refactoring
-
-### GPT-5 Smart (GitHub Copilot - Subscription)
-**Strategy:** Always-on assistant
-- Real-time code completion
-- Inline suggestions
-
-### Grok (Limited API)
-**Strategy:** Use sparingly for:
-- Real-time research
-- Creative content
-- Market intelligence
-
----
-
-## 🔌 API Integration (Where Possible)
-
-### Can be automated:
-```python
-# DeepSeek API
 import openai
-openai.api_base = "https://api.deepseek.com/v1"
-# Use for: Testing, data generation, iterations
-
-# Kimi K2 API (if available)
-# Use for: Long document analysis, translation
-
-# Groq API (already integrated)
-# Use for: Production AI inference in DWS6
+openai.api_base = "https://api.moonshot.cn/v1"
+openai.api_key = "your_kimi_key"
 ```
-
-### Requires manual coordination:
-- Claude Code: CLI-based, no API (Boardy copies output)
-- Cursor.ai: Desktop IDE (Boardy uses locally)
-- GPT-5 Smart: Via GitHub Copilot in IDE
-- Grok: Limited API access
 
 ---
 
-## 📊 Current Status & Next Tasks
+### 6. Grok — Call Sign: "The Scout" 🔭
 
-### ✅ Completed (Claude Code)
-- DWS6 pilot system architecture
-- 2 AI agents (Customer Sat + Viability)
-- 5 Nordic companies mock data
-- Deployment automation
-- Documentation
+**Primary Role:** Edge Cases & Real-Time Data  
+**Platform:** xAI  
+**API:** `openai` library with custom `base_url`
+
+**When to Use:**
+- **The Chaos Monkey** - Generate unhinged edge cases for stress testing
+- **Real-time API checks** - Latest changes via X/web access
+- **Security stress tests** - Adversarial inputs, injection attempts
+- **Market intelligence** - Monitor competitor announcements
+
+**GitHub Integration:** **Review Bot** via GitHub Actions  
+**How to join:** Add to `ai-review.yml` for security testing
+
+**Cost:** X Premium API access
+
+**API Example:**
+```python
+import openai
+openai.api_base = "https://api.x.ai/v1"
+openai.api_key = "your_grok_key"
+```
+
+---
+
+### 7. Boardy — Call Sign: "The Connector" 🌐
+
+**Primary Role:** Strategic Advisor - Growth, Ops & Networking
+**Platform:** Human
+**API:** N/A (meat-based intelligence)
+
+**When to Use:**
+- **The Super Connector** - User feedback loops, customer relationships
+- **Go-to-market** - Sales strategy, investor pitches
+- **Strategic guidance** - Advising on priorities and direction
+- **Networking** - Finding warm intros to NCC, securing funding
+
+**Status:** Active - Strategic advisor to Team Lead
+
+---
+
+## 🎯 GitHub Integration Methods
+
+### Method 1: Ghost Writer (Claude Code)
+```bash
+# Run in terminal inside /home/user/dws6/
+cd /home/user/dws6
+claude
+
+# Claude can now:
+# - Read all files
+# - Edit code
+# - Run tests
+# - Execute git commands (commits appear under your name)
+```
+
+### Method 2: Repository Agent (GPT-5 via Copilot)
+```bash
+# Install GitHub Copilot App
+# Visit: https://github.com/apps/github-copilot
+# Click "Install" on @blogtheristo organization
+
+# GPT-5 can now:
+# - Review PRs automatically
+# - Suggest code in real-time
+# - Explain changes
+```
+
+### Method 3: Cloud Agent (Gemini via Cloud Build)
+```bash
+# Connect repo to Google Cloud Build
+gcloud builds submit --config cloudbuild.yaml
+
+# Create cloudbuild.yaml with Gemini API call
+# Gemini can now:
+# - Review every push
+# - Check for cloud misconfigurations
+# - Audit security
+```
+
+### Method 4: Review Bots (DeepSeek, Kimi, Grok via GitHub Actions)
+```yaml
+# .github/workflows/ai-review.yml
+# Triggered on every Pull Request
+# Calls DeepSeek/Kimi/Grok APIs
+# Posts feedback as PR comments
+```
+
+---
+
+## 🔄 Task Routing Strategy
+
+### Decision Tree: Which AI for Which Task?
+
+```
+┌─────────────────────────────────────────┐
+│         New Task Arrives                │
+└─────────────────────────────────────────┘
+                   │
+                   ▼
+        ┌──────────────────────┐
+        │ Is it Google Cloud   │
+        │ infrastructure?      │
+        └──────────────────────┘
+               │         │
+            YES│         │NO
+               │         │
+               ▼         ▼
+         [Gemini]  ┌──────────────────────┐
+                   │ Does it require      │
+                   │ complex reasoning?   │
+                   └──────────────────────┘
+                        │         │
+                     YES│         │NO
+                        │         │
+                        ▼         ▼
+                  [GPT-5]   ┌──────────────────────┐
+                            │ Is it security or    │
+                            │ code review?         │
+                            └──────────────────────┘
+                                 │         │
+                              YES│         │NO
+                                 │         │
+                                 ▼         ▼
+                          [Claude]   ┌──────────────────────┐
+                                     │ Is it bulk coding    │
+                                     │ or boilerplate?      │
+                                     └──────────────────────┘
+                                          │         │
+                                       YES│         │NO
+                                          │         │
+                                          ▼         ▼
+                                    [DeepSeek] [Kimi/Grok]
+```
+
+### Cost-Optimized Routing
+
+| Task Type | First Try | Escalate If | Final Escalation |
+|-----------|-----------|-------------|------------------|
+| **Simple CRUD** | DeepSeek | Syntax errors | Claude |
+| **Cloud Config** | Gemini | Architecture issues | GPT-5 |
+| **Security Audit** | Claude | Need real-time data | Grok |
+| **Documentation** | Kimi K2 | Need code context | Claude |
+| **Complex Algorithm** | GPT-5 | - | - |
+
+---
+
+## 🛠️ War Room Command Center
+
+**Location:** `tools/war_room.py`
+
+This Python script routes tasks to the appropriate AI based on complexity and cost.
+
+**Usage:**
+```bash
+python tools/war_room.py --task "Add Sustainability Agent" --context "Need to track embodied carbon"
+
+# Output:
+# 🎯 Routing to: DeepSeek (The Engine)
+# 💰 Estimated cost: $0.002
+# ⏱️ Expected time: 2 minutes
+# 📝 Task assigned to DeepSeek...
+```
+
+**Features:**
+- Cost estimation before running
+- Automatic escalation if primary AI fails
+- Logging all interactions for audit
+- Token usage tracking per AI
+
+---
+
+## 📋 Current Task Assignment
+
+### ✅ Completed (Claude Code "The Lead")
+- [x] DWS6 pilot system architecture
+- [x] 2 AI agents (Customer Sat + Viability)
+- [x] 5 Nordic companies mock data
+- [x] Deployment automation
+- [x] Documentation (QUICKSTART, PILOT_RECOMMENDATIONS)
+- [x] GitHub Actions CI/CD
+- [x] Situation Room setup
 
 ### 🔄 In Progress (Assign to team)
-1. **Cursor.ai:** Build dws10.com frontend
-2. **Kimi K2:** Create investor pitch deck
-3. **DeepSeek:** Generate 50 company test dataset
-4. **Grok:** Research NCC contact info
-5. **GPT-5:** Assist with frontend development
 
-### ⏳ Upcoming (Month 2-3)
-1. Supabase integration (Claude Code + Cursor.ai)
-2. Slack notifications (DeepSeek)
-3. Google Sheets automation (Kimi K2)
-4. Investor demo prep (Grok + Claude Code)
-5. Nordic language localization (Kimi K2)
+**1. Frontend Development** → Cursor.ai + GPT-5 "The Architect"
+```
+Task: Build dws10.com sales website
+- Next.js 14 with App Router
+- Tailwind CSS
+- Hero section with NCC case study
+- Pricing page
+Status: Pending assignment
+ETA: 2-3 days
+```
 
----
+**2. Investor Pitch Deck** → Kimi K2 "The Researcher"
+```
+Task: Create comprehensive 20-slide deck
+- Ingest entire codebase (2M tokens)
+- Extract key metrics
+- Generate slides with data
+Status: Pending assignment
+ETA: 1 day
+```
 
-## 🎯 Decision Framework
+**3. Test Dataset Expansion** → DeepSeek "The Engine"
+```
+Task: Generate 50 Nordic construction companies
+- Realistic profiles
+- Varied health scores
+- Multiple industries
+Status: Pending assignment
+ETA: 2 hours
+Cost: $0.10
+```
 
-**Who decides what:**
+**4. NCC Contact Research** → Grok "The Scout"
+```
+Task: Find decision-makers at NCC
+- LinkedIn search for CSO, CTO
+- Recent sustainability initiatives
+- Warm intro paths
+Status: Pending assignment
+ETA: 30 minutes
+```
 
-| Decision Type | Decision Maker | Example |
-|---------------|----------------|---------|
-| **Strategic** | Boardy | Which company to target first (NCC) |
-| **Architecture** | Claude Code | How to structure agents, APIs |
-| **Implementation** | Cursor.ai / GPT-5 | How to code React components |
-| **Testing** | DeepSeek | How many test cases to run |
-| **Content** | Grok / Kimi K2 | Marketing copy, translations |
-| **Final Approval** | Boardy | Merge to main, deploy to production |
-
----
-
-## 📞 Team Communication
-
-**Primary:** This document (SITUATION_ROOM.md)
-**Updates:** Boardy commits changes to assign new tasks
-**Status:** Each AI updates their section when done
-
-### Task Status Template:
-```markdown
-### Task: Build dws10.com frontend
-**Assigned to:** Cursor.ai
-**Status:** In Progress (30% complete)
-**Blockers:** Need final NCC case study content from Grok
-**ETA:** 2 days
-**Files:** frontend/dws10-sales/
+**5. CI/CD Enhancement** → Gemini "The Overwatch"
+```
+Task: Add automated security scanning
+- Cloud Build integration
+- Dependency vulnerability checks
+- Container scanning
+Status: Pending assignment
+ETA: 1 day
 ```
 
 ---
 
-## 🚀 Ready to Scale!
+## 🚀 Immediate Next Steps
 
-This multi-AI team approach allows us to:
-- **Conserve credits** on expensive APIs (Claude, GPT-5)
-- **Maximize speed** with parallel development
-- **Leverage strengths** of each AI
-- **Scale efficiently** without burnout
+### Step 1: Activate GitHub Integrations (Boardy)
 
-**Boardy:** Assign tasks using this framework, track in git commits
+**Install GitHub Copilot:**
+```bash
+# Visit: https://github.com/apps/github-copilot
+# Install on @blogtheristo organization
+# Enable for dws6 repository
+```
 
-**Next update:** When first parallel task is complete (dws10.com frontend)
+**Create AI Review Workflow:**
+```bash
+# I'll create .github/workflows/ai-review.yml
+# Adds DeepSeek, Kimi, Grok as PR reviewers
+```
+
+**Connect Cloud Build:**
+```bash
+# I'll create cloudbuild.yaml
+# Triggers Gemini on every push
+```
+
+### Step 2: Deploy War Room Script (Now)
+
+```bash
+# I'll create tools/war_room.py
+# Routing logic for task assignment
+```
+
+### Step 3: Test the System (30 minutes)
+
+```bash
+# Create a test PR
+# Watch AI agents review it automatically
+# Verify all integrations working
+```
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** December 3, 2025  
-**Team Lead:** Boardy  
-**Status:** ACTIVE - Coordinating multi-AI development
+## 📊 Credit Conservation Tracker
+
+| AI Agent | Budget | Used | Remaining | Status |
+|----------|--------|------|-----------|--------|
+| Claude Code | 200K tokens | ~122K | ~78K | 🟡 Reserve for critical tasks |
+| Gemini | Free tier | 0 | Generous | 🟢 Use freely |
+| GPT-5 | Subscription | N/A | Unlimited | 🟢 Use freely |
+| DeepSeek | $10 budget | $0 | $10 | 🟢 Ultra-cheap, use liberally |
+| Kimi K2 | Free tier | 0 | Limited | 🟡 Use for long docs only |
+| Grok | X Premium | 0 | Limited | 🟡 Use for research only |
+
+---
+
+## 🎯 Success Criteria
+
+**War Room is operational when:**
+- ✅ All 7 agents have defined roles and call signs
+- ✅ GitHub integrations active (Copilot, Cloud Build, Actions)
+- ✅ War Room script can route tasks automatically
+- ✅ Cost tracking in place
+- ✅ First collaborative task completed (e.g., PR review)
+
+**Next milestone:** All agents successfully review one Pull Request together
+
+---
+
+**Document Version:** 2.1 (Team Structure Updated)
+**Last Updated:** December 3, 2025 07:45
+**Team Lead:** Risto Anton Päärni
+**Strategic Advisor:** Boardy
+**Status:** 🟢 ACTIVE - All agents standing by for deployment
