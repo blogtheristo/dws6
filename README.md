@@ -74,37 +74,6 @@ Construction firms and manufacturing SMEs face the same problem: **climate compl
 
 **DWS6 agents do.**
 
-### Deployment Options
-
-**Two deployment models available:**
-
-#### Option A: DWS IQ Cloud (Default - Recommended) 🎯
-
-**Custom AI agent system:**
-- Built on Claude + Groq + LlamaStack
-- Full control and flexibility
-- Edge AI ready (NVIDIA Jetson)
-- **MVP Cost:** €0/month (100% free tier)
-- **Alpha Cost:** €50-150/month (50 customers)
-- **V1 Production:** €350/month (100+ customers)
-
-**This is what we build and support.**
-
-#### Option B: DWS6 Private Cloud with Rovo 🏢
-
-**For Atlassian-native enterprise customers:**
-- Managed service using Atlassian Rovo agents
-- Requires customer's Atlassian Premium/Enterprise license
-- Deployed on customer's Atlassian Cloud tenant
-- We configure and manage Rovo agents
-- **Cost:** €200-300/month managed service fee + customer pays Atlassian (~€1,400/month)
-- **Available:** Alpha phase (Month 4+)
-
-**When to choose Option B:**
-- Already heavily invested in Atlassian (Jira, Confluence)
-- Enterprise compliance mandates Atlassian-only
-- IT team prefers no-code/low-code tools
-
 ### Why Construction Is Viable
 
 European construction giants like Vinci (€70B), Bouygues (€37B), and ACS Group are accelerating investments in renewable energy, low-carbon materials, and green digital solutions specifically to track embodied carbon across supply chains in real-time.
@@ -125,18 +94,9 @@ Manufacturing SMEs in Europe face a "twin transition"—simultaneous digital and
 - EU data residency (Chromebook PWA + Google Cloud Run infrastructure)
 - ROI calculator: €50-100k annual savings through materialized compliance efficiency
 
-### Pilot Program (MVP Phase)
+### Pilot Program
 
-**FREE 30-day pilot with 5 customers:**
-- 2 AI agents (Customer Satisfaction + Viability)
-- €0 cost (100% free tier using Groq $10K credits)
-- Construction vertical only
-- Silent pilot mode (observation, no autonomous actions)
-- Google Sheets for manual metrics tracking
-
-**Goal:** Prove concept, raise €150K seed funding
-
-**Timeline:** December 2025 - February 2026
+We're validating DWS6 with 2-3 construction or manufacturing companies in Europe through Q2 2026. We handle implementation; you commit 6-8 weeks for workflow mapping and KPI definition.
 
 **Why now?** 2028 embodied carbon mandate accelerates adoption curves. First movers establish procedural advantage before regulatory compliance becomes crisis management.
 
@@ -202,150 +162,21 @@ Manufacturing SMEs in Europe face a "twin transition"—simultaneous digital and
 
 ## Financial Projection
 
-### MVP Phase (Month 1-3) - FREE
-- **Operational Cost**: €0/month (100% free tier)
-- **Customers**: 5 pilot
-- **Revenue**: €0 (pilot phase)
-- **Goal**: Raise €150,000 SAFE @ €3.8M cap, 20% discount
-
-### Alpha Phase (Month 4-6)
-- **Operational Cost**: €50-150/month
-- **Customers**: 20-50
-- **Revenue**: €40,000-100,000
-- **Deployment Options**:
-  - Option A (DWS IQ Cloud): €101/month avg
-  - Option B (Rovo): €200-300/month managed service fee
-
-### V1 Production (Month 7-12)
-- **Operational Cost**: €350/month
-- **Customers**: 100+
-- **12-Month Revenue**: €200,000+ (ARR €2.4M)
-- **Edge Savings**: €333,000/year (cloud cost avoidance)
-- **Hardware ROI**: 515% annually (NVIDIA Jetson)
-- **Result**: Profitable in Month 12
-
-### Cost Evolution
-
-| Phase | Duration | Cost/Month | Customers | Agents |
-|-------|----------|------------|-----------|--------|
-| **MVP** | Month 1-3 | €0 | 5 | 2 |
-| **Alpha** | Month 4-6 | €50-150 | 20-50 | 8 |
-| **V1** | Month 7-12 | €350 | 100+ | 33 |
-
-**vs. Competitors:**
-- Rovo (Atlassian): €1,400/month for 100 users
-- **Our Savings**: €1,050/month (75% cheaper)
+- **12-Month Cash Need**: €191,630
+- **12-Month Revenue**: €140,000 (pilots + customers)
+- **12-Month Edge Savings**: €333,000 (cloud cost avoidance)
+- **Result**: +€281,370 PROFIT in Month 12
+- **Investment Ask**: €150,000 SAFE @ €3.8M cap, 20% discount
+- **Hardware ROI**: 515% annually (NVIDIA Jetson investment)
 
 ---
 
 ## Timeline
 
-### MVP Phase (Month 1-3): December 2025 - February 2026
-- **Week 1**: Deploy infrastructure (FREE tiers)
-- **Week 2-3**: Onboard 5 pilot customers
-- **Week 4**: Collect results, prepare investor pitch
-- **Month 2-3**: Investor outreach, raise €150K seed
-
-### Alpha Phase (Month 4-6): March 2026 - May 2026
-- **Month 4**: Deploy Deal Flow + Desirability agents
-- **Month 5**: Expand to Manufacturing & Energy verticals
-- **Month 6**: Activate Phase 2 (Advisor Mode), scale to 50 customers
-
-### V1 Production (Month 7-12): June 2026 - November 2026
-- **Month 7**: Deploy Growth Tracker Agent
-- **Month 8-9**: Expand to all 8 verticals
-- **Month 10-11**: Deploy Edge AI (NVIDIA Jetson)
-- **Month 12**: Activate Phase 3 (Autonomous), profitability
-
----
-
-## Agent System Roadmaps
-
-**Branch:** `claude/agents-setup-01Tw8Mj3rg96N2Hiy5VdhRCF`
-
-### Phased Development Strategy
-
-#### MVP Phase (Month 1-3) - **Current**
-**Location:** [docs/roadmaps/ROADMAP_MVP.md](docs/roadmaps/ROADMAP_MVP.md)
-
-- **Agents:** 2 (Customer Satisfaction + Viability)
-- **Customers:** 5 pilot
-- **Verticals:** 1 (Construction)
-- **Cost:** €0/month (100% free tier)
-- **Features:** Phase 1 (Silent Pilot) only
-- **Goal:** Prove concept, raise €150K seed
-
-**Key Deliverables:**
-- Working agent system on free tiers
-- 5 customers with 0 churn
-- Average payback ≤2 months proven
-- Investor pitch deck with live demo
-
-#### Alpha Phase (Month 4-6)
-**Location:** [docs/roadmaps/ROADMAP_ALPHA.md](docs/roadmaps/ROADMAP_ALPHA.md)
-
-- **Agents:** 8 (add Deal Flow + Desirability)
-- **Customers:** 20-50
-- **Verticals:** 3 (Construction, Manufacturing, Energy)
-- **Cost:** €50-150/month
-- **Features:** Phase 2 (Advisor Mode) with approval workflows
-- **Deployment Options:**
-  - Option A: DWS IQ Cloud (default)
-  - Option B: DWS6 Private Cloud with Rovo (for Atlassian-native customers)
-
-**Key Additions:**
-- Multi-vertical support
-- Approval workflows (Slack + email)
-- CRM write access (with approval)
-- Automated weekly reports
-- Rovo agent alternative for enterprise
-
-#### V1 Production (Month 7-12)
-**Location:** [docs/roadmaps/ROADMAP_V1.md](docs/roadmaps/ROADMAP_V1.md)
-
-- **Agents:** 33 (32 + Growth Tracker)
-- **Customers:** 100+
-- **Verticals:** 8 (all industries)
-- **Cost:** €350/month
-- **Features:** Phase 3 (Autonomous Mode)
-- **Edge AI:** NVIDIA Jetson on 10+ sites
-
-**Key Additions:**
-- **Growth Tracker Agent** (automated investor reporting)
-- Edge AI deployment (<100ms inference)
-- All 8 verticals operational
-- Autonomous mode activated
-- Real-time Grafana dashboards
-- Series A fundraising
-
-### Key Decision: Growth Tracker in V1
-
-**Growth Tracker Agent NOT in MVP/Alpha:**
-- Manual Google Sheets sufficient for 5-50 customers
-- Investors care about proof, not polish
-- Deploy when hitting 50+ customers (V1)
-
-**See:** [GROWTH_TRACKER_ANALYSIS.md](AgentFoundry/GROWTH_TRACKER_ANALYSIS.md)
-
----
-
-## Implementation Updates
-
-### GCP Setup Complete (December 3, 2025)
-
-**Infrastructure:**
-- Project ID: `dws-pilot-442509`
-- Region: `europe-north1` (Finland data center)
-- Container Registry: Migrated from GCR to Artifact Registry
-- Security: VPC configured for isolated networking
-
-**Pilot Environment:**
-- 5 Nordic construction companies selected
-- 2 AI agents deployed (Customer Satisfaction + Viability)
-- Test data prepared for all 5 companies
-- Hardware: €54,200 NVIDIA Jetson Orin setup
-
-**See:** [SETUP_STATUS.md](SETUP_STATUS.md) for complete details
+- **Days 1-30**: Foundation (Google Cloud + Groq setup)
+- **Days 31-60**: Pilot validation with European construction/manufacturing partner
+- **Days 61-90**: Production launch
+- **Month 12**: Profitability
 
 ---
 
@@ -353,7 +184,7 @@ Manufacturing SMEs in Europe face a "twin transition"—simultaneous digital and
 
 This repository contains comprehensive implementation guides for building an Agentic AI SaaS platform using modern cloud infrastructure.
 
-### Implementation Guides
+### Files
 
 **agentic-ai-saas-implementation-guide-en.md**
 - Complete English version
@@ -368,28 +199,7 @@ This repository contains comprehensive implementation guides for building an Age
 - Same content as English version
 - Localized for Finnish market
 
-### Agent System Documentation (AgentFoundry/)
-
-**Roadmaps:**
-- **docs/roadmaps/ROADMAP_MVP.md** - Month 1-3: FREE pilot with 5 customers
-- **docs/roadmaps/ROADMAP_ALPHA.md** - Month 4-6: Scale to 50 customers + Rovo option
-- **docs/roadmaps/ROADMAP_V1.md** - Month 7-12: Production with Growth Tracker
-- **docs/roadmaps/ROADMAP.md** - Overall summary and decision framework
-
-**Strategy Documents:**
-- **ROVO_ANALYSIS_AND_ALTERNATIVES.md** - Why custom agents > Rovo
-- **MVP_FREE_TIER_STRATEGY.md** - €0/month deployment guide
-- **MVP_QUICK_START.md** - Deploy in 1 day tutorial
-- **GROWTH_TRACKER_ANALYSIS.md** - When to deploy Growth Tracker
-- **DEPLOYMENT_GUIDE.md** - Full production deployment
-
-**Agent Configurations:**
-- configs/templates/ - Agent templates (YAML)
-- configs/mvp/ - MVP agent instances
-- services/groq-router-mvp/ - Groq API service (FastAPI)
-- workflows/ - Multi-agent orchestration examples
-
-### Implementation Guide Structure
+### Document Structure (English Version)
 
 1. Executive Summary
 2. Hybrid Technical Architecture (AWS Edge + Google Core + NVIDIA)
@@ -432,28 +242,8 @@ Founder & CEO, Lifetime Consulting
 
 ---
 
-## Recent Updates (December 2025)
-
-**Branch:** `claude/agents-setup-01Tw8Mj3rg96N2Hiy5VdhRCF`
-
-### Session Additions:
-1. ✅ **FREE MVP Strategy** (€0/month for 5-customer pilot)
-2. ✅ **Phased Roadmaps** (MVP → Alpha → V1)
-3. ✅ **Deployment Options** (DWS IQ Cloud + Rovo alternative)
-4. ✅ **Growth Tracker Analysis** (deploy in V1, not MVP)
-5. ✅ **Agent Configurations** (YAML templates + Groq router)
-6. ✅ **Complete Documentation** (10 new files in AgentFoundry/)
-
-### Key Decisions:
-- **MVP uses 100% free tiers** (Groq $10K credits + Cloud Run free tier)
-- **Growth Tracker deferred to V1** (manual Google Sheets for MVP/Alpha)
-- **Rovo option added for Alpha** (enterprise Atlassian-native customers)
-- **Branch renamed** (removed "rovo" from name, custom agents are primary)
-
----
-
-Document Version: 3.1
-Last Updated: December 3, 2025
+Document Version: 2.0
+Last Updated: November 22, 2026
 Prepared by: Risto Anton Päärni / Lifetime Consulting
-AI Agents Used: Claude Code (Sonnet 4.5), Kimi K2, GitHub Copilot, Cursor.ai
+AI Agents Used: Claude Code, Kimi K2, GitHub Copilot, Cursor.ai
 License: Proprietary - Lifetime Oy

@@ -4,3 +4,4 @@ Phase,Action,Goal
 Phase 3: Autonomous Mode,Full integration with financial systems and CRM.,"Proactive Viability Management. The Agent autonomously calculates viability scores (0-100), flags red industries where payback/CAC/NRR fall below thresholds, and feeds scores into Deal Flow + Desirability agents to avoid bad-economics verticals within set parameters (e.g., payback ≤ 2 months, NRR > 100%)."
 
 
+

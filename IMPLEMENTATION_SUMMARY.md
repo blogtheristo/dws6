@@ -177,7 +177,7 @@ lifetime-agent-foundry/
 
 | Item | Quantity | Unit Cost | Total |
 |------|----------|-----------|-------|
-| Jetson Orin Nano Super | 5 (pilot) | $249 (Student) | $1,245 |
+| Jetson Orin Nano Dev Kit | 5 (pilot) | $499 | $2,495 |
 | Industrial Enclosure (IP67) | 5 | $150 | $750 |
 | Solar Panel + Battery | 5 | $200 | $1,000 |
 | 4G/5G Modem | 5 | $300 | $1,500 |
@@ -202,8 +202,8 @@ Infrastructure:
   Subtotal: €737/year
 
 Hardware (Pilot):
-  - 5 Jetson devices: $1,245 = €1,175
-  - 10 Chromebook Plus: €4,990
+  - 5 Jetson devices: $5,745 = €5,420
+  - 10 Chromebook Plus: €7,990
   Subtotal: €13,410
 
 Other Costs:
@@ -321,7 +321,7 @@ LAYER 3: Continuous Assurance
 ### Phase 2: Edge Computing (Days 31-60)
 
 **Month 2: Hardware & AWS IoT**
-- [ ] Order 5 NVIDIA Jetson Orin Nano Super devices ($1,245)
+- [ ] Order 5 NVIDIA Jetson Orin Nano devices ($2,495)
 - [ ] Finalize first pilot customer agreement
 - [ ] Configure AWS IoT Greengrass, create thing groups
 - [ ] Deploy edge agents to Jetson (TensorRT Llama 3.1 8B 4-bit)
@@ -431,14 +431,14 @@ Follow **CLOUDFLARE_DNS_SETUP.md** guide:
 
 **Google Cloud Project Setup:**
 ```bash
-gcloud projects create dws-iq-pilot
-gcloud config set project dws-iq-pilot
+gcloud projects create lifetime-dws-iq
+gcloud config set project lifetime-dws-iq
 gcloud services enable run.googleapis.com pubsub.googleapis.com secretmanager.googleapis.com
 ```
 
 **Supabase Database Setup:**
 1. Go to https://supabase.com/dashboard
-2. Create project: "dws-iq-pilot", region: eu-central-1 (Frankfurt)
+2. Create project: "lifetime-dws-iq", region: eu-central-1 (Frankfurt)
 3. Run SQL schema from PLANNING_PHASE_UPDATED.md (users, conversations, agents_memory, etc.)
 4. Enable Row Level Security (RLS) policies
 5. Copy connection string to Secret Manager

@@ -616,6 +616,6 @@ VCs in Europe are actively investing in climate tech intersecting with AI, with 
 
 ---
 
-## Next Immediate Action (December 2025)
+## Rescheduled Action (August 2026)
 
-Send investor letter and GitHub repo to Jan Michael Hess (jan@ecosummit.net) to secure March 2026 pitch slot.
+Send investor letter and GitHub repo to Jan Michael Hess (jan@ecosummit.net) to secure October 2026 pitch slot.
