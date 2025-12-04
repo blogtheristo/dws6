@@ -25,14 +25,15 @@ def send_weekly_report():
 
     # Get latest reports (support both from repo root and Reports/ directory)
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    en_pattern = os.path.join(script_dir, "en/WEEKLY_REPORT*.md")
-    fi_pattern = os.path.join(script_dir, "fi/WEEKLY_REPORT*.md")
+    en_pattern = os.path.join(script_dir, "en/WEEKLY_REPORT*.pdf")
+    fi_pattern = os.path.join(script_dir, "fi/WEEKLY_REPORT*.pdf")
 
     en_reports = sorted(glob.glob(en_pattern), reverse=True)
     fi_reports = sorted(glob.glob(fi_pattern), reverse=True)
 
     if not en_reports or not fi_reports:
-        print("❌ No reports found")
+        print("❌ No PDF reports found")
+        print("💡 Run 'python generate_pdf.py' first to create PDFs")
         return False
 
     en_report = en_reports[0]
@@ -48,7 +49,7 @@ def send_weekly_report():
     body = f"""
 Hi Risto,
 
-Your weekly DWS6 progress report is attached in both English and Finnish.
+Your weekly DWS6 progress report is attached in both English and Finnish (PDF format).
 
 📊 This Week's Highlights:
 - Production-ready AI agent system complete (25 files, 2,087 lines)
@@ -58,8 +59,15 @@ Your weekly DWS6 progress report is attached in both English and Finnish.
 - Ready for deployment to api.dws6.com
 
 📎 Attachments:
-- WEEKLY_REPORT.md (English)
-- WEEKLY_REPORT_FI.md (Finnish / Suomi)
+- WEEKLY_REPORT.pdf (English)
+- WEEKLY_REPORT_FI.pdf (Finnish / Suomi)
+
+These reports are formatted for presentation to:
+✓ University partners
+✓ Investors
+✓ Media contacts
+
+Copies automatically uploaded to Google Drive.
 
 Next Steps:
 → Deploy to Google Cloud Run
@@ -67,6 +75,7 @@ Next Steps:
 → Test with real Groq API credits
 
 ---
+Lifetime Group - DWS IQ Platform
 Team Lead: Risto Anton Päärni
 Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 Status: 🟢 ON TRACK
@@ -80,7 +89,7 @@ Status: 🟢 ON TRACK
             part = MIMEBase('application', 'octet-stream')
             part.set_payload(f.read())
             encoders.encode_base64(part)
-            part.add_header('Content-Disposition', f'attachment; filename=WEEKLY_REPORT_EN.md')
+            part.add_header('Content-Disposition', f'attachment; filename=DWS6_Weekly_Report_EN.pdf')
             msg.attach(part)
     except Exception as e:
         print(f"❌ Failed to attach English report: {e}")
@@ -92,7 +101,7 @@ Status: 🟢 ON TRACK
             part = MIMEBase('application', 'octet-stream')
             part.set_payload(f.read())
             encoders.encode_base64(part)
-            part.add_header('Content-Disposition', f'attachment; filename=WEEKLY_REPORT_FI.md')
+            part.add_header('Content-Disposition', f'attachment; filename=DWS6_Weekly_Report_FI.pdf')
             msg.attach(part)
     except Exception as e:
         print(f"❌ Failed to attach Finnish report: {e}")
@@ -113,7 +122,7 @@ Status: 🟢 ON TRACK
         server.quit()
 
         print(f"✅ Weekly report sent to {recipient_email}")
-        print(f"📎 Attached: {os.path.basename(en_report)}, {os.path.basename(fi_report)}")
+        print(f"📎 Attached: DWS6_Weekly_Report_EN.pdf, DWS6_Weekly_Report_FI.pdf")
         return True
 
     except Exception as e:
