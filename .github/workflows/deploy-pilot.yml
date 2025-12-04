@@ -64,19 +64,21 @@ jobs:
             --role="roles/secretmanager.secretAccessor" \
             --quiet || true
 
-      - name: Configure Docker
-        run: gcloud auth configure-docker
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker europe-north1-docker.pkg.dev
 
       - name: Build and push Docker image
         working-directory: ./AgentFoundry/services/groq-router-mvp
         run: |
-          docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME }}:latest .
-          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME }}:latest
+          IMAGE_URI="europe-north1-docker.pkg.dev/${{ env.PROJECT_ID }}/dws-containers/${{ env.SERVICE_NAME }}"
+          docker build -t $IMAGE_URI:latest .
+          docker push $IMAGE_URI:latest
 
       - name: Deploy to Cloud Run
         run: |
+          IMAGE_URI="europe-north1-docker.pkg.dev/${{ env.PROJECT_ID }}/dws-containers/${{ env.SERVICE_NAME }}"
           gcloud run deploy ${{ env.SERVICE_NAME }} \
-            --image gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME }}:latest \
+            --image $IMAGE_URI:latest \
             --region ${{ env.REGION }} \
             --platform managed \
             --allow-unauthenticated \
