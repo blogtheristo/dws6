@@ -1,6 +1,6 @@
 # DWS6 Setup Status
 
-## Current Status: 🟢 Ready for Deployment Test
+## Current Status: 🔄 Deployment (Artifact Registry Migration)
 
 ### ✅ Completed
 - [x] GitHub repository configured
@@ -9,19 +9,43 @@
 - [x] Deployment workflow created (`.github/workflows/deploy-pilot.yml`)
 - [x] Application code ready (`AgentFoundry/services/groq-router-mvp/`)
 - [x] Google Cloud Project created (`dws-iq-pilot`)
-- [x] GCP APIs enabled
+- [x] GCP APIs enabled (including Artifact Registry)
 - [x] Service account created (`github-actions-deployer`)
+- [x] **Migrated to Artifact Registry (`dws-containers`)**
 
 ### ⚠️ Pending Verification
-- [ ] Billing enabled (required for Cloud Run) - **Please verify in GCP Console**
+- [ ] Billing enabled (required for Cloud Run) - **Verify in GCP Console**
+- [ ] Deployment Success (Green check in GitHub Actions)
 
 ---
 
-## Next Immediate Action
+## Next Steps (After Deployment)
 
-**Trigger Deployment:**
-1. Commit and push changes to `main` branch
-2. Watch the "Deploy DWS6 Pilot to Cloud Run" workflow in GitHub Actions
+1. **Get Service URL:**
+   Check GitHub Actions logs or run:
+   ```bash
+   gcloud run services list --region europe-north1
+   ```
+
+2. **Test Health Endpoint:**
+   ```bash
+   curl https://<YOUR-SERVICE-URL>/health
+   ```
+
+3. **Run Agent Tests:**
+   ```bash
+   # Update API_URL in scripts/test_agents.sh first
+   ./scripts/test_agents.sh
+   ```
+
+---
+
+## Troubleshooting Deployment
+
+If deployment fails again:
+1. **Check Billing:** Cloud Run requires an active billing account.
+2. **Check APIs:** Ensure `artifactregistry.googleapis.com` is enabled.
+3. **Check Permissions:** Ensure `github-actions-deployer` has `Artifact Registry Writer` or `Storage Admin` roles.
 
 ---
 
@@ -45,7 +69,7 @@
    ```bash
    gcloud services enable \
      run.googleapis.com \
-     containerregistry.googleapis.com \
+     artifactregistry.googleapis.com \
      cloudbuild.googleapis.com \
      secretmanager.googleapis.com
    ```

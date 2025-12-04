@@ -102,7 +102,7 @@ Google Cloud Run (europe-north1)
 │   └── SLACK_WEBHOOK_URL
 │
 └── Container Registry
-    └── gcr.io/dws-iq-pilot/groq-agent-router-mvp
+    └── europe-north1-docker.pkg.dev/dws-iq-pilot/dws-containers/groq-agent-router-mvp
 
 External Services (All Free)
 ├── Groq API ($10K credits = €0)

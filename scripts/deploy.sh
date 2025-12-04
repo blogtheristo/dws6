@@ -13,7 +13,8 @@ NC='\033[0m'
 PROJECT_ID="${GCP_PROJECT_ID:-dws-iq-pilot}"
 SERVICE_NAME="groq-agent-router-mvp"
 REGION="europe-north1"
-IMAGE_NAME="gcr.io/$PROJECT_ID/$SERVICE_NAME"
+REPO_NAME="dws-containers"
+IMAGE_NAME="$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$SERVICE_NAME"
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "🚀 DWS6 Pilot - Manual Deployment Script"
@@ -46,18 +47,18 @@ docker build -t $SERVICE_NAME:latest .
 echo -e "${GREEN}✓ Docker image built${NC}"
 echo ""
 
-# Step 2: Tag for GCR
+# Step 2: Tag for Artifact Registry
 echo -e "${YELLOW}Step 2/4: Tagging image for Google Container Registry...${NC}"
 docker tag $SERVICE_NAME:latest $IMAGE_NAME:latest
 docker tag $SERVICE_NAME:latest $IMAGE_NAME:$(date +%Y%m%d-%H%M%S)
 echo -e "${GREEN}✓ Image tagged${NC}"
 echo ""
 
-# Step 3: Push to GCR
-echo -e "${YELLOW}Step 3/4: Pushing to Google Container Registry...${NC}"
-gcloud auth configure-docker --quiet
+# Step 3: Push to Artifact Registry
+echo -e "${YELLOW}Step 3/4: Pushing to Artifact Registry...${NC}"
+gcloud auth configure-docker $REGION-docker.pkg.dev --quiet
 docker push $IMAGE_NAME:latest
-echo -e "${GREEN}✓ Image pushed to GCR${NC}"
+echo -e "${GREEN}✓ Image pushed to Artifact Registry${NC}"
 echo ""
 
 # Step 4: Deploy to Cloud Run

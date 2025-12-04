@@ -426,7 +426,7 @@ pyyaml==6.0.1
 
 ```bash
 gcloud run deploy groq-agent-router \
-  --image gcr.io/dws-iq-pilot/groq-agent-router:mvp-v1 \
+  --image europe-north1-docker.pkg.dev/dws-iq-pilot/dws-containers/groq-agent-router:mvp-v1 \
   --platform managed \
   --region europe-north1 \
   --port 8083 \

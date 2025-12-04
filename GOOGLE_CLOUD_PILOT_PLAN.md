@@ -46,7 +46,7 @@
 │                                                      │
 │  ┌────────────────────────────────────────────────┐ │
 │  │  Container Registry                            │ │
-│  │  gcr.io/dws-iq-pilot/                      │ │
+│  │  europe-north1-docker.pkg.dev/dws-iq-pilot/dws-containers/                      │ │
 │  │  - groq-agent-router:v1.0.0                   │ │
 │  └────────────────────────────────────────────────┘ │
 │                                                      │
@@ -583,19 +583,19 @@ docker build -t groq-agent-router-mvp:v1.0.0 .
 
 # Tag for GCR
 docker tag groq-agent-router-mvp:v1.0.0 \
-  gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0
+  europe-north1-docker.pkg.dev/dws-iq-pilot/dws-containers/groq-agent-router-mvp:v1.0.0
 
 # Authenticate
 gcloud auth configure-docker
 
 # Push
-docker push gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0
+docker push europe-north1-docker.pkg.dev/dws-iq-pilot/dws-containers/groq-agent-router-mvp:v1.0.0
 ```
 
 **Day 16: Deploy to Cloud Run**
 ```bash
 gcloud run deploy groq-agent-router-mvp \
-  --image gcr.io/dws-iq-pilot/groq-agent-router-mvp:v1.0.0 \
+  --image europe-north1-docker.pkg.dev/dws-iq-pilot/dws-containers/groq-agent-router-mvp:v1.0.0 \
   --region europe-north1 \
   --platform managed \
   --allow-unauthenticated \
