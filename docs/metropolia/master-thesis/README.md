@@ -1,229 +1,172 @@
-# Metropolia Master's Thesis: DWS6 Operating Model
-**Student:** Risto Anton Päärni
-**Company:** Lifetime Oy (Firehorse brand)
-**Program:** [TBD]
-**Timeline:** [TBD - typically 6 months]
+# Metropolia Master's Thesis - DWS6 Operating Model
+**Student:** Risto Anton Päärni | **Company:** Lifetime Oy (Firehorse)
 
 ---
 
-## Thesis Focus
+## Folder Structure
 
-**Title:** Operating Model of Firehorse Product Manufacturing: A Hybrid AI-Edge Architecture for Climate-Intelligent Industrial Platforms
-
-**Research Question:**
-*How can a bootstrapped industrial AI platform achieve product-market fit through a hybrid cloud-edge operating model while maintaining <€400/month operational costs?*
-
-**Approach:** Action Research + Case Study (implementing DWS6 MVP → Alpha phases)
-
----
-
-## Documents in This Folder
-
-### Core Thesis Documents
-
-1. **[THESIS_OUTLINE.md](THESIS_OUTLINE.md)**
-   - Complete thesis structure (8 chapters)
-   - Research questions and objectives
-   - Theoretical framework (Lean Startup, Platform Economics, Edge Computing)
-   - Timeline and milestones
-   - Expected contributions
-
-2. **[RESEARCH_FRAMEWORK.md](RESEARCH_FRAMEWORK.md)**
-   - Detailed methodology (mixed methods)
-   - Data collection protocols (quantitative + qualitative)
-   - Analysis plan (cost validation, thematic coding)
-   - Validity, reliability, ethics
-   - Quality criteria
-
-### Supporting Documents (To Be Created)
-
-3. **data-collection/**
-   - `customer-interview-protocol.md` (semi-structured questions)
-   - `cost-tracking-template.xlsx` (Google Sheets format)
-   - `weekly-log-template.md` (developer reflection format)
-   - `performance-metrics-dashboard.md` (monitoring setup)
-
-4. **logs/**
-   - `week-01-reflection.md` (weekly dev logs during MVP)
-   - `week-02-reflection.md`
-   - ... (12 weeks total for MVP phase)
-
-5. **analysis/**
-   - `cost-analysis.xlsx` (actual vs budget, edge ROI calculations)
-   - `customer-feedback-themes.md` (thematic coding output)
-   - `competitor-comparison.md` (DWS6 vs Rovo vs SAP)
-   - `kanban-velocity-analysis.md` (GitHub Projects data)
-
-6. **appendices/**
-   - `operating-model-canvas.pdf` (visual 1-pager)
-   - `agent-config-samples.yaml` (example agent templates)
-   - `cost-calculator.xlsx` (reusable tool for other startups)
-   - `deployment-playbook.md` (step-by-step guide)
+```
+docs/metropolia/master-thesis/
+├── README.md (this file)
+├── en/ (English artifacts)
+│   ├── THESIS_OUTLINE.md
+│   └── RESEARCH_FRAMEWORK.md
+├── fi/ (Finnish artifacts - PRIMARY)
+│   └── OPINNAYTETYO_SUUNNITELMA_FI.md
+└── data-collection/ (to be created during MVP)
+    ├── customer-interviews/
+    ├── cost-tracking/
+    └── weekly-logs/
+```
 
 ---
 
-## Connection to DWS6 Implementation
+## Language Policy
 
-**This thesis documents the REAL implementation of DWS6:**
+**Primary language:** Finnish (Suomi)
+- Thesis will be written in Finnish for Metropolia
+- Main document: `fi/OPINNAYTETYO_SUUNNITELMA_FI.md`
 
-### MVP Phase (Month 1-3) = Thesis Data Collection
-- 5 pilot customers → Customer interviews (data source)
-- €0 operational cost → Cost model validation (hypothesis)
-- 2 agents deployed → Implementation chapter (evidence)
-- GitHub Projects → Development velocity analysis (data source)
-
-### Alpha Phase (Month 4-6) = Thesis Analysis
-- Scale to 50 customers → Generalizability testing
-- €50-150/month costs → Cost model scaling validation
-- Rovo option added → Competitive positioning analysis
-- Edge AI deployed → ROI validation (€333K/year savings claim)
-
-### Thesis Outputs → Business Artifacts
-- Chapter 4 (Operating Model) → Investor pitch deck
-- Cost analysis → Fundraising financial projections
-- Customer interviews → Product roadmap prioritization
-- Lessons learned → Team training and process improvement
+**Supporting language:** English
+- Technical documentation and implementation guides in English
+- English versions in `en/` folder for international reference
 
 ---
 
-## Key Theoretical Contributions
+## Research Focus
 
-### 1. Free-Tier Bootstrap Model
-**Gap in literature:** Lean Startup focuses on MVPs but not infrastructure funding strategies.
+**Industry:** Construction / Rakennusteollisuus
 
-**DWS6 contribution:** Demonstrates how $135K in startup credits (AWS, Google, Groq) can fund 6+ years of operations, eliminating need for seed funding before product-market fit.
-
-**Validation:** Track actual credit usage vs runway (target: <10% used by end of MVP).
-
-### 2. Hybrid Cloud-Edge Economics
-**Gap in literature:** Edge computing papers focus on latency, not total cost of ownership (TCO) for startups.
-
-**DWS6 contribution:** Proves NVIDIA Jetson hardware (€1,084/site) beats cloud inference (€555/month/site) with 1.95-month payback.
-
-**Validation:** Compare actual edge vs cloud costs over 12 months (V1 phase).
-
-### 3. Phased Trust-Building in High-Risk AI
-**Gap in literature:** AI adoption models don't address regulatory industries (construction, manufacturing).
-
-**DWS6 contribution:** 3-phase deployment (Silent → Advisor → Autonomous) de-risks AI in industries where errors have legal/safety consequences.
-
-**Validation:** Measure customer trust scores (surveys) and churn rates across phases.
+**Why construction?**
+- Most developed model in DWS6
+- Clear regulatory driver (EU embodied carbon mandate 2028)
+- 5 Nordic pilot customers ready for MVP phase
+- €74Bn+ market (Vinci, Bouygues, ACS, Strabag, Hochtief)
 
 ---
 
-## Practical Outputs for Lifetime Oy
+## Four Research Questions (Neljä tutkimuskysymystä)
 
-### Immediate Business Use
-1. **Investor Pitch Deck**
-   - Use Chapter 4 (Operating Model) as technical slides
-   - Use cost analysis for financial projections
-   - Use customer quotes for social proof
+### 1. Tuote ja liiketoimintamalli (Product & Business Model)
+- Customer promise development (Asiakaslupauksen kehittäminen)
+- Product vision (Tuotteen visio)
+- Limited market research (Suppea markkinatutkimus)
+- Problem definition (Minkä ongelman tuote ratkaisee?)
 
-2. **Product Roadmap**
-   - Customer interview themes → Feature prioritization
-   - Competitor analysis → Differentiation strategy
-   - Kanban velocity → Sprint planning
+### 2. Teknologia - Monialustainen kehitys (Multi-platform Technology)
+- Digital scalable service product (Digitaalinen skaalautuva palvelutuote)
+- E-commerce implementation (Verkkokauppatoteutus)
+- Marketing channel solutions (Markkinointikanavien ratkaisut)
+- AI-based software implementation (Tekoälypohjainen ohjelmistototeutus)
 
-3. **Marketing Materials**
-   - Operating Model Canvas → Website explainer graphic
-   - Edge AI ROI → Sales collateral for enterprise customers
-   - Deployment Playbook → Onboarding documentation
+### 3. Teknisten ratkaisujen evaluointi (Technical Solution Evaluation)
+- **Solution 1:** Agents for Lifetime Firehorse DWS IQ as cloud-native app
+- **Solution 2:** Websites, applications, automations
+- **Solution 3:** Cursor AI + Docker MCP (development tools)
 
-### Long-Term Strategic Value
-1. **Open Source Contributions**
-   - Agent configuration library (attract developer community)
-   - Cost calculator tool (thought leadership, inbound leads)
-   - Deployment playbook (establish DWS6 as industry standard)
-
-2. **Replication Template**
-   - Other industries (logistics, agriculture, energy) can use same model
-   - Partner onboarding (show construction playbook, adapt to their vertical)
-   - Franchise model (license operating model to regional partners)
+### 4. Yritysturvallisuus (Enterprise Security)
+- NIS 2 / EU AI Act / GDPR / Cybersecurity Act compliance
 
 ---
 
-## Timeline Alignment
+## Key Technical Decisions
 
-| Month | Thesis Activity | DWS6 Milestone | Deliverable |
-|-------|-----------------|----------------|-------------|
-| **1-2** | Literature review, competitor analysis | MVP prep, infrastructure deployment | Chapter 2 (Theory), Chapter 3 (Current State) |
-| **3** | Design operating model | Agent development (Customer Sat, Viability) | Chapter 4 (Operating Model Design) |
-| **4-5** | Data collection (MVP phase) | 5 pilot customers onboarded | Chapter 5 (Implementation) |
-| **6** | Data analysis | Alpha prep (scale to 20-50 customers) | Chapter 6 (Results & Analysis) |
-| **7** | Writing, revisions | Alpha launch | Chapters 7-8 (Discussion, Conclusions) |
+### MCP (Model Context Protocol) Status
+**Tested but not in production:**
+- MCP solutions were extensively tested for agent-to-agent communication
+- **Only Docker MCP remains in use** with Cursor.AI development environment
+- Not a significant role in final architecture
 
-**Defense:** Month 8 (coincides with Alpha results available for validation)
-
----
-
-## Success Criteria
-
-### Thesis (Academic)
-- ✅ Approved by Metropolia supervisor
-- ✅ Grade: 4-5 (out of 5)
-- ✅ Contribution to theory (3 gaps filled)
-- ✅ Practical applicability (replicable model)
-
-### DWS6 (Business)
-- ✅ MVP deployed at €0/month operational cost
-- ✅ 5 customers with 0 churn
-- ✅ Customer payback ≤2 months proven
-- ✅ Investor pitch successful (€150K SAFE raised)
-
-### Open Source (Community)
-- ✅ Agent templates downloaded 100+ times
-- ✅ Cost calculator used by 10+ startups
-- ✅ Deployment playbook cited in industry blogs
+### Primary Technologies
+- **Cloud:** Google Cloud Run (€0/month free tier MVP)
+- **AI:** Groq Llama 3.1 70B + Claude Sonnet 4.5
+- **Edge:** NVIDIA Jetson Orin Nano (€1,084/site, <100ms latency)
+- **Development:** Cursor.AI + Docker MCP + GitHub Copilot
 
 ---
 
-## How to Use This Folder
+## Timeline
 
-### For Risto (Researcher)
-1. **Weekly:** Add logs to `logs/week-XX-reflection.md`
-2. **Monthly:** Update `analysis/cost-analysis.xlsx` with actual costs
-3. **After customer interviews:** Code themes in `analysis/customer-feedback-themes.md`
-4. **Continuously:** Commit all changes to GitHub (audit trail)
-
-### For Metropolia Supervisor
-1. **Start here:** Read `THESIS_OUTLINE.md` (10-min overview)
-2. **Methodology review:** Read `RESEARCH_FRAMEWORK.md` (30-min deep dive)
-3. **Progress tracking:** Check `logs/` folder weekly
-4. **Quality assurance:** Review `analysis/` before thesis writing
-
-### For Lifetime Oy Team
-1. **Understand the research:** Read `THESIS_OUTLINE.md` (sections 1-4)
-2. **Contribute data:** Add customer feedback to shared Slack channel (I'll code it)
-3. **Business outputs:** Check `appendices/` for reusable tools (cost calculator, playbook)
-4. **Investor materials:** Use thesis findings for pitch deck (coordinate with Risto)
+| Phase | Duration | Focus | Thesis Chapter |
+|-------|----------|-------|----------------|
+| **Lit Review** | Month 1-2 | Theory, competitors, market | Ch 2-3 |
+| **Design** | Month 3 | Operating model, architecture | Ch 4 |
+| **MVP Implementation** | Month 4-5 | 2 agents, 5 customers, €0 cost | Ch 5 |
+| **Analysis** | Month 6 | Results, cost validation, ROI | Ch 6 |
+| **Writing** | Month 6-7 | Discussion, conclusions | Ch 7-8 |
+| **Defense** | Month 8 | Thesis presentation | - |
 
 ---
 
-## Contact & Collaboration
+## Files Overview
 
-**Student/Researcher:** Risto Anton Päärni
-**Email:** risto@lifetime.fi
-**LinkedIn:** [linkedin.com/in/ristopaarni](https://linkedin.com/in/ristopaarni)
-**GitHub:** [github.com/blogtheristo/dws6](https://github.com/blogtheristo/dws6)
-**Branch:** `claude/agents-setup-01Tw8Mj3rg96N2Hiy5VdhRCF`
+### Finnish (PRIMARY)
+- **OPINNAYTETYO_SUUNNITELMA_FI.md** (35,000+ words)
+  - Complete thesis outline in Finnish
+  - 4 research questions addressed
+  - Construction industry focus
+  - 8 chapters with detailed methodology
 
-**Metropolia Supervisor:** [TBD - awaiting assignment]
+### English (REFERENCE)
+- **THESIS_OUTLINE.md** (10,000+ words)
+  - English version for international collaboration
+  - Same structure as Finnish version
 
-**Collaboration opportunities:**
-- Co-authorship on academic papers (edge AI economics, free tier strategy)
-- Guest lectures (Metropolia ICT/Business programs)
-- Open source community (agent templates, cost calculator)
+- **RESEARCH_FRAMEWORK.md** (8,000+ words)
+  - Detailed methodology and data collection protocols
+  - Interview protocols, cost tracking formulas
+  - Validity, reliability, ethics
 
 ---
 
-**Next Steps:**
-1. ☐ Meet with Metropolia supervisor (finalize scope and timeline)
-2. ☐ Set up data collection tools (cost dashboard, interview forms)
-3. ☐ Begin MVP implementation (December 2025)
-4. ☐ Start weekly reflection logs
+## Expected Contributions
+
+### Theoretical
+1. Free-Tier Bootstrap Model (6+ years runway with startup credits)
+2. Hybrid Cloud-Edge Economics (€333K/year savings validation)
+3. Phased Trust-Building Framework (Silent → Advisor → Autonomous)
+
+### Practical
+1. Operating Model Template (reusable for other construction tech startups)
+2. Construction Industry Playbook (embodied carbon tracking, viability analysis)
+3. Open Source Agent Library (YAML configs for 2 MVP agents)
+
+---
+
+## Data Collection (Starting MVP Phase)
+
+**Week 1-12 (Dec 2025 - Feb 2026):**
+- Customer interviews (5 pilots, 3 rounds each)
+- Cost tracking (daily, target €0/month)
+- Development logs (weekly reflections)
+- Performance metrics (response time, uptime)
+
+**Storage:**
+- `data-collection/customer-interviews/` (anonymized transcripts)
+- `data-collection/cost-tracking/` (Google Sheets exports)
+- `data-collection/weekly-logs/` (markdown reflections)
+
+---
+
+## Quick Links
+
+**Finnish Thesis:**
+- [Opinnäytetyön suunnitelma (FI)](fi/OPINNAYTETYO_SUUNNITELMA_FI.md)
+
+**English Reference:**
+- [Thesis Outline (EN)](en/THESIS_OUTLINE.md)
+- [Research Framework (EN)](en/RESEARCH_FRAMEWORK.md)
+
+**Related Documents:**
+- [Weekly Reports](/docs/Reports/) (EN + FI)
+- [Roadmaps](/docs/roadmaps/) (MVP, Alpha, V1)
+- [Sales Pipeline Agents](/CloudAgents/dws-team/SALES_PIPELINE_AGENTS.md)
 
 ---
 
 **Last Updated:** December 3, 2025
-**Document Version:** 1.0
-**Status:** Draft (awaiting supervisor approval)
+**Status:** Thesis outline complete, awaiting Metropolia supervisor meeting
+**Next Steps:**
+1. Meet with Metropolia supervisor (finalize scope)
+2. Begin MVP implementation (December 2025)
+3. Start data collection (customer interviews, cost tracking)
