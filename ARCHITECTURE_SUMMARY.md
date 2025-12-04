@@ -111,7 +111,7 @@
 │  ┌──────────────────────────────────────────────────────────┐ │
 │  │  Construction Site (e.g., Austin Tower)                  │ │
 │  │  ┌────────────────────────────────────────────────────┐  │ │
-│  │  │  NVIDIA Jetson Orin Nano                           │  │ │
+│  │  │  NVIDIA Jetson Orin Nano Super Developer Kit       │  │ │
 │  │  │  - TensorRT-Optimized Llama 3.1 8B (4-bit quant)   │  │ │
 │  │  │  - YOLOv8 (object detection)                       │  │ │
 │  │  │  - Local inference: <100ms                         │  │ │
@@ -384,7 +384,7 @@ The Agent Foundry provides the development framework for all AI agents in the sy
 
 - **Users:** 10-20 (pilot customers)
 - **Requests:** 500-1,000/day
-- **Edge Devices:** 5 NVIDIA Jetson
+- **Edge Devices:** 5 NVIDIA Jetson Orin Nano Super Developer Kits
 - **Cloud Run Instances:** 1 (min)
 
 ### 6 Months (Growth Phase)
@@ -460,7 +460,7 @@ gcloud run services update agent-orchestrator \
    - [ ] AWS for Startups ($25K)
 
 3. **Cloud Project Setup** (Priority: HIGH)
-   - [ ] Create Google Cloud project: lifetime-dws-iq
+   - [ ] Create Google Cloud project: dws-iq-pilot
    - [ ] Enable APIs: Cloud Run, Pub/Sub, Secret Manager
    - [ ] Create service account with least-privilege IAM
 

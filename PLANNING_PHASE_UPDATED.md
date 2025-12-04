@@ -178,8 +178,8 @@ lifetime-agent-foundry/
 **Day 1-2: dws10.com Backend Setup**
 ```bash
 # Google Cloud Project Setup
-gcloud projects create lifetime-dws-iq --name="Lifetime DWS IQ Platform"
-gcloud config set project lifetime-dws-iq
+gcloud projects create dws-iq-pilot --name="Lifetime DWS IQ Platform"
+gcloud config set project dws-iq-pilot
 
 # Enable required APIs
 gcloud services enable run.googleapis.com \
@@ -226,7 +226,7 @@ gcloud run domain-mappings create \
 
 **Day 5-7: Supabase & Database Setup**
 ```sql
--- Create Supabase project: lifetime-dws-iq
+-- Create Supabase project: dws-iq-pilot
 -- Region: eu-central-1 (Frankfurt, GDPR-compliant)
 
 -- Enable pgvector extension

@@ -1,301 +1,290 @@
 """
-Groq Agent Router - MVP Version
-Simplified FastAPI service for MVP pilot using Groq free tier
+DWS IQ Agent Router - MVP
+FastAPI service with 2 AI agents using Groq API
+
+Agents:
+1. Customer Satisfaction Agent - Analyzes customer health and churn risk
+2. Viability Agent - Calculates payback period and unit economics
+
+Cost: €0 (using Groq credits)
 """
 
-from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
-import os
-import yaml
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
 import httpx
-from typing import Dict, List, Any
-import logging
+import os
 from datetime import datetime
-from pathlib import Path
+from typing import Optional, Dict, Any
 import json
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
-
 app = FastAPI(
-    title="Groq Agent Router - MVP",
-    description="Routes agent requests to Groq API (free tier)",
-    version="1.0.0-mvp"
+    title="DWS IQ Agent Router - MVP",
+    version="1.0.0",
+    description="AI agents for construction industry customer analysis"
 )
 
-# Groq API configuration
+# CORS for frontend access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://dws10.com",
+        "https://www.dws10.com",
+        "https://onelifetime.world",
+        "https://www.onelifetime.world",
+        "http://localhost:3000"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Environment variables
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "")
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL", "")
 
-# Agent config cache
-agent_configs: Dict[str, Dict] = {}
+# Request/Response Models
+class CustomerHealthRequest(BaseModel):
+    customer_id: str = Field(..., description="Unique customer identifier")
+    customer_name: str = Field(..., description="Company name")
+    nps_score: int = Field(..., ge=0, le=10, description="NPS score (0-10)")
+    open_tickets: int = Field(..., ge=0, description="Number of open support tickets")
+    days_since_contact: int = Field(..., ge=0, description="Days since last contact")
+    usage_trend: str = Field(default="Stable", description="Usage trend: Increasing, Stable, or Declining")
 
-# Cost tracking (for investor demo)
-total_tokens_used = 0
-total_cost_eur = 0.0
+class ViabilityRequest(BaseModel):
+    customer_id: str = Field(..., description="Unique customer identifier")
+    customer_name: str = Field(..., description="Company name")
+    setup_hours: int = Field(..., ge=0, description="Hours required for setup")
+    monthly_revenue_eur: float = Field(..., gt=0, description="Monthly revenue in EUR")
 
+class AgentResponse(BaseModel):
+    agent_id: str
+    customer_id: str
+    customer_name: str
+    response: str
+    usage: Dict[str, int]
+    cost_eur: float
+    latency_ms: int
+    timestamp: str
 
-def load_agent_config(agent_id: str) -> Dict[str, Any]:
-    """Load agent configuration from YAML file"""
-    if agent_id in agent_configs:
-        return agent_configs[agent_id]
-
-    # Try to find config file
-    config_paths = [
-        Path(f"/app/configs/{agent_id}.yaml"),
-        Path(f"/app/configs/mvp/{agent_id}.yaml"),
-        Path(f"configs/mvp/{agent_id}.yaml"),  # For local dev
-    ]
-
-    for config_path in config_paths:
-        if config_path.exists():
-            with open(config_path, 'r') as f:
-                config = yaml.safe_load(f)
-                agent_configs[agent_id] = config
-                logger.info(f"Loaded config for agent {agent_id}")
-                return config
-
-    raise HTTPException(
-        status_code=404,
-        detail=f"Agent configuration not found for {agent_id}"
-    )
-
-
+# Health check endpoint
 @app.get("/health")
 async def health_check():
-    """Health check endpoint for Cloud Run"""
+    """Health check endpoint for Cloud Run and monitoring"""
     return {
         "status": "healthy",
         "service": "groq-agent-router-mvp",
-        "timestamp": datetime.utcnow().isoformat(),
-        "groq_api_configured": GROQ_API_KEY is not None
+        "version": "1.0.0",
+        "groq_api_configured": bool(GROQ_API_KEY),
+        "timestamp": datetime.utcnow().isoformat()
     }
 
+# Metrics endpoint
+@app.get("/v1/metrics")
+async def get_metrics():
+    """Return service metrics for monitoring"""
+    return {
+        "total_invocations": 0,
+        "total_tokens_used": 0,
+        "estimated_cost_eur": 0.0,
+        "using_free_credits": True,
+        "actual_cost_eur": 0.0
+    }
 
+# List agents endpoint
 @app.get("/v1/agents")
 async def list_agents():
-    """List all MVP agents"""
+    """List all available agents"""
     return {
         "agents": [
             {
                 "id": "customersat-construction-mvp",
-                "name": "Customer Satisfaction Agent - MVP",
+                "name": "Customer Satisfaction Agent - Construction MVP",
                 "type": "customer_satisfaction",
                 "vertical": "construction",
-                "model": "groq/llama-3.1-70b-versatile"
+                "model": "llama-3.1-70b-versatile",
+                "status": "active"
             },
             {
                 "id": "viability-construction-mvp",
-                "name": "Viability Agent - MVP",
+                "name": "Viability Agent - Construction MVP",
                 "type": "viability",
                 "vertical": "construction",
-                "model": "groq/llama-3.1-70b-versatile"
+                "model": "llama-3.1-70b-versatile",
+                "status": "active"
             }
-        ],
-        "mvp_mode": True,
-        "pilot_customers": 5
+        ]
     }
 
+@app.post("/v1/agents/customersat-construction-mvp/analyze", response_model=AgentResponse)
+async def analyze_customer_health(request: CustomerHealthRequest):
+    """Customer Satisfaction Agent - Analyzes customer health and churn risk"""
+    
+    if not GROQ_API_KEY:
+        raise HTTPException(status_code=500, detail="GROQ_API_KEY not configured")
+    
+    import time
+    start_time = time.time()
+    
+    system_prompt = """You are a Customer Satisfaction Specialist for construction SMEs in the Nordic region.
 
-@app.get("/v1/metrics")
-async def get_metrics():
-    """Get cost metrics for investor demo"""
-    global total_tokens_used, total_cost_eur
+ANALYZE these metrics:
+1. NPS score (target: ≥8 healthy, 7 medium, ≤6 high risk)
+2. Support tickets (>5 open = red flag)
+3. Last contact (>30 days = issue, >45 days = high risk)
+4. Usage trend (Declining = concerning)
 
-    return {
-        "total_invocations": len(agent_configs),
-        "total_tokens_used": total_tokens_used,
-        "estimated_cost_eur": total_cost_eur,
-        "cost_per_token_eur": 0.0007 / 1000,  # Groq pricing
-        "using_free_credits": True,
-        "actual_cost_eur": 0.0  # Free with startup credits
-    }
+OUTPUT (JSON only):
+{
+  "customer_id": "string",
+  "customer_name": "string",
+  "health_score": 0-100,
+  "risk_level": "Low" | "Medium" | "High",
+  "primary_concern": "main issue in one sentence",
+  "recommended_action": "specific CSM action",
+  "supporting_data": {"nps_score": N, "open_tickets": N, "days_since_contact": N}
+}
 
+Keep under 200 tokens. Be specific and actionable."""
 
-@app.post("/v1/agents/{agent_id}/invoke")
-async def invoke_agent(agent_id: str, request: Request):
-    """
-    Invoke an agent via Groq API
-
-    Request body:
-    {
-        "messages": [
-            {"role": "user", "content": "Analyze customer health..."}
-        ],
-        "customer_data": {...}  (optional)
-    }
-    """
-    global total_tokens_used, total_cost_eur
+    user_message = f"""Analyze: {request.customer_name} (ID: {request.customer_id})
+NPS: {request.nps_score}/10
+Tickets: {request.open_tickets}
+Days since contact: {request.days_since_contact}
+Trend: {request.usage_trend}"""
 
     try:
-        request_data = await request.json()
-
-        # Load agent configuration
-        config = load_agent_config(agent_id)
-        agent_config = config.get("agent", {})
-        model_config = agent_config.get("model", {})
-
-        # Get system prompt
-        system_prompt = agent_config.get("system_prompt", "")
-
-        # Build messages for Groq
-        messages = [
-            {"role": "system", "content": system_prompt}
-        ]
-
-        # Add user messages
-        user_messages = request_data.get("messages", [])
-        for msg in user_messages:
-            messages.append({
-                "role": msg.get("role", "user"),
-                "content": msg.get("content", "")
-            })
-
-        # Add customer data if provided
-        customer_data = request_data.get("customer_data")
-        if customer_data:
-            messages.append({
-                "role": "user",
-                "content": f"Customer Data (JSON): {json.dumps(customer_data)}"
-            })
-
-        # Prepare Groq API request
-        groq_payload = {
-            "model": model_config.get("name", "llama-3.1-70b-versatile"),
-            "messages": messages,
-            "temperature": model_config.get("temperature", 0.7),
-            "max_tokens": model_config.get("max_tokens", 1500)
-        }
-
-        # Call Groq API
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.post(
                 GROQ_API_URL,
-                json=groq_payload,
-                headers={
-                    "Authorization": f"Bearer {GROQ_API_KEY}",
-                    "Content-Type": "application/json"
-                },
-                timeout=30.0
+                headers={"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"},
+                json={
+                    "model": "llama-3.1-70b-versatile",
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_message}
+                    ],
+                    "temperature": 0.3,
+                    "max_tokens": 500
+                }
             )
-
-            response.raise_for_status()
-            groq_response = response.json()
-
-        # Track usage for cost metrics
-        usage = groq_response.get("usage", {})
-        tokens_used = usage.get("total_tokens", 0)
-        total_tokens_used += tokens_used
-
-        # Groq pricing: ~$0.70 per 1M tokens (but free with credits)
-        cost_eur = (tokens_used / 1_000_000) * 0.70
-        total_cost_eur += cost_eur
-
-        # Log usage
-        logger.info(
-            f"Groq API call - Agent: {agent_id} - "
-            f"Tokens: {tokens_used} - "
-            f"Cost: €{cost_eur:.4f} (covered by free credits)"
-        )
-
-        # Return response
-        return JSONResponse(content={
-            "agent_id": agent_id,
-            "response": groq_response.get("choices", [{}])[0].get("message", {}).get("content", ""),
-            "model": groq_response.get("model"),
-            "usage": usage,
-            "cost_eur": 0.0,  # Free with credits
-            "timestamp": datetime.utcnow().isoformat()
-        })
-
-    except httpx.HTTPStatusError as e:
-        logger.error(f"Groq API error: {e.response.status_code} - {e.response.text}")
-        raise HTTPException(
-            status_code=e.response.status_code,
-            detail=f"Groq API error: {e.response.text}"
-        )
+            
+            if response.status_code != 200:
+                raise HTTPException(status_code=502, detail=f"Groq API error: {response.text}")
+            
+            result = response.json()
+            agent_response = result["choices"][0]["message"]["content"]
+            usage = result.get("usage", {})
+            latency_ms = int((time.time() - start_time) * 1000)
+            
+            return AgentResponse(
+                agent_id="customersat-construction-mvp",
+                customer_id=request.customer_id,
+                customer_name=request.customer_name,
+                response=agent_response,
+                usage=usage,
+                cost_eur=0.0,
+                latency_ms=latency_ms,
+                timestamp=datetime.utcnow().isoformat()
+            )
+    
     except Exception as e:
-        logger.error(f"Error invoking agent {agent_id}: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.post("/v1/agents/viability-construction-mvp/analyze", response_model=AgentResponse)
+async def analyze_viability(request: ViabilityRequest):
+    """Viability Agent - Calculates payback period and unit economics"""
+    
+    if not GROQ_API_KEY:
+        raise HTTPException(status_code=500, detail="GROQ_API_KEY not configured")
+    
+    import time
+    start_time = time.time()
+    
+    system_prompt = """You are a Financial Analyst for construction SaaS.
 
-@app.post("/v1/agents/{agent_id}/analyze-customer")
-async def analyze_customer(agent_id: str, request: Request):
-    """
-    Convenience endpoint for customer analysis
+CONSTANTS:
+- Hardware: €470 (2× Jetson Orin Nano Super @ $249 each)
+- Setup rate: €80/hour
+- Monthly COGS: €50
 
-    Request body:
-    {
-        "customer_id": "cust_001",
-        "nps_score": 8,
-        "open_tickets": 2,
-        "days_since_contact": 15,
-        "monthly_revenue_eur": 2000,
-        "setup_hours": 8
-    }
-    """
+CALCULATE:
+- Upfront = 700 + (hours × 80)
+- Monthly GP = Revenue - 50
+- Payback = Upfront / Monthly GP
+- Margin % = (Revenue - 50) / Revenue × 100
+
+RULES:
+- Payback ≤2.0 → "Approve" ✅
+- Payback 2.0-3.0 → "Review" ⚠️
+- Payback >3.0 → "Reject" ❌
+
+OUTPUT (JSON):
+{
+  "customer_id": "string",
+  "customer_name": "string",
+  "payback_months": number,
+  "gross_margin_percent": number,
+  "verdict": "Approve" | "Review" | "Reject",
+  "calculation": "formula shown",
+  "reasoning": "one sentence"
+}"""
+
+    user_message = f"""Calculate for: {request.customer_name}
+Setup hours: {request.setup_hours}
+Monthly revenue: €{request.monthly_revenue_eur}"""
+
     try:
-        customer_data = await request.json()
-        customer_id = customer_data.get("customer_id", "unknown")
-
-        # Load agent config to determine analysis type
-        config = load_agent_config(agent_id)
-        agent_type = config.get("agent", {}).get("type")
-
-        if agent_type == "customer_satisfaction":
-            prompt = f"""
-            Analyze this customer's health:
-
-            Customer ID: {customer_id}
-            NPS Score: {customer_data.get('nps_score', 'N/A')}
-            Open Support Tickets: {customer_data.get('open_tickets', 'N/A')}
-            Days Since Last Contact: {customer_data.get('days_since_contact', 'N/A')}
-            Equipment Usage Trend: {customer_data.get('usage_trend', 'Stable')}
-
-            Provide analysis in JSON format as specified in your system prompt.
-            """
-
-        elif agent_type == "viability":
-            prompt = f"""
-            Calculate viability metrics for this customer:
-
-            Customer ID: {customer_id}
-            Setup Hours: {customer_data.get('setup_hours', 'N/A')}
-            Monthly Revenue: €{customer_data.get('monthly_revenue_eur', 'N/A')}
-
-            Use the constants and formulas from your system prompt.
-            Provide calculation in JSON format.
-            """
-
-        else:
-            raise HTTPException(
-                status_code=400,
-                detail=f"Unknown agent type: {agent_type}"
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(
+                GROQ_API_URL,
+                headers={"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"},
+                json={
+                    "model": "llama-3.1-70b-versatile",
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_message}
+                    ],
+                    "temperature": 0.1,
+                    "max_tokens": 400
+                }
             )
-
-        # Call invoke endpoint
-        return await invoke_agent(
-            agent_id=agent_id,
-            request=Request(
-                scope={
-                    "type": "http",
-                    "method": "POST",
-                    "headers": []
-                },
-                receive=lambda: {"body": json.dumps({
-                    "messages": [{"role": "user", "content": prompt}]
-                }).encode()}
+            
+            if response.status_code != 200:
+                raise HTTPException(status_code=502, detail=f"Groq API error: {response.text}")
+            
+            result = response.json()
+            agent_response = result["choices"][0]["message"]["content"]
+            usage = result.get("usage", {})
+            latency_ms = int((time.time() - start_time) * 1000)
+            
+            return AgentResponse(
+                agent_id="viability-construction-mvp",
+                customer_id=request.customer_id,
+                customer_name=request.customer_name,
+                response=agent_response,
+                usage=usage,
+                cost_eur=0.0,
+                latency_ms=latency_ms,
+                timestamp=datetime.utcnow().isoformat()
             )
-        )
-
+    
     except Exception as e:
-        logger.error(f"Error analyzing customer: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/")
+async def root():
+    """Root endpoint"""
+    return {
+        "service": "DWS IQ Agent Router - MVP",
+        "version": "1.0.0",
+        "documentation": "/docs",
+        "health": "/health"
+    }
 
 if __name__ == "__main__":
     import uvicorn

@@ -3,3 +3,4 @@ Phase,Action,Goal
 "Phase 2: The ""Advisor""",Activate the dashboard for Finance and Strategy Teams.,"Human-in-the-loop. The Agent sends alerts/suggestions for viability scores, red-flag industries, and economic thresholds. Teams manually review and adjust pricing, sales strategy, or industry focus based on recommendations."
 Phase 3: Autonomous Mode,Full integration with financial systems and CRM.,"Proactive Viability Management. The Agent autonomously calculates viability scores (0-100), flags red industries where payback/CAC/NRR fall below thresholds, and feeds scores into Deal Flow + Desirability agents to avoid bad-economics verticals within set parameters (e.g., payback ≤ 2 months, NRR > 100%)."
 
+
