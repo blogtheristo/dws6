@@ -1,21 +1,34 @@
-# DWS6 Weekly Report Recipients
-# Add one email address per line
-# Lines starting with # are ignored (comments)
+# DWS6 Weekly Report Recipients - CONFIDENTIAL TEMPLATE
+# Copy this file to recipients.txt and add real email addresses
+# The actual recipients.txt file is excluded from git for privacy
+
+# INSTRUCTIONS:
+# 1. Copy this file: cp recipients.txt.example recipients.txt
+# 2. Add real email addresses (one per line)
+# 3. Lines starting with # are ignored (comments)
+# 4. recipients.txt will NOT be committed to git (confidential)
+# 5. All recipients are sent via BCC (they cannot see each other)
+
+# PRIVACY: Recipients are hidden from each other using BCC mode
 
 # Team Lead
-risto.paarni2024@lifetime.fi
+your.email@example.com
 
 # Investors
-# investor1@example.com
-# investor2@example.com
+# investor1@vc-firm.com
+# investor2@angel-network.fi
+# investor3@seed-fund.com
 
 # University Partners
-# professor@university.fi
-# research@university.fi
+# professor@aalto.fi
+# research@tampere.fi
+# dept-head@oulu.fi
 
 # Media Contacts
-# journalist@magazine.com
+# journalist@tekniikka-lehti.fi
+# editor@kauppalehti.fi
 
-# Leads
-# lead1@company.com
-# lead2@company.com
+# Leads (Construction Companies)
+# ceo@construction-company.fi
+# cto@rakennusliike.se
+# operations@bygge.no
