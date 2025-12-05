@@ -21,7 +21,30 @@ def send_weekly_report():
     sender_password = os.getenv("SMTP_PASSWORD")
     smtp_server = os.getenv("SMTP_SERVER", "smtp.gmail.com")
     smtp_port = int(os.getenv("SMTP_PORT", "587"))
-    recipient_email = "risto.paarni2024@lifetime.fi"
+
+    # Recipients: Support multiple emails from env var or file
+    recipients_env = os.getenv("REPORT_RECIPIENTS")
+
+    if recipients_env:
+        # From environment variable (comma-separated)
+        recipients = [email.strip() for email in recipients_env.split(',')]
+    else:
+        # From file (one email per line)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        recipients_file = os.path.join(script_dir, "recipients.txt")
+
+        if os.path.exists(recipients_file):
+            with open(recipients_file, 'r') as f:
+                recipients = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+        else:
+            # Default recipient if no list configured
+            recipients = ["risto.paarni2024@lifetime.fi"]
+
+    if not recipients:
+        print("❌ No recipients configured")
+        return False
+
+    print(f"📧 Sending to {len(recipients)} recipient(s)")
 
     # Get latest reports (support both from repo root and Reports/ directory)
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -42,7 +65,7 @@ def send_weekly_report():
     # Create email
     msg = MIMEMultipart()
     msg['From'] = sender_email
-    msg['To'] = recipient_email
+    msg['To'] = ', '.join(recipients)  # Multiple recipients in To: field
     msg['Subject'] = f"DWS6 Weekly Progress Report - {datetime.now().strftime('%Y-%m-%d')}"
 
     # Email body
@@ -115,7 +138,7 @@ Status: 🟢 ON TRACK
     try:
         if not sender_password:
             print("⚠️  SMTP_PASSWORD not set. Email not sent (dry run mode).")
-            print(f"📧 Would send to: {recipient_email}")
+            print(f"📧 Would send to: {', '.join(recipients)}")
             print(f"📎 Attachments: {os.path.basename(en_report)}, {os.path.basename(fi_report)}")
             return True
 
@@ -125,7 +148,9 @@ Status: 🟢 ON TRACK
         server.send_message(msg)
         server.quit()
 
-        print(f"✅ Weekly report sent to {recipient_email}")
+        print(f"✅ Weekly report sent to {len(recipients)} recipient(s)")
+        for recipient in recipients:
+            print(f"   → {recipient}")
         print(f"📎 Attached: DWS6_Weekly_Report_W{week:02d}_{year}_EN.pdf, DWS6_Weekly_Report_W{week:02d}_{year}_FI.pdf")
         return True
 

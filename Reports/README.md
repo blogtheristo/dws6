@@ -35,11 +35,15 @@ Professional reports formatted for **universities, investors, and media**:
 
 ## 📧 Email Automation
 
-Reports are automatically emailed every **Monday at 10:00 Helsinki time** to:
-- **Recipient:** risto.paarni2024@lifetime.fi
-- **Format:** Professional PDF attachments (EN + FI)
-- **Automation:** GitHub Actions workflow
-- **Backup:** Copies uploaded to Google Drive
+Reports are automatically emailed every **Monday at 10:00 Helsinki time** to your recipient list.
+
+**Recipients:** Configured in `Reports/recipients.txt` or via environment variable
+- Team Lead: risto.paarni2024@lifetime.fi
+- Investors, university partners, media contacts, leads
+
+**Format:** Professional PDF attachments (EN + FI)
+**Automation:** GitHub Actions workflow
+**Backup:** Copies uploaded to Google Drive
 
 ### Workflow Schedule
 
@@ -107,7 +111,30 @@ For automatic backup to Google Drive:
    - `GOOGLE_APPLICATION_CREDENTIALS` - Paste entire JSON credentials file content
    - `GDRIVE_FOLDER_ID` - The folder ID from step 2
 
-### 5. Test Locally
+### 5. Configure Recipients
+
+Edit `Reports/recipients.txt` to add your email list:
+
+```txt
+# Team Lead
+risto.paarni2024@lifetime.fi
+
+# Investors
+investor@example.com
+
+# University Partners
+professor@university.fi
+
+# Leads
+lead@company.com
+```
+
+Or use environment variable for comma-separated list:
+```bash
+export REPORT_RECIPIENTS="email1@example.com,email2@example.com,email3@example.com"
+```
+
+### 6. Test Locally
 
 ```bash
 cd Reports
@@ -121,6 +148,9 @@ export SMTP_PASSWORD="your-app-password"
 export SMTP_SERVER="smtp.gmail.com"
 export SMTP_PORT="587"
 
+# Optional: Override recipients for testing
+export REPORT_RECIPIENTS="test@example.com"
+
 # Test email (dry run without SMTP_PASSWORD)
 python send_weekly_report.py
 
@@ -130,12 +160,14 @@ export GDRIVE_FOLDER_ID="your-folder-id"
 python upload_to_drive.py
 ```
 
-### 6. Manual Trigger (GitHub)
+### 7. Manual Trigger (GitHub)
 
 1. Go to **Actions** tab in GitHub
 2. Select **Weekly Report Email Automation**
 3. Click **Run workflow**
 4. Click **Run workflow** button
+
+**Note:** Recipients from `recipients.txt` will be used automatically. For one-time custom recipients, set `REPORT_RECIPIENTS` secret in GitHub.
 
 ## 📊 Report Contents
 
@@ -343,7 +375,9 @@ INTRODUCTIONS = {
 - [x] PDF attachment generation ✅
 - [x] Google Drive backup ✅
 - [x] Professional branding ✅
-- [ ] Multiple recipient support
+- [x] Multiple recipient support ✅
+- [ ] BCC for privacy (hide recipients from each other)
+- [ ] Personalized email templates per recipient type
 - [ ] Slack/Teams integration
 - [ ] Custom report templates
 - [ ] Automated metrics collection

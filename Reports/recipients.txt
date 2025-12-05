@@ -1,0 +1,21 @@
+# DWS6 Weekly Report Recipients
+# Add one email address per line
+# Lines starting with # are ignored (comments)
+
+# Team Lead
+risto.paarni2024@lifetime.fi
+
+# Investors
+# investor1@example.com
+# investor2@example.com
+
+# University Partners
+# professor@university.fi
+# research@university.fi
+
+# Media Contacts
+# journalist@magazine.com
+
+# Leads
+# lead1@company.com
+# lead2@company.com
