@@ -25,8 +25,8 @@ def send_weekly_report():
 
     # Get latest reports (support both from repo root and Reports/ directory)
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    en_pattern = os.path.join(script_dir, "en/WEEKLY_REPORT*.pdf")
-    fi_pattern = os.path.join(script_dir, "fi/WEEKLY_REPORT*.pdf")
+    en_pattern = os.path.join(script_dir, "en/WEEKLY_REPORT_W*.pdf")
+    fi_pattern = os.path.join(script_dir, "fi/WEEKLY_REPORT_W*.pdf")
 
     en_reports = sorted(glob.glob(en_pattern), reverse=True)
     fi_reports = sorted(glob.glob(fi_pattern), reverse=True)
@@ -83,13 +83,17 @@ Status: 🟢 ON TRACK
 
     msg.attach(MIMEText(body, 'plain'))
 
+    # Get week number for attachment filenames
+    now = datetime.now()
+    year, week, _ = now.isocalendar()
+
     # Attach English report
     try:
         with open(en_report, 'rb') as f:
             part = MIMEBase('application', 'octet-stream')
             part.set_payload(f.read())
             encoders.encode_base64(part)
-            part.add_header('Content-Disposition', f'attachment; filename=DWS6_Weekly_Report_EN.pdf')
+            part.add_header('Content-Disposition', f'attachment; filename=DWS6_Weekly_Report_W{week:02d}_{year}_EN.pdf')
             msg.attach(part)
     except Exception as e:
         print(f"❌ Failed to attach English report: {e}")
@@ -101,7 +105,7 @@ Status: 🟢 ON TRACK
             part = MIMEBase('application', 'octet-stream')
             part.set_payload(f.read())
             encoders.encode_base64(part)
-            part.add_header('Content-Disposition', f'attachment; filename=DWS6_Weekly_Report_FI.pdf')
+            part.add_header('Content-Disposition', f'attachment; filename=DWS6_Weekly_Report_W{week:02d}_{year}_FI.pdf')
             msg.attach(part)
     except Exception as e:
         print(f"❌ Failed to attach Finnish report: {e}")
@@ -122,7 +126,7 @@ Status: 🟢 ON TRACK
         server.quit()
 
         print(f"✅ Weekly report sent to {recipient_email}")
-        print(f"📎 Attached: DWS6_Weekly_Report_EN.pdf, DWS6_Weekly_Report_FI.pdf")
+        print(f"📎 Attached: DWS6_Weekly_Report_W{week:02d}_{year}_EN.pdf, DWS6_Weekly_Report_W{week:02d}_{year}_FI.pdf")
         return True
 
     except Exception as e:

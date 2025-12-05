@@ -308,10 +308,19 @@ def create_logo_placeholder(output_path):
         f.write(svg_logo)
     return output_path
 
-def generate_pdf(md_file, output_pdf, language='en'):
+def generate_pdf(md_file, output_pdf=None, language='en'):
     """Generate PDF from Markdown with Lifetime Group branding"""
 
     script_dir = Path(__file__).parent
+
+    # Auto-generate output filename with week number if not provided
+    if output_pdf is None:
+        now = datetime.now()
+        year, week, _ = now.isocalendar()
+        if language == 'fi':
+            output_pdf = script_dir / "fi" / f"WEEKLY_REPORT_W{week:02d}_{year}.pdf"
+        else:
+            output_pdf = script_dir / "en" / f"WEEKLY_REPORT_W{week:02d}_{year}.pdf"
 
     # Logo path (check for actual logo, fallback to placeholder)
     logo_path = script_dir / "assets" / "lifetime_logo.svg"
@@ -359,21 +368,24 @@ def main():
     """Generate PDFs for all reports"""
     script_dir = Path(__file__).parent
 
-    # Generate English PDF
+    # Get current week number
+    now = datetime.now()
+    year, week, _ = now.isocalendar()
+    print(f"📅 Generating reports for Week {week}, {year}")
+
+    # Generate English PDF (with auto-generated filename including week number)
     en_md = script_dir / "en" / "WEEKLY_REPORT.md"
-    en_pdf = script_dir / "en" / "WEEKLY_REPORT.pdf"
 
     if en_md.exists():
-        generate_pdf(en_md, en_pdf, language='en')
+        en_pdf = generate_pdf(en_md, language='en')
     else:
         print(f"❌ English report not found: {en_md}")
 
-    # Generate Finnish PDF
+    # Generate Finnish PDF (with auto-generated filename including week number)
     fi_md = script_dir / "fi" / "WEEKLY_REPORT_FI.md"
-    fi_pdf = script_dir / "fi" / "WEEKLY_REPORT_FI.pdf"
 
     if fi_md.exists():
-        generate_pdf(fi_md, fi_pdf, language='fi')
+        fi_pdf = generate_pdf(fi_md, language='fi')
     else:
         print(f"❌ Finnish report not found: {fi_md}")
 

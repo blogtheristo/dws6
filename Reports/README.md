@@ -154,14 +154,19 @@ Each weekly report includes:
 
 ## 🗓️ Report Naming Convention
 
-Reports are named with date stamps for versioning:
+Reports are named with ISO week numbers for versioning:
 
 ```
-WEEKLY_REPORT_2025-12-03.md       # English Markdown
-WEEKLY_REPORT_2025-12-03.pdf      # English PDF
-WEEKLY_REPORT_FI_2025-12-03.md    # Finnish Markdown
-WEEKLY_REPORT_FI_2025-12-03.pdf   # Finnish PDF
+WEEKLY_REPORT.md                  # English Markdown (source)
+WEEKLY_REPORT_W49_2025.pdf        # English PDF (Week 49, 2025)
+
+WEEKLY_REPORT_FI.md               # Finnish Markdown (source)
+WEEKLY_REPORT_FI_W49_2025.pdf     # Finnish PDF (Week 49, 2025)
 ```
+
+**Format:** `WEEKLY_REPORT_W{week}_{year}.pdf`
+- Week number uses ISO 8601 week date standard
+- Automatically generated based on current date
 
 ## 📄 Manual PDF Generation
 
