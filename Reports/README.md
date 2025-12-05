@@ -7,19 +7,21 @@ Reports in both **English and Finnish**, automatically emailed and backed up to 
 
 ```
 Reports/
-├── en/                      # English reports
-│   ├── WEEKLY_REPORT.md       # Markdown source
-│   └── WEEKLY_REPORT.pdf      # Professional PDF
-├── fi/                      # Finnish reports (Suomi)
-│   ├── WEEKLY_REPORT_FI.md    # Markdown source
-│   └── WEEKLY_REPORT_FI.pdf   # Professional PDF
-├── assets/                  # Branding assets
-│   └── lifetime_logo.svg      # Lifetime Group logo
-├── generate_pdf.py          # PDF generator with branding
-├── send_weekly_report.py    # Email automation script
-├── upload_to_drive.py       # Google Drive backup
-├── requirements.txt         # Python dependencies
-└── README.md                # This file
+├── en/                          # English reports
+│   ├── WEEKLY_REPORT.md           # Markdown source
+│   └── WEEKLY_REPORT_W49_2025.pdf # Professional PDF
+├── fi/                          # Finnish reports (Suomi)
+│   ├── WEEKLY_REPORT_FI.md        # Markdown source
+│   └── WEEKLY_REPORT_W49_2025.pdf # Professional PDF
+├── assets/                      # Branding assets
+│   └── lifetime_logo.svg          # Lifetime Group logo
+├── generate_pdf.py              # PDF generator with branding
+├── send_weekly_report.py        # Email automation script
+├── upload_to_drive.py           # Google Drive backup
+├── requirements.txt             # Python dependencies
+├── recipients.txt.example       # Recipient list template
+├── recipients.txt               # Actual recipients (gitignored, confidential)
+└── README.md                    # This file
 ```
 
 ## 🎨 PDF Features
@@ -111,23 +113,32 @@ For automatic backup to Google Drive:
    - `GOOGLE_APPLICATION_CREDENTIALS` - Paste entire JSON credentials file content
    - `GDRIVE_FOLDER_ID` - The folder ID from step 2
 
-### 5. Configure Recipients
+### 5. Configure Recipients (Confidential)
 
-Edit `Reports/recipients.txt` to add your email list:
+**IMPORTANT:** The recipients list is confidential and excluded from git.
 
-```txt
-# Team Lead
-risto.paarni2024@lifetime.fi
+1. **Create your recipients file:**
+   ```bash
+   cd Reports
+   cp recipients.txt.example recipients.txt
+   ```
 
-# Investors
-investor@example.com
+2. **Add real email addresses:**
+   ```txt
+   # Team Lead
+   risto.paarni2024@lifetime.fi
 
-# University Partners
-professor@university.fi
+   # Investors
+   investor@vc-firm.com
 
-# Leads
-lead@company.com
-```
+   # University Partners
+   professor@aalto.fi
+
+   # Leads
+   ceo@company.fi
+   ```
+
+**Note:** `recipients.txt` is in `.gitignore` and will NOT be committed to the repository for privacy.
 
 Or use environment variable for comma-separated list:
 ```bash
@@ -370,13 +381,19 @@ INTRODUCTIONS = {
 }
 ```
 
+## 🔐 Privacy & Security
+
+**BCC Mode:** All recipients are sent via BCC (blind carbon copy) to protect privacy. Recipients cannot see each other's email addresses.
+
+**Confidential Recipients List:** The `recipients.txt` file is excluded from git and never committed to the repository.
+
 ## 🚀 Future Enhancements
 
 - [x] PDF attachment generation ✅
 - [x] Google Drive backup ✅
 - [x] Professional branding ✅
 - [x] Multiple recipient support ✅
-- [ ] BCC for privacy (hide recipients from each other)
+- [x] BCC for privacy (hide recipients from each other) ✅
 - [ ] Personalized email templates per recipient type
 - [ ] Slack/Teams integration
 - [ ] Custom report templates

@@ -62,15 +62,16 @@ def send_weekly_report():
     en_report = en_reports[0]
     fi_report = fi_reports[0]
 
-    # Create email
+    # Create email with BCC for privacy (recipients hidden from each other)
     msg = MIMEMultipart()
     msg['From'] = sender_email
-    msg['To'] = ', '.join(recipients)  # Multiple recipients in To: field
+    msg['To'] = sender_email  # Sender as To: field
+    msg['Bcc'] = ', '.join(recipients)  # All recipients in BCC (hidden from each other)
     msg['Subject'] = f"DWS6 Weekly Progress Report - {datetime.now().strftime('%Y-%m-%d')}"
 
-    # Email body
+    # Email body (generic since recipients are hidden via BCC)
     body = f"""
-Hi Risto,
+Hello,
 
 Your weekly DWS6 progress report is attached in both English and Finnish (PDF format).
 
