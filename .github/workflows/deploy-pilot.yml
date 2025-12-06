@@ -8,6 +8,7 @@ on:
     paths:
       - 'AgentFoundry/services/groq-router-mvp/**'
       - '.github/workflows/deploy-pilot.yml'
+  workflow_dispatch:
 
 env:
   PROJECT_ID: dws-iq-pilot
