@@ -177,12 +177,12 @@ lifetime-agent-foundry/
 
 | Item | Quantity | Unit Cost | Total |
 |------|----------|-----------|-------|
-| Jetson Orin Nano Dev Kit | 5 (pilot) | $499 | $2,495 |
+| Jetson Orin Nano Dev Kit | 5 (pilot) | $249 | $1,245 |
 | Industrial Enclosure (IP67) | 5 | $150 | $750 |
 | Solar Panel + Battery | 5 | $200 | $1,000 |
 | 4G/5G Modem | 5 | $300 | $1,500 |
-| **Pilot Total** | — | — | **$5,745** |
-| **Full Rollout (50 sites)** | — | — | **$57,450** |
+| **Pilot Total** | — | — | **$4,495** |
+| **Full Rollout (50 sites)** | — | — | **$44,950** |
 
 **ROI:** Jetson investment pays for itself in **1.95 months** through cloud cost avoidance ($29,435/month savings).
 
@@ -202,9 +202,9 @@ Infrastructure:
   Subtotal: €737/year
 
 Hardware (Pilot):
-  - 5 Jetson devices: $5,745 = €5,420
+  - 5 Jetson devices: $4,495 = €4,240
   - 10 Chromebook Plus: €7,990
-  Subtotal: €13,410
+  Subtotal: €12,230
 
 Other Costs:
   - Legal & incorporation: €5,000 (one-time)
@@ -214,7 +214,7 @@ Other Costs:
   Subtotal: €24,440
 
 ───────────────────────────────────────────────────────────
-TOTAL 12-MONTH CASH NEED: €143,587 (~$157,000 USD)
+TOTAL 12-MONTH CASH NEED: €142,407 (~$151,000 USD)
 ```
 
 **UPDATED (down from original €191,630):**
@@ -233,13 +233,13 @@ TOTAL 12-MONTH CASH NEED: €143,587 (~$157,000 USD)
 | **Year 1 Total** | — | — | — | **€59,976** |
 
 **Break-Even Analysis:**
-- Cash need: €143,587
+- Cash need: €142,407
 - Revenue: €104,978
-- Gap: €38,609 (€3,217/month burn rate)
+- Gap: €37,429 (€3,119/month burn rate)
 
 **Conclusion:** With €150K SAFE investment, you'll have:
 - €150,000 (investment) + €104,978 (revenue) = €254,978 total
-- €254,978 - €143,587 (costs) = **€111,391 cash remaining at Month 12**
+- €254,978 - €142,407 (costs) = **€112,571 cash remaining at Month 12**
 - **Runway:** 34+ months (profitability achieved Month 12-13)
 
 ---
@@ -321,7 +321,7 @@ LAYER 3: Continuous Assurance
 ### Phase 2: Edge Computing (Days 31-60)
 
 **Month 2: Hardware & AWS IoT**
-- [ ] Order 5 NVIDIA Jetson Orin Nano devices ($2,495)
+- [ ] Order 5 NVIDIA Jetson Orin Nano devices ($1,245)
 - [ ] Finalize first pilot customer agreement
 - [ ] Configure AWS IoT Greengrass, create thing groups
 - [ ] Deploy edge agents to Jetson (TensorRT Llama 3.1 8B 4-bit)
